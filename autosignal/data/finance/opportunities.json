@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "cluster_label": "Cash Yield Optimization (HYSA vs T-Bills vs Money Market)",
+    "topic": "savings",
+    "final_score": 9.8,
+    "window": "IMMEDIATE",
+    "trending_score": 5.9,
+    "search_gap_score": 9.4,
+    "seasonal_score": 9.0,
+    "outlier_score": 8.84,
+    "video_count": 7,
+    "avg_vph": 2950,
+    "outperformance_multiplier": "6.8x",
+    "search_gap_percent": "94%",
+    "recommended_angle": "Target high-intent searchers dealing with cash yield optimization (hysa vs t-bills vs money market) without requiring high-cost equipment.",
+    "sample_titles": [
+      "The Emergency Fund Myth: Why 6 Months of Cash Is Costing You Thousands",
+      "Where to Park $20,000 Cash Right Now (HYSA vs Treasury Bills vs CD Ladders)",
+      "T-Bill Auctions on TreasuryDirect: Step-by-Step State Tax Free Guide"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 2,
+    "cluster_label": "401k Match vs Roth IRA Order of Operations",
+    "topic": "retirement",
+    "final_score": 9.8,
+    "window": "SEASONAL",
+    "trending_score": 4.3,
+    "search_gap_score": 8.8,
+    "seasonal_score": 8.5,
+    "outlier_score": 7.41,
+    "video_count": 6,
+    "avg_vph": 2150,
+    "outperformance_multiplier": "5.7x",
+    "search_gap_percent": "88%",
+    "recommended_angle": "Target high-intent searchers dealing with 401k match vs roth ira order of operations without requiring high-cost equipment.",
+    "sample_titles": [
+      "Why 'Maxing Out Your 401k' Might Be the Wrong Move for Your First $10K",
+      "The 4% Rule Revisited: Safe Withdrawal Rates for Early Retirees",
+      "The Backdoor Roth IRA Loophole Explained in 7 Plain English Minutes"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 3,
+    "cluster_label": "VOO vs VTI vs Factor Investing Asset Allocation",
+    "topic": "etfs",
+    "final_score": 9.71,
+    "window": "EVERGREEN",
+    "trending_score": 3.7,
+    "search_gap_score": 8.1,
+    "seasonal_score": 7.8,
+    "outlier_score": 6.11,
+    "video_count": 7,
+    "avg_vph": 1850,
+    "outperformance_multiplier": "4.7x",
+    "search_gap_percent": "81%",
+    "recommended_angle": "Target high-intent searchers dealing with voo vs vti vs factor investing asset allocation without requiring high-cost equipment.",
+    "sample_titles": [
+      "Bogleheads Core Principles: Why Simple Portfolios Beat 95% of Active Traders",
+      "VOO vs VTI in 2026: Why This 1% Difference Actually Matters Over 30 Years",
+      "S&P 500 Peak Price Anxiety: Lump Sum vs Dollar Cost Averaging Historical Data"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 4,
+    "cluster_label": "Credit Card Rewards Points Churning & Redemption Truth",
+    "topic": "credit_cards",
+    "final_score": 9.8,
+    "window": "EVERGREEN",
+    "trending_score": 4.1,
+    "search_gap_score": 8.4,
+    "seasonal_score": 7.8,
+    "outlier_score": 6.76,
+    "video_count": 5,
+    "avg_vph": 2050,
+    "outperformance_multiplier": "5.2x",
+    "search_gap_percent": "84%",
+    "recommended_angle": "Target high-intent searchers dealing with credit card rewards points churning & redemption truth without requiring high-cost equipment.",
+    "sample_titles": [
+      "I Tested 6 Credit Cards for 1 Year \u2014 Here is the Brutal Point Truth",
+      "Credit Card Churning in 2026: 500k Points Strategy Without Ruining Credit Score",
+      "Amex Gold vs Chase Sapphire Preferred: The Final Dining/Travel Showdown"
+    ],
+    "status": "ready_for_brief"
+  }
+]

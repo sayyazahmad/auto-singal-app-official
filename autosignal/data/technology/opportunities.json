@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "cluster_label": "Local AI & Private LLM Deployment (Ollama / DeepSeek / vLLM)",
+    "topic": "local_ai",
+    "final_score": 9.8,
+    "window": "IMMEDIATE",
+    "trending_score": 9.6,
+    "search_gap_score": 9.5,
+    "seasonal_score": 9.0,
+    "outlier_score": 9.8,
+    "video_count": 5,
+    "avg_vph": 4800,
+    "outperformance_multiplier": "8.1x",
+    "search_gap_percent": "95%",
+    "recommended_angle": "Target high-intent searchers dealing with local ai & private llm deployment (ollama / deepseek / vllm) without requiring high-cost equipment.",
+    "sample_titles": [
+      "Ollama + DeepSeek-R1 on a Budget PC: Complete Setup & Speed Benchmark",
+      "OpenWebUI Setup Guide: Beautiful Private ChatGPT Alternative at Home",
+      "How to Run Mistral Small 24B on a 16GB Mac with Zero Stuttering"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 2,
+    "cluster_label": "Autonomous Coding Agents & CLI Assistants (Cursor / Claude Code)",
+    "topic": "ai_agents",
+    "final_score": 9.8,
+    "window": "IMMEDIATE",
+    "trending_score": 7.8,
+    "search_gap_score": 9.0,
+    "seasonal_score": 9.0,
+    "outlier_score": 9.36,
+    "video_count": 6,
+    "avg_vph": 3900,
+    "outperformance_multiplier": "7.2x",
+    "search_gap_percent": "90%",
+    "recommended_angle": "Target high-intent searchers dealing with autonomous coding agents & cli assistants (cursor / claude code) without requiring high-cost equipment.",
+    "sample_titles": [
+      "I Replaced My Entire Backend with 1 Local LLM Agent (Step-by-Step)",
+      "Cursor vs Claude Code CLI: Full Hands-On Comparison for Real Codebases",
+      "Building a RAG Pipeline with Hybrid Search (BM25 + Semantic Embeddings)"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 3,
+    "cluster_label": "Next.js 15 Server Actions & Web Security Best Practices",
+    "topic": "web_frameworks",
+    "final_score": 9.8,
+    "window": "EVERGREEN",
+    "trending_score": 4.8,
+    "search_gap_score": 8.2,
+    "seasonal_score": 7.8,
+    "outlier_score": 6.63,
+    "video_count": 6,
+    "avg_vph": 2400,
+    "outperformance_multiplier": "5.1x",
+    "search_gap_percent": "82%",
+    "recommended_angle": "Target high-intent searchers dealing with next.js 15 server actions & web security best practices without requiring high-cost equipment.",
+    "sample_titles": [
+      "Next.js 15 Server Actions: The Security Vulnerabilities Nobody Warns You About",
+      "React Server Components vs Traditional SSR: Memory & Bundle Footprint",
+      "Tailwind CSS v4 Complete Migration Guide (What Broke & How to Fix It)"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 4,
+    "cluster_label": "Self-Hosted VPS & Production Docker Deployment on Budget Hardware",
+    "topic": "devops",
+    "final_score": 9.8,
+    "window": "EVERGREEN",
+    "trending_score": 5.2,
+    "search_gap_score": 8.5,
+    "seasonal_score": 7.8,
+    "outlier_score": 7.28,
+    "video_count": 7,
+    "avg_vph": 2600,
+    "outperformance_multiplier": "5.6x",
+    "search_gap_percent": "85%",
+    "recommended_angle": "Target high-intent searchers dealing with self-hosted vps & production docker deployment on budget hardware without requiring high-cost equipment.",
+    "sample_titles": [
+      "Deploying High-Availability PostgreSQL on Hetzner for Under $20/Month",
+      "Kubernetes Is Overkill: Modern Container Orchestration with Nomad & Docker Swarm",
+      "Docker in 2026: 7 Production Best Practices I Wish I Knew 5 Years Ago"
+    ],
+    "status": "ready_for_brief"
+  }
+]

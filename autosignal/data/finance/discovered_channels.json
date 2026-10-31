@@ -1,0 +1,77 @@
+{
+  "channels": [
+    {
+      "channel_title": "The Sensible Investor",
+      "channel_id": "UC_finance_34667",
+      "subscriber_count": 21000,
+      "avg_views_per_video": 11000,
+      "outlier_hit_rate": 0.5,
+      "status": "validated_seed",
+      "niche": "finance"
+    },
+    {
+      "channel_title": "Finance Decoded Daily",
+      "channel_id": "UC_finance_96184",
+      "subscriber_count": 49000,
+      "avg_views_per_video": 24000,
+      "outlier_hit_rate": 0.47,
+      "status": "validated_seed",
+      "niche": "finance"
+    },
+    {
+      "channel_title": "Money Mindset Matt",
+      "channel_id": "UC_finance_84552",
+      "subscriber_count": 8800,
+      "avg_views_per_video": 4200,
+      "outlier_hit_rate": 0.37,
+      "status": "validated_seed",
+      "niche": "finance"
+    },
+    {
+      "channel_title": "CashFlow Compass",
+      "channel_id": "UC_finance_74479",
+      "subscriber_count": 32000,
+      "avg_views_per_video": 16000,
+      "outlier_hit_rate": 0.27,
+      "status": "validated_seed",
+      "niche": "finance"
+    },
+    {
+      "channel_title": "Young Adult Wealth",
+      "channel_id": "UC_finance_84189",
+      "subscriber_count": 6500,
+      "avg_views_per_video": 3100,
+      "outlier_hit_rate": 0.42,
+      "status": "validated_seed",
+      "niche": "finance"
+    },
+    {
+      "channel_title": "Dividend Path Blueprint",
+      "channel_id": "UC_finance_52309",
+      "subscriber_count": 78000,
+      "avg_views_per_video": 36000,
+      "outlier_hit_rate": 0.27,
+      "status": "validated_seed",
+      "niche": "finance"
+    },
+    {
+      "channel_title": "Passive Wealth Academy",
+      "channel_id": "UC_finance_22842",
+      "subscriber_count": 15200,
+      "avg_views_per_video": 7800,
+      "outlier_hit_rate": 0.28,
+      "status": "validated_seed",
+      "niche": "finance"
+    },
+    {
+      "channel_title": "Smart Money Roadmap",
+      "channel_id": "UC_finance_66787",
+      "subscriber_count": 41000,
+      "avg_views_per_video": 19500,
+      "outlier_hit_rate": 0.48,
+      "status": "validated_seed",
+      "niche": "finance"
+    }
+  ],
+  "total": 8
+}

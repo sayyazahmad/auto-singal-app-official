@@ -1,0 +1,20 @@
+{
+  "discarded": [
+    {
+      "video_id": "disc_technology_1",
+      "title": "Random daily vlog grocery shopping",
+      "discard_reason": "off_niche_topic: daily lifestyle irrelevant to niche"
+    },
+    {
+      "video_id": "disc_technology_2",
+      "title": "Short test video 10 seconds",
+      "discard_reason": "too_short: duration < 180 seconds"
+    },
+    {
+      "video_id": "disc_technology_3",
+      "title": "Dead old video with zero momentum",
+      "discard_reason": "low_vph: velocity < 5 views/hour"
+    }
+  ],
+  "count": 3
+}

@@ -1,0 +1,5 @@
+# Per-niche pipeline outputs live in subfolders:
+#   data/automotive/
+#   data/finance/
+#   data/technology/
+#   data/productivity/

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoSignal | The Unfair Advantage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #08080A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #888888;
+            --accent-glow: rgba(255, 0, 50, 0.15); /* Subtle YouTube red glow */
+            --input-bg: rgba(255, 255, 255, 0.03);
+            --input-border: rgba(255, 255, 255, 0.08);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        /* Subtle background glow */
+        .glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--accent-glow);
+            filter: blur(120px);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .container {
+            z-index: 1;
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        /* Minimalist Toggle Graphic */
+        .toggle-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 24px;
+            border-radius: 100px;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+        .toggle-text {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        .toggle-switch {
+            width: 44px;
+            height: 24px;
+            background: rgba(255, 0, 0, 0.2);
+            border-radius: 20px;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.1);
+        }
+        .toggle-knob {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 20px;
+            height: 20px;
+            background: #FF0033;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(255, 0, 50, 0.5);
+        }
+        /* Typography */
+        h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        /* Form */
+        form {
+            display: flex;
+            gap: 12px;
+            width: 100%;
+            max-width: 420px;
+            margin-top: 20px;
+        }
+        input[type="email"] {
+            flex: 1;
+            background: var(--input-bg);
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            padding: 16px 20px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        input[type="email"]:focus {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        input[type="email"]::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+        }
+        button {
+            background: #FFFFFF;
+            color: #000000;
+            border: none;
+            border-radius: 8px;
+            padding: 0 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+        button:hover {
+            opacity: 0.9;
+            transform: scale(0.98);
+        }
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 40px;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 3rem;
+            }
+            form {
+                flex-direction: column;
+            }
+            button {
+                padding: 16px 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow"></div>
+    <div class="container">
+        
+        <div class="toggle-wrapper">
+            <span class="toggle-text">Auto-Rank Algorithm</span>
+            <div class="toggle-switch">
+                <div class="toggle-knob"></div>
+            </div>
+        </div>
+        <div>
+            <h1>High Rank.<br>Zero Effort.</h1>
+            <p class="subtitle">The AI engine that finds YouTube search gaps and writes your hooks before you even pick up a camera.</p>
+        </div>
+        <form onsubmit="submitWaitlist(event)">
+            <input type="email" id="email" placeholder="Enter your email address" required>
+            <button type="submit">Get Early Access</button>
+        </form>
+    </div>
+    <div class="footer">
+        © 2026 AutoSignal. Spots are strictly limited.
+    </div>
+    <script>
+        function submitWaitlist(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const btn = e.target.querySelector('button');
+            
+            // Simple visual feedback
+            btn.innerHTML = 'Added! ✓';
+            btn.style.background = '#00E676';
+            btn.style.color = '#000';
+            
+            // Here you would normally send 'email' to your backend or convertkit API
+            console.log("Email submitted:", email);
+            
+            setTimeout(() => {
+                e.target.reset();
+                btn.innerHTML = 'Get Early Access';
+                btn.style.background = '#FFFFFF';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_srch_mvv7ivhc",
+      "generated_at": "2026-10-30T16:49:11.904Z",
+      "ai_powered": true,
+      "model": "gemini-2.5-flash",
+      "topic": "brake caliper slider pin grease",
+      "niche": "automotive",
+      "target_angle": "Step-by-step masterclass revealing why common tutorials fail",
+      "titles": {
+        "title_1_search_match": "brake caliper slider pin grease: The Complete Step-by-Step Guide",
+        "title_2_curiosity": "Why 90% of Advice on brake caliper slider pin grease Is Completely Wrong",
+        "title_3_value": "The $10 Strategy for brake caliper slider pin grease That Saves Hours",
+        "recommended_title": "title_2_curiosity",
+        "reason": "Curiosity pattern interrupts achieve 4.2x higher click-through on YouTube"
+      },
+      "hook_script": "Before you spend another second on brake caliper slider pin grease, stop. Most tutorials skip the one critical detail that causes 90% of failures. In the next 6 minutes, I will show you the exact blueprint that actually works.",
+      "thumbnail_direction": {
+        "primary_image": "Dramatic split-screen: red X over faulty method (e.g., wrong grease/no cleaning) vs emerald glow on proper tool/setup (e.g., correct grease applied correctly)",
+        "text_overlay": "NEVER DO THIS",
+        "color_signal": "Red and emerald contrast",
+        "focal_point": "Key tool or critical visual checkpoint (e.g., the specific type of grease, proper cleaning)"
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00 - 0:30",
+          "beat": "Pattern Interrupt Hook",
+          "action": "Debunk common myth about 'any grease' and show immediate visual of a failed pin"
+        },
+        {
+          "time": "0:30 - 2:00",
+          "beat": "The Hidden Bottleneck",
+          "action": "Explain why standard procedures fail (e.g., incorrect grease type, overlooked cleaning steps, wrong application technique)"
+        },
+        {
+          "time": "2:00 - 4:30",
+          "beat": "Step-by-Step Masterclass",
+          "action": "Execute the winning method cleanly: proper cleaning, correct grease selection, precise application, and reassembly"
+        },
+        {
+          "time": "4:30 - 6:00",
+          "beat": "Verification & Payoff",
+          "action": "Demonstrate the smooth, long-lasting result and summarize the critical differences/benefits"
+        }
+      ],
+      "production_checklist": [
+        "High contrast close-up B-roll of grease types and application points",
+        "On-screen graphic checklist for 'Do's and Don'ts' of slider pin grease",
+        "Audio reset sound cue at minute 2 (signaling transition from problem to solution)",
+        "Slow-motion capture of proper slider pin movement after greasing"
+      ]
+    }
+  ]
+}

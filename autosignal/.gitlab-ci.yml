@@ -1,0 +1,45 @@
+# AutoSignal CI pipeline
+# Lints Python, builds the frontend, and scans for committed secrets.
+stages:
+  - lint
+  - build
+  - security
+
+default:
+  interruptible: true
+
+# ── Python lint ─────────────────────────────────────────────────────
+python-lint:
+  stage: lint
+  image: python:3.12-slim
+  before_script:
+    - pip install --quiet ruff
+  script:
+    # Fail on real errors; keep style warnings non-blocking for now.
+    - ruff check --select E9,F63,F7,F82 .
+    - ruff check . || echo "Style warnings present (non-blocking)."
+
+# ── Frontend build ─────────────────────────────────────────────────
+web-build:
+  stage: build
+  image: node:20-alpine
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - node_modules/
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 week
+
+# ── Secret detection ───────────────────────────────────────────────
+include:
+  - template: Security/Secret-Detection.gitlab-ci.yml
+
+secret_detection:
+  stage: security

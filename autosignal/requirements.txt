@@ -1,0 +1,26 @@
+# AutoSignal — pinned dependencies
+# Install:  pip install -r requirements.txt
+# Pins match the verified-working environment. Bump deliberately and re-test.
+
+# ── Core (required — pipeline will not start without these) ───────────────────
+google-genai==2.9.0          # Gemini client (the NEW google.genai package, NOT google-generativeai)
+requests==2.33.0             # YouTube Data API v3 calls
+python-dotenv==1.2.2         # .env loading
+
+# ── Semantic / clustering (required for full analysis) ────────────────────────
+# Without these the pipeline still runs but degrades to non-semantic scoring
+# (modules set HAS_TRANSFORMER / HAS_SKLEARN / HAS_HDBSCAN = False).
+numpy==1.26.4
+scikit-learn==1.9.0
+scipy==1.15.3                # transitive dep of scikit-learn; pinned for ABI stability
+sentence-transformers==5.5.1
+hdbscan==0.8.44
+
+# sentence-transformers pulls torch + transformers transitively. They are large;
+# pinned here so a fresh install resolves to a known-good CUDA/CPU build.
+torch==2.12.0
+transformers==5.11.0
+
+# ── Persistence (optional — only if using Supabase instead of SQLite/JSON) ────
+supabase==2.31.0
+pydantic==2.13.4            # transitive of google-genai + supabase; pinned for compat

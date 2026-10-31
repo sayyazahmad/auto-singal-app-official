@@ -1,0 +1,77 @@
+{
+  "channels": [
+    {
+      "channel_title": "Wrench & Spark DIY",
+      "channel_id": "UC_automotive_98849",
+      "subscriber_count": 14200,
+      "avg_views_per_video": 8500,
+      "outlier_hit_rate": 0.61,
+      "status": "validated_seed",
+      "niche": "automotive"
+    },
+    {
+      "channel_title": "Garage Pete Diagnostics",
+      "channel_id": "UC_automotive_39147",
+      "subscriber_count": 38000,
+      "avg_views_per_video": 19000,
+      "outlier_hit_rate": 0.28,
+      "status": "validated_seed",
+      "niche": "automotive"
+    },
+    {
+      "channel_title": "SouthCoast Diesel Guy",
+      "channel_id": "UC_automotive_77468",
+      "subscriber_count": 7200,
+      "avg_views_per_video": 3800,
+      "outlier_hit_rate": 0.55,
+      "status": "validated_seed",
+      "niche": "automotive"
+    },
+    {
+      "channel_title": "Real Deal Auto Tech",
+      "channel_id": "UC_automotive_52701",
+      "subscriber_count": 89000,
+      "avg_views_per_video": 42000,
+      "outlier_hit_rate": 0.28,
+      "status": "validated_seed",
+      "niche": "automotive"
+    },
+    {
+      "channel_title": "Backyard Mechanic Steve",
+      "channel_id": "UC_automotive_75404",
+      "subscriber_count": 5300,
+      "avg_views_per_video": 2400,
+      "outlier_hit_rate": 0.57,
+      "status": "validated_seed",
+      "niche": "automotive"
+    },
+    {
+      "channel_title": "Precision OBDI & II",
+      "channel_id": "UC_automotive_86220",
+      "subscriber_count": 22400,
+      "avg_views_per_video": 11000,
+      "outlier_hit_rate": 0.46,
+      "status": "validated_seed",
+      "niche": "automotive"
+    },
+    {
+      "channel_title": "Torque & Piston Lab",
+      "channel_id": "UC_automotive_72277",
+      "subscriber_count": 18500,
+      "avg_views_per_video": 9200,
+      "outlier_hit_rate": 0.26,
+      "status": "validated_seed",
+      "niche": "automotive"
+    },
+    {
+      "channel_title": "Modern Car DIY Fixes",
+      "channel_id": "UC_automotive_68980",
+      "subscriber_count": 45000,
+      "avg_views_per_video": 21000,
+      "outlier_hit_rate": 0.33,
+      "status": "validated_seed",
+      "niche": "automotive"
+    }
+  ],
+  "total": 8
+}

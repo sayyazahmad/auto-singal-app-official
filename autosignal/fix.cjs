@@ -1,0 +1,10 @@
+const fs = require('fs');
+let c = fs.readFileSync('app.html', 'utf8');
+c = c.replace(/Ã¢â€ â‚¬/g, '─');
+c = c.replace(/Ã¢â‚¬â€ /g, '— ');
+c = c.replace(/Ã¢â‚¬â€/g, '—');
+c = c.replace(/Ã‚Â·/g, '·');
+c = c.replace(/Ã¢Å“â€œ/g, '✓');
+c = c.replace(/Ã¢â€ â€™/g, '→');
+c = c.replace(/Ã¢â‚¬Â¢/g, '•');
+fs.writeFileSync('app.html', c);

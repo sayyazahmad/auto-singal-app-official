@@ -1,0 +1,61 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_auto_mvl9qm0y",
+      "generated_at": "2026-10-23T17:53:30.370Z",
+      "ai_powered": true,
+      "model": "gemini-2.5-flash",
+      "topic": "Parasitic Battery Drain",
+      "niche": "automotive",
+      "target_angle": "Step-by-step troubleshooting without expensive scan tools",
+      "titles": {
+        "title_1_search_match": "Parasitic Battery Drain Diagnosis: DIY Guide (No Scan Tool Needed)",
+        "title_2_curiosity": "Your Battery ISN'T Dead: The HIDDEN Killer Draining Your Car (DIY FIX!)",
+        "title_3_value": "STOP Buying New Batteries! Fix Your Car's Parasitic Drain for FREE",
+        "recommended_title": "title_2_curiosity",
+        "reason": "For channels in the 25k subscriber tier, curiosity-driven titles that present a common misconception (e.g., 'battery isn't dead') and promise a 'hidden' solution resonate strongly. They create immediate intrigue while directly addressing a high-pain point, leading to higher click-through rates and viewer retention, especially when the solution is pitched as accessible and free."
+      },
+      "hook_script": "Is your car battery constantly dying? You charge it, it seems fine, then BAM! Dead again. Most people immediately blame the battery itself, or worse, fork over hundreds to a mechanic. But what if a hidden, silent culprit is slowly sucking the life out of your car, right now? Today, I'm going to show you exactly how to find ANY parasitic battery drain, using just a cheap multimeter and simple household tools. No fancy scan tools, no guesswork, just a step-by-step DIY fix that will save you a ton of money and frustration. Let's get your car reliable again!",
+      "thumbnail_direction": {
+        "primary_image": "Creator kneeling next to an open car hood, looking frustrated yet determined, with one hand on a battery terminal and the other holding a multimeter pointed at the fuse box. A faint, subtle 'electrical current' visual effect emanates from the fuse box towards the battery.",
+        "text_overlay": "BATTERY DRAIN!\nDIY FIX",
+        "color_signal": "High contrast: Dominant deep red (frustration/problem) for the general scene, with bright neon green/yellow (solution/electricity) highlighting the multimeter display and the 'current' effect.",
+        "focal_point": "The multimeter display showing a high amperage reading, and the creator's determined facial expression."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00 - 0:30",
+          "beat": "Hook & False Assumptions",
+          "action": "Open with the common symptom (dead battery) and immediately debunk the #1 rookie mistake (just buying a new battery). Introduce the promise of a free, DIY fix."
+        },
+        {
+          "time": "0:30 - 2:30",
+          "beat": "Setup & Equipment Test",
+          "action": "Clearly show the minimal tools required (multimeter, basic hand tools). Demonstrate how to correctly connect the multimeter for a baseline parasitic draw reading, explaining acceptable vs. problematic numbers."
+        },
+        {
+          "time": "2:30 - 5:30",
+          "beat": "Step-by-Step Isolation",
+          "action": "Walk through the systematic process of pulling fuses, one by one, while monitoring the multimeter. Visually demonstrate the amperage drop when the culprit fuse is removed, with clear on-screen graphics."
+        },
+        {
+          "time": "5:30 - 7:30",
+          "beat": "The Breakthrough Fix",
+          "action": "Once the circuit is identified, demonstrate how to further pinpoint the specific component causing the drain (e.g., disconnecting individual components, inspecting wiring). Implement the solution and show side-by-side verification of the reduced draw."
+        },
+        {
+          "time": "7:30 - 8:30",
+          "beat": "Retention Payoff & Pro Tip",
+          "action": "Provide valuable long-term prevention advice (e.g., aftermarket accessory wiring, leaving lights on). Encourage viewers to subscribe and share their own experiences in the comments."
+        }
+      ],
+      "production_checklist": [
+        "Clean high-contrast lighting on key focal objects (multimeter display, fuse box, battery terminals).",
+        "B-roll close-ups on gauge/screen/action (multimeter readings, pulling fuses, wiring inspection).",
+        "On-screen graphic overlay of key metrics (acceptable amperage draw, troubleshooting flowchart/decision tree).",
+        "Clear, concise voiceover explaining each step, especially during detailed B-roll sections.",
+        "Pacing reset audio chime at minute 2:30 to signal transition to the main diagnostic steps."
+      ]
+    }
+  ]
+}

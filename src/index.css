@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --claude-bg: #FAF9F5;
+    --claude-surface: #FFFFFF;
+    --claude-surface-soft: #F5F3EC;
+    --claude-surface-card: #FFFFFF;
+    --claude-border: #E8E5DC;
+    --claude-border-subtle: #EFECE4;
+    --claude-text: #1C1917;
+    --claude-text-muted: #736E65;
+    --claude-accent: #C96442;
+    --claude-accent-hover: #B55232;
+    --claude-accent-soft: #FDF5F0;
+  }
+
+  .dark {
+    --claude-bg: #1B1A18;
+    --claude-surface: #242320;
+    --claude-surface-soft: #2B2A26;
+    --claude-surface-card: #242320;
+    --claude-border: #3A3833;
+    --claude-border-subtle: #302F2A;
+    --claude-text: #ECE8E1;
+    --claude-text-muted: #9E9A90;
+    --claude-accent: #D97757;
+    --claude-accent-hover: #E3886A;
+    --claude-accent-soft: #2F241F;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--claude-bg);
+    color: var(--claude-text);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, .font-serif-claude {
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  }
+
+  code, pre, .font-mono-claude {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+}
+
+/* Custom Soft Scrollbars reminiscent of Claude web UI */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 115, 105, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 115, 105, 0.45);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoSignal — Content Intelligence Dashboard</title>
+  <meta name="description" content="AutoSignal analyzes your YouTube channel and generates production-ready content briefs guaranteed to outperform your channel average.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <style>
+    :root {
+      --bg-primary:    #0a0a0f;
+      --bg-secondary:  #111119;
+      --bg-card:       #16161f;
+      --bg-card-hover: #1c1c28;
+      --border:        rgba(255,255,255,0.07);
+      --border-bright: rgba(255,255,255,0.15);
+
+      --accent-primary:  #6c63ff;
+      --accent-hover:    #8b84ff;
+      --accent-glow:     rgba(108, 99, 255, 0.3);
+
+      --green:  #22c55e;
+      --yellow: #eab308;
+      --red:    #ef4444;
+      --blue:   #3b82f6;
+
+      --text-primary:   #f1f1f1;
+      --text-secondary: #8b8b9a;
+      --text-muted:     #555568;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+
+      --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* Niche colors */
+      --niche-automotive:  #6c63ff;
+      --niche-finance:     #22c55e;
+      --niche-technology:  #3b82f6;
+      --niche-productivity:#f59e0b;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Scrollbar ──────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 3px; }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    .header {
+      background: linear-gradient(135deg, #0f0f1a 0%, #12122a 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--accent-primary), #a855f7);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .logo-sub { font-size: 11px; font-weight: 400; color: var(--text-secondary); display: block; letter-spacing: 2px; text-transform: uppercase; }
+    .header-actions { display: flex; gap: 12px; align-items: center; }
+
+    /* ── Buttons ─────────────────────────────────────────────────── */
+    .btn {
+      padding: 9px 20px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary {
+      background: var(--accent-primary);
+      color: #fff;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      box-shadow: 0 0 30px var(--accent-glow);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover {
+      color: var(--text-primary);
+      border-color: var(--border-bright);
+      background: var(--bg-card-hover);
+    }
+
+    /* ── Layout ──────────────────────────────────────────────────── */
+    .main { max-width: 1280px; margin: 0 auto; padding: 32px 24px; }
+
+    /* ── Channel input ───────────────────────────────────────────── */
+    .channel-input-section {
+      background: linear-gradient(135deg, rgba(108,99,255,0.1), rgba(168,85,247,0.05));
+      border: 1px solid rgba(108,99,255,0.25);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .channel-input-section h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #fff, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .channel-input-section p {
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      font-size: 15px;
+    }
+    .input-row {
+      display: flex;
+      gap: 12px;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .channel-input {
+      flex: 1;
+      background: var(--bg-card);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-sm);
+      padding: 12px 18px;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 14px;
+      transition: var(--transition);
+      outline: none;
+    }
+    .channel-input:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(108,99,255,0.2);
+    }
+    .channel-input::placeholder { color: var(--text-muted); }
+
+    /* ── Progress ────────────────────────────────────────────────── */
+    .progress-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 32px;
+      display: none;
+    }
+    .progress-section.visible { display: block; }
+    .progress-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .spinner {
+      width: 20px; height: 20px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent-primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .progress-title { font-weight: 600; font-size: 15px; }
+    .progress-steps { display: flex; flex-direction: column; gap: 4px; }
+    .progress-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    .progress-step.active {
+      background: rgba(108,99,255,0.1);
+      color: var(--text-primary);
+      border-left: 2px solid var(--accent-primary);
+    }
+    .progress-step.done { color: var(--green); }
+    .step-icon { width: 18px; text-align: center; }
+    .log-stream {
+      margin-top: 16px;
+      background: var(--bg-secondary);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: var(--text-secondary);
+      max-height: 120px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+    }
+
+    /* ── Creator Card ────────────────────────────────────────────── */
+    .creator-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 32px;
+      display: none;
+    }
+    .creator-card.visible { display: flex; gap: 24px; align-items: flex-start; }
+    .creator-avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-primary), #a855f7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: 800;
+      flex-shrink: 0;
+      overflow: hidden;
+      color: #fff;
+    }
+    .creator-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .creator-info { flex: 1; }
+    .creator-name-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .creator-name { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+    .tier-badge {
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .tier-micro       { background: rgba(234,179,8,0.15);   color: #eab308; border: 1px solid rgba(234,179,8,0.3); }
+    .tier-rising      { background: rgba(59,130,246,0.15);  color: #3b82f6; border: 1px solid rgba(59,130,246,0.3); }
+    .tier-established { background: rgba(108,99,255,0.15);  color: #6c63ff; border: 1px solid rgba(108,99,255,0.3); }
+    .tier-major       { background: rgba(34,197,94,0.15);   color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
+    .creator-subniche { color: var(--text-secondary); font-size: 13px; margin-bottom: 16px; }
+    .creator-stats { display: flex; gap: 24px; flex-wrap: wrap; }
+    .stat-item { text-align: left; }
+    .stat-value { font-size: 20px; font-weight: 700; }
+    .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+    .creator-actions { display: flex; flex-direction: column; gap: 8px; }
+
+    /* ── Section headers ─────────────────────────────────────────── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title .icon {
+      width: 32px; height: 32px;
+      background: rgba(108,99,255,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .section-count {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* ── Brief cards ─────────────────────────────────────────────── */
+    .briefs-section { margin-bottom: 40px; display: none; }
+    .briefs-section.visible { display: block; }
+    .briefs-grid { display: flex; flex-direction: column; gap: 16px; }
+
+    .brief-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .brief-card:hover {
+      border-color: var(--border-bright);
+      background: var(--bg-card-hover);
+      transform: translateY(-1px);
+    }
+    .brief-card.expanded { border-color: rgba(108,99,255,0.4); }
+
+    .brief-header {
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .score-ring {
+      width: 56px; height: 56px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .score-ring svg { transform: rotate(-90deg); }
+    .score-ring-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .brief-meta { flex: 1; min-width: 0; }
+    .brief-topic {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .brief-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+    .badge {
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-urgent    { background: rgba(239,68,68,0.15);   color: #ef4444; border: 1px solid rgba(239,68,68,0.25); }
+    .badge-evergreen { background: rgba(34,197,94,0.15);   color: #22c55e; border: 1px solid rgba(34,197,94,0.25); }
+    .badge-seasonal  { background: rgba(234,179,8,0.15);   color: #eab308; border: 1px solid rgba(234,179,8,0.25); }
+    .badge-niche     { background: rgba(139,139,154,0.15); color: #8b8b9a; border: 1px solid rgba(139,139,154,0.25); }
+    .badge-rising    { background: rgba(59,130,246,0.15);  color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
+    .badge-stable    { background: rgba(139,139,154,0.15); color: #8b8b9a; border: 1px solid rgba(139,139,154,0.25); }
+    .badge-falling   { background: rgba(239,68,68,0.1);    color: #f87171; border: 1px solid rgba(239,68,68,0.15); }
+    .brief-chevron {
+      color: var(--text-muted);
+      font-size: 18px;
+      transition: transform var(--transition);
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .brief-card.expanded .brief-chevron { transform: rotate(180deg); }
+
+    .brief-body {
+      padding: 0 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .brief-card.expanded .brief-body {
+      max-height: 2000px;
+      padding-bottom: 24px;
+    }
+    .brief-divider { height: 1px; background: var(--border); margin-bottom: 20px; }
+    .brief-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .brief-field {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+    }
+    .brief-field-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brief-field-value { font-size: 13px; color: var(--text-primary); line-height: 1.5; }
+    .brief-field.full-width { grid-column: 1 / -1; }
+
+    .title-option {
+      padding: 10px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .title-option:hover { border-color: var(--accent-primary); color: var(--accent-hover); }
+    .title-option:last-child { margin-bottom: 0; }
+    .title-num {
+      background: rgba(108,99,255,0.2);
+      color: var(--accent-primary);
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .tags-list { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      transition: var(--transition);
+      font-family: inherit;
+    }
+    .copy-btn:hover { color: var(--text-primary); background: var(--bg-card); }
+
+    /* ── Analytics ───────────────────────────────────────────────── */
+    .analytics-section { margin-bottom: 40px; display: none; }
+    .analytics-section.visible { display: block; }
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .chart-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .chart-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .chart-container { position: relative; height: 220px; }
+    .donut-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .donut-big { font-size: 28px; font-weight: 800; }
+    .donut-label { font-size: 11px; color: var(--text-secondary); }
+
+    /* ── Outliers ────────────────────────────────────────────────── */
+    .outlier-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .outlier-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .outlier-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .outlier-rank { font-size: 16px; font-weight: 800; color: var(--text-muted); width: 28px; text-align: center; }
+    .outlier-info { flex: 1; min-width: 0; }
+    .outlier-title {
+      font-size: 13px; font-weight: 600;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      margin-bottom: 4px;
+    }
+    .outlier-meta { font-size: 12px; color: var(--text-secondary); }
+    .outlier-mult { font-size: 16px; font-weight: 800; color: var(--green); white-space: nowrap; }
+
+    /* ── Empty state ─────────────────────────────────────────────── */
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+    .empty-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.5; }
+    .empty-msg { font-size: 15px; }
+
+    /* ── Toast ───────────────────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-sm);
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      z-index: 9999;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+
+    /* ── Responsive ──────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .charts-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .header { padding: 14px 16px; }
+      .main { padding: 20px 16px; }
+      .creator-card.visible { flex-direction: column; }
+      .input-row { flex-direction: column; }
+      .creator-stats { gap: 16px; }
+      .brief-grid { grid-template-columns: 1fr; }
+    }
+    /* ── Niche confirmation card ────────────────────────────────────────────── */
+    .niche-confirm-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 28px;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+    .niche-confirm-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .niche-detected-row { display: flex; align-items: center; gap: 16px; }
+    .niche-detected-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+    .niche-detected-name { font-size: 20px; font-weight: 700; }
+    .niche-detected-conf { font-size: 12px; color: var(--text-secondary); }
+    .niche-override-row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .niche-override-label { font-size: 13px; color: var(--text-secondary); }
+    .niche-select {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      padding: 8px 12px;
+      font-family: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      outline: none;
+    }
+    .niche-select:focus { border-color: var(--accent-primary); }
+    .niche-badge {
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">📡</div>
+      <div>
+        AutoSignal
+        <span class="logo-sub">Content Intelligence</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-ghost" id="btn-new-channel" onclick="resetView()" style="display:none">
+        ← New Channel
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Channel Input -->
+    <section class="channel-input-section" id="input-section">
+      <h1>Discover Your Next Breakout Video</h1>
+      <p>Enter your YouTube channel ID and get 5 personalized content briefs<br>built from real trending data — engineered to outperform your channel average.</p>
+      <div class="input-row">
+        <input
+          type="text"
+          id="channel-id-input"
+          class="channel-input"
+          placeholder="YouTube Channel ID (e.g. UCxxxxxxxxxxxxxx)"
+          onkeydown="if(event.key==='Enter') startAnalysis()"
+        />
+        <button class="btn btn-primary" id="btn-analyze" onclick="startAnalysis()">
+          ⚡ Analyze Channel
+        </button>
+      </div>
+    </section>
+
+    <!-- Progress -->
+    <section class="progress-section" id="progress-section">
+      <div class="progress-header">
+        <div class="spinner" id="progress-spinner"></div>
+        <span class="progress-title" id="progress-title">Analyzing your channel...</span>
+      </div>
+      <div class="progress-steps" id="progress-steps">
+        <div class="progress-step" id="step-audit">
+          <span class="step-icon">⏳</span> Auditing channel (last 100 videos)
+        </div>
+        <div class="progress-step" id="step-clusters">
+          <span class="step-icon">○</span> Loading market cluster data
+        </div>
+        <div class="progress-step" id="step-personalize">
+          <span class="step-icon">○</span> Personalizing opportunities to your channel
+        </div>
+        <div class="progress-step" id="step-generate">
+          <span class="step-icon">○</span> Generating briefs with Gemini AI
+        </div>
+        <div class="progress-step" id="step-done">
+          <span class="step-icon">○</span> Saving to dashboard
+        </div>
+      </div>
+      <div class="log-stream" id="log-stream">
+        <div>Initializing pipeline...</div>
+      </div>
+    </section>
+
+    <!-- Niche Detection Result -->
+    <section class="niche-confirm-card" id="niche-confirm-section" style="display:none">
+      <div class="niche-confirm-inner">
+        <div class="niche-detected-row">
+          <span id="niche-icon" style="font-size:28px">🔧</span>
+          <div>
+            <div class="niche-detected-label">Detected Niche</div>
+            <div class="niche-detected-name" id="niche-detected-name">Automotive Repair</div>
+            <div class="niche-detected-conf" id="niche-detected-conf">87% confidence</div>
+          </div>
+        </div>
+        <div class="niche-override-row">
+          <label class="niche-override-label">Not right? Override:</label>
+          <select id="niche-override-select" class="niche-select">
+            <option value="automotive">🔧 Automotive Repair</option>
+            <option value="finance">💰 Finance &amp; Investing</option>
+            <option value="technology">💻 Technology &amp; Software</option>
+            <option value="productivity">🚀 Productivity &amp; Growth</option>
+          </select>
+          <button class="btn btn-primary" id="btn-confirm-niche" onclick="confirmNiche()" style="padding: 8px 18px; font-size: 13px">
+            ✓ Confirm &amp; Generate Briefs
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Creator Card -->
+    <section class="creator-card" id="creator-card">
+      <div class="creator-avatar" id="creator-avatar">?</div>
+      <div class="creator-info">
+        <div class="creator-name-row">
+          <span class="creator-name" id="creator-name">Creator</span>
+          <span class="tier-badge tier-rising" id="tier-badge">Rising</span>
+          <span class="niche-badge" id="niche-badge" style="background: rgba(108,99,255,0.15); color: #6c63ff; border: 1px solid rgba(108,99,255,0.3)">🔧 Automotive</span>
+        </div>
+        <div class="creator-subniche" id="creator-subniche">Automotive Repair</div>
+        <div class="creator-stats">
+          <div class="stat-item">
+            <div class="stat-value" id="stat-subscribers">—</div>
+            <div class="stat-label">Subscribers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="stat-avg-views">—</div>
+            <div class="stat-label">Avg Views</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="stat-best-day">—</div>
+            <div class="stat-label">Best Upload Day</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="stat-upload-freq">—</div>
+            <div class="stat-label">Upload Rate</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="stat-videos">—</div>
+            <div class="stat-label">Videos Analyzed</div>
+          </div>
+        </div>
+      </div>
+      <div class="creator-actions">
+        <button class="btn btn-primary" onclick="refreshBriefs()">
+          🔄 New Briefs
+        </button>
+        <button class="btn btn-ghost" onclick="resetView()">
+          ← Change Channel
+        </button>
+      </div>
+    </section>
+
+    <!-- Briefs Section -->
+    <section class="briefs-section" id="briefs-section">
+      <div class="section-header">
+        <div class="section-title">
+          <div class="icon">🎯</div>
+          Content Opportunities
+        </div>
+        <span class="section-count" id="briefs-count">0 briefs</span>
+      </div>
+      <div class="briefs-grid" id="briefs-grid">
+        <div class="empty-state">
+          <div class="empty-icon">📊</div>
+          <div class="empty-msg">Briefs will appear here after analysis completes.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analytics Section -->
+    <section class="analytics-section" id="analytics-section">
+      <div class="section-header">
+        <div class="section-title">
+          <div class="icon">📈</div>
+          Channel Analytics
+        </div>
+      </div>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-title">Sub-niche Performance (avg views per topic)</div>
+          <div class="chart-container"><canvas id="chart-views-trend"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Topic Rankings (sorted by avg views)</div>
+          <div class="chart-container"><canvas id="chart-topic-perf"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-title">Brief Success Rate</div>
+          <div class="chart-container" style="height: 210px;">
+            <canvas id="chart-success-rate"></canvas>
+            <div class="donut-center">
+              <div class="donut-big" id="donut-pct">—</div>
+              <div class="donut-label">outperformed</div>
+            </div>
+          </div>
+        </div>
+        <div class="outlier-card">
+          <div class="chart-title" style="margin-bottom: 16px;">🔥 Outlier Topics (beating channel avg)</div>
+          <div id="outlier-list">
+            <div style="color: var(--text-muted); font-size: 13px; text-align: center; padding: 20px">
+              Run analysis to see outlier data
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+<script>
+// ─────────────────────────────────────────────────────────────────────────────
+const API_BASE = '';
+let currentChannelId = '';
+let currentRunId = null;
+let pollInterval = null;
+let chartViewsTrend, chartTopicPerf, chartSuccessRate;
+
+// ── XSS Safety ──
+function escapeHtml(str) {
+  if (!str && str !== 0) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
+function fmtNum(n) {
+  if (n === null || n === undefined) return '—';
+  const v = Number(n);
+  if (isNaN(v)) return '—';
+  if (v >= 1_000_000) return (v / 1_000_000).toFixed(1) + 'M';
+  if (v >= 1_000) return (v / 1_000).toFixed(1) + 'K';
+  return v.toLocaleString();
+}
+
+// ── Toast ──
+function showToast(msg, ms = 2500) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), ms);
+}
+
+// ── Clipboard ──
+function copyText(text) {
+  navigator.clipboard.writeText(text)
+    .then(() => showToast('✅ Copied to clipboard'))
+    .catch(() => showToast('⚠️ Copy failed'));
+}
+
+// ── Start analysis ──
+async function startAnalysis() {
+  const input = document.getElementById('channel-id-input');
+  const channelId = (input ? input.value : '').trim();
+  if (!channelId) { showToast('⚠️ Please enter a channel ID'); return; }
+
+  currentChannelId = channelId;
+  document.getElementById('input-section').style.display = 'none';
+  document.getElementById('btn-new-channel').style.display = '';
+  showProgress();
+
+  // First: detect niche, then show confirmation card
+  try {
+    const detectRes = await fetch(`${API_BASE}/api/detect-niche`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ channel_id: channelId })
+    });
+
+    if (detectRes.ok) {
+      const nicheData = await detectRes.json();
+      document.getElementById('progress-section').classList.remove('visible');
+      showNicheConfirmation(nicheData);
+    } else {
+      // API not available yet — skip detection, go straight to automotive
+      generateBriefsForChannel('automotive');
+    }
+  } catch {
+    // Server doesn't have /api/detect-niche yet — fall back to direct generation
+    generateBriefsForChannel('automotive');
+  }
+}
+
+function refreshBriefs() {
+  if (!currentChannelId) return;
+  document.getElementById('creator-card').classList.remove('visible');
+  document.getElementById('briefs-section').classList.remove('visible');
+  document.getElementById('analytics-section').classList.remove('visible');
+  showProgress();
+  startAnalysis();
+}
+
+function resetView() {
+  clearInterval(pollInterval);
+  document.getElementById('input-section').style.display = '';
+  document.getElementById('btn-new-channel').style.display = 'none';
+  document.getElementById('progress-section').classList.remove('visible');
+  document.getElementById('creator-card').classList.remove('visible');
+  document.getElementById('briefs-section').classList.remove('visible');
+  document.getElementById('analytics-section').classList.remove('visible');
+  const inp = document.getElementById('channel-id-input');
+  if (inp) inp.value = '';
+  currentChannelId = '';
+  currentRunId = null;
+}
+
+// ── Niche detection & confirmation ──
+let detectedNicheData = null;
+let confirmedNiche = 'automotive';
+
+function showNicheConfirmation(nicheData) {
+  detectedNicheData = nicheData;
+  const section = document.getElementById('niche-confirm-section');
+  if (!section) return;
+
+  document.getElementById('niche-icon').textContent = nicheData.icon || '🔧';
+  document.getElementById('niche-detected-name').textContent = nicheData.display_name || 'Automotive Repair';
+  document.getElementById('niche-detected-conf').textContent =
+    nicheData.confidence ? `${Math.round(nicheData.confidence * 100)}% confidence` : 'Detected';
+
+  // Pre-select the detected niche in dropdown
+  const sel = document.getElementById('niche-override-select');
+  if (sel && nicheData.niche) sel.value = nicheData.niche;
+
+  // Apply niche accent color
+  if (nicheData.ui_color) {
+    document.documentElement.style.setProperty('--accent-primary', nicheData.ui_color);
+  }
+
+  section.style.display = '';
+}
+
+function confirmNiche() {
+  const sel = document.getElementById('niche-override-select');
+  confirmedNiche = sel ? sel.value : (detectedNicheData && detectedNicheData.niche) || 'automotive';
+
+  document.getElementById('niche-confirm-section').style.display = 'none';
+  generateBriefsForChannel(confirmedNiche);
+}
+
+async function generateBriefsForChannel(niche) {
+  showProgress();
+  try {
+    const res = await fetch(`${API_BASE}/api/start-script`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        script: 'run_pipeline.py',
+        args: ['--creator-mode', '--generate-briefs', '--brief-channel-id', currentChannelId, '--brief-count', '5', '--niche', niche]
+      })
+    });
+    const data = await res.json();
+    if (!data.runId) throw new Error('No runId returned from server');
+    currentRunId = data.runId;
+    pollProgress(data.runId);
+  } catch (err) {
+    addLog(`Error: ${escapeHtml(err.message)}`);
+    showToast('❌ Failed to start. Is the server running?', 4000);
+  }
+}
+
+// ── Progress tracker ──
+function showProgress() {
+  document.getElementById('progress-section').classList.add('visible');
+  document.getElementById('progress-spinner').style.display = '';
+  ['audit','clusters','personalize','generate','done'].forEach(s => {
+    const el = document.getElementById(`step-${s}`);
+    if (el) {
+      el.className = 'progress-step';
+      el.querySelector('.step-icon').textContent = '○';
+    }
+  });
+  setStepActive('audit');
+  document.getElementById('log-stream').innerHTML = '<div>Initializing...</div>';
+}
+
+function setStepActive(id) {
+  const el = document.getElementById(`step-${id}`);
+  if (!el) return;
+  el.className = 'progress-step active';
+  el.querySelector('.step-icon').textContent = '⏳';
+}
+
+function setStepDone(id) {
+  const el = document.getElementById(`step-${id}`);
+  if (!el) return;
+  el.className = 'progress-step done';
+  el.querySelector('.step-icon').textContent = '✅';
+}
+
+function addLog(msg) {
+  const ls = document.getElementById('log-stream');
+  const div = document.createElement('div');
+  div.textContent = msg;
+  ls.appendChild(div);
+  if (ls.children.length > 50) ls.removeChild(ls.firstChild);
+  ls.scrollTop = ls.scrollHeight;
+}
+
+function pollProgress(runId) {
+  let stage = 0;
+  const stepThresholds = ['audit','clusters','personalize','generate','done'];
+
+  pollInterval = setInterval(async () => {
+    try {
+      const res = await fetch(`${API_BASE}/api/status/${encodeURIComponent(runId)}`);
+      if (!res.ok) return;
+      const data = await res.json();
+
+      (data.recentLogs || []).forEach(l => addLog(l));
+
+      const text = (data.recentLogs || []).join(' ').toLowerCase();
+      if (text.includes('audit') && stage < 1) { setStepDone('audit'); setStepActive('clusters'); stage = 1; }
+      if (text.includes('cluster') && stage < 2) { setStepDone('clusters'); setStepActive('personalize'); stage = 2; }
+      if (text.includes('personaliz') && stage < 3) { setStepDone('personalize'); setStepActive('generate'); stage = 3; }
+      if ((text.includes('gemini') || text.includes('brief')) && stage < 4) { setStepDone('generate'); setStepActive('done'); stage = 4; }
+
+      if (data.status === 'completed') {
+        clearInterval(pollInterval);
+        stepThresholds.forEach(s => setStepDone(s));
+        document.getElementById('progress-spinner').style.display = 'none';
+        document.getElementById('progress-title').textContent = '✅ Analysis complete!';
+        setTimeout(() => {
+          document.getElementById('progress-section').classList.remove('visible');
+          loadResults();
+        }, 1500);
+      } else if (data.status === 'error' || data.status === 'failed') {
+        clearInterval(pollInterval);
+        addLog('❌ Pipeline error. Check server console for details.');
+        showToast('❌ Pipeline failed. Check logs.', 4000);
+      }
+    } catch { /* network blip — keep polling */ }
+  }, 2000);
+}
+
+// ── Load results ──
+async function loadResults() {
+  try {
+    const res = await fetch(`${API_BASE}/api/data/briefs_latest.json`);
+    if (!res.ok) throw new Error('No briefs file');
+    const data = await res.json();
+    renderDashboard(data);
+  } catch {
+    showToast('⚠️ Briefs generated! Open briefs_*.json to view.', 5000);
+  }
+}
+
+// ── Full dashboard render ──
+function renderDashboard(data) {
+  const briefs = (data.briefs || []).filter(b => b.status === 'success');
+  const profile = (briefs[0] && briefs[0].creator_profile) || {};
+
+  renderCreatorCard(profile, briefs);
+  renderBriefs(briefs);
+  renderAnalytics(profile, briefs);
+
+  document.getElementById('briefs-section').classList.add('visible');
+  document.getElementById('analytics-section').classList.add('visible');
+}
+
+// ── Creator card ──
+function renderCreatorCard(profile, briefs) {
+  const card = document.getElementById('creator-card');
+  card.classList.add('visible');
+
+  const name = profile.channel_name || currentChannelId || 'Your Channel';
+  document.getElementById('creator-avatar').textContent = name.charAt(0).toUpperCase();
+  document.getElementById('creator-name').textContent = escapeHtml(name);
+  document.getElementById('creator-subniche').textContent = escapeHtml(
+    profile.primary_label || profile.primary_subniche || 'Automotive Repair'
+  );
+
+  const tierInfo = profile.creator_tier || {};
+  const tierKey  = (typeof tierInfo === 'object' ? tierInfo.tier_key : tierInfo) || 'rising';
+  const tierLabel = (typeof tierInfo === 'object' ? tierInfo.label : tierKey) || 'Rising Creator';
+  const badge = document.getElementById('tier-badge');
+  badge.textContent = escapeHtml(tierLabel);
+  badge.className = `tier-badge tier-${escapeHtml(tierKey)}`;
+
+  // Niche badge
+  const nicheBadge = document.getElementById('niche-badge');
+  if (nicheBadge) {
+    const nicheKey   = profile.niche || confirmedNiche || 'automotive';
+    const nicheIcons = { automotive: '🔧', finance: '💰', technology: '💻', productivity: '🚀' };
+    const nicheNames = { automotive: 'Automotive', finance: 'Finance', technology: 'Technology', productivity: 'Productivity' };
+    const nicheColors= {
+      automotive:   { bg: 'rgba(108,99,255,0.15)',  color: '#6c63ff', border: 'rgba(108,99,255,0.3)' },
+      finance:      { bg: 'rgba(34,197,94,0.15)',   color: '#22c55e', border: 'rgba(34,197,94,0.3)' },
+      technology:   { bg: 'rgba(59,130,246,0.15)',  color: '#3b82f6', border: 'rgba(59,130,246,0.3)' },
+      productivity: { bg: 'rgba(245,158,11,0.15)',  color: '#f59e0b', border: 'rgba(245,158,11,0.3)' },
+    };
+    const c = nicheColors[nicheKey] || nicheColors.automotive;
+    nicheBadge.textContent = `${nicheIcons[nicheKey] || '🎯'} ${nicheNames[nicheKey] || nicheKey}`;
+    nicheBadge.style.background = c.bg;
+    nicheBadge.style.color = c.color;
+    nicheBadge.style.border = `1px solid ${c.border}`;
+    // Also update the accent color for the whole page
+    document.documentElement.style.setProperty('--accent-primary', c.color);
+  }
+
+  document.getElementById('stat-subscribers').textContent = fmtNum(profile.subscribers);
+  document.getElementById('stat-avg-views').textContent   = fmtNum(profile.avg_views);
+  const bestDay = profile.best_upload_day || '';
+  document.getElementById('stat-best-day').textContent    = escapeHtml(
+    bestDay ? bestDay.charAt(0).toUpperCase() + bestDay.slice(1) : '—'
+  );
+  document.getElementById('stat-upload-freq').textContent = escapeHtml(profile.upload_frequency || '—');
+  document.getElementById('stat-videos').textContent      = fmtNum(profile.total_videos_analyzed);
+}
+
+// ── Score ring SVG ──
+function scoreRing(score, max = 10) {
+  const pct  = Math.min(Math.max(score / max, 0), 1);
+  const r    = 24, cx = 28, cy = 28;
+  const circ = 2 * Math.PI * r;
+  const dash = circ * pct;
+  const color = score >= 7 ? '#22c55e' : score >= 4 ? '#eab308' : '#ef4444';
+  return `
+    <svg width="56" height="56" viewBox="0 0 56 56">
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="4"/>
+      <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${color}" stroke-width="4"
+        stroke-dasharray="${dash.toFixed(1)} ${(circ - dash).toFixed(1)}"
+        stroke-linecap="round"/>
+    </svg>
+    <div class="score-ring-text" style="color:${color}">${score.toFixed(1)}</div>
+  `;
+}
+
+// ── Render briefs ──
+function renderBriefs(briefs) {
+  const grid = document.getElementById('briefs-grid');
+  document.getElementById('briefs-count').textContent =
+    `${briefs.length} brief${briefs.length !== 1 ? 's' : ''}`;
+
+  if (!briefs.length) {
+    grid.innerHTML = '<div class="empty-state"><div class="empty-icon">📊</div><div class="empty-msg">No briefs generated yet.</div></div>';
+    return;
+  }
+
+  const sorted = [...briefs].sort((a, b) => (b.opportunity_score || 0) - (a.opportunity_score || 0));
+
+  grid.innerHTML = sorted.map((brief, i) => {
+    const bj     = brief.brief_json || {};
+    const cs     = bj.cluster_signal || {};
+    const titles = bj.titles || {};
+    const tags   = bj.tags || [];
+    const pf     = bj.performance_forecast || {};
+    const td     = bj.thumbnail_direction || {};
+    const ut     = bj.upload_timing || {};
+    const score  = Number(brief.opportunity_score || brief.cluster_score || 0);
+    const win    = String(cs.window || 'NICHE').toUpperCase();
+    const trend  = String(cs.trend_velocity || 'STABLE').toUpperCase();
+
+    const winClass   = { URGENT: 'badge-urgent', EVERGREEN: 'badge-evergreen', SEASONAL: 'badge-seasonal', NICHE: 'badge-niche' }[win] || 'badge-niche';
+    const trendClass = { RISING: 'badge-rising', STABLE: 'badge-stable', FALLING: 'badge-falling' }[trend] || 'badge-stable';
+    const trendIcon  = { RISING: '↗', STABLE: '→', FALLING: '↘' }[trend] || '→';
+
+    const t1 = escapeHtml(titles.title_1_search_match || '');
+    const t2 = escapeHtml(titles.title_2_curiosity || '');
+    const t3 = escapeHtml(titles.title_3_value || '');
+    const hook     = escapeHtml(bj.hook_script || 'INSUFFICIENT DATA');
+    const thumbRef = escapeHtml(`${td.primary_image || ''} ${td.text_overlay ? '| Text: ' + td.text_overlay : ''} ${td.reference ? '| Ref: ' + td.reference : ''}`.trim());
+    const timing   = escapeHtml(`${ut.day || '—'} ${ut.time || ''} — ${ut.reasoning || ''}`);
+    const forecast = escapeHtml(pf.expected_performance || pf.reasoning || 'INSUFFICIENT DATA');
+    const tagsHtml = tags.slice(0, 15).map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('');
+
+    // Raw title for copy (unescaped)
+    const rawT1 = String(titles.title_1_search_match || '').replace(/'/g, "\\'");
+
+    return `
+    <div class="brief-card" id="brief-card-${i}" onclick="toggleBrief(${i})">
+      <div class="brief-header">
+        <div class="score-ring">${scoreRing(score)}</div>
+        <div class="brief-meta">
+          <div class="brief-topic">${escapeHtml(brief.cluster_label || cs.topic_cluster || 'Unknown')}</div>
+          <div class="brief-badges">
+            <span class="badge ${winClass}">${win}</span>
+            <span class="badge ${trendClass}">${trendIcon} ${trend}</span>
+          </div>
+        </div>
+        <span class="brief-chevron">⌃</span>
+      </div>
+      <div class="brief-body" id="brief-body-${i}">
+        <div class="brief-divider"></div>
+        <div class="brief-grid">
+          <div class="brief-field full-width">
+            <div class="brief-field-label">
+              Title Options
+              <button class="copy-btn" onclick="event.stopPropagation(); copyText('${rawT1}')">📋 copy #1</button>
+            </div>
+            <div class="brief-field-value">
+              ${t1 ? `<div class="title-option" onclick="event.stopPropagation(); copyText(this.querySelector('span').textContent)"><div class="title-num">1</div><span>${t1}</span></div>` : ''}
+              ${t2 ? `<div class="title-option" onclick="event.stopPropagation(); copyText(this.querySelector('span').textContent)"><div class="title-num">2</div><span>${t2}</span></div>` : ''}
+              ${t3 ? `<div class="title-option" onclick="event.stopPropagation(); copyText(this.querySelector('span').textContent)"><div class="title-num">3</div><span>${t3}</span></div>` : ''}
+            </div>
+          </div>
+          <div class="brief-field full-width">
+            <div class="brief-field-label">
+              Hook Script (first 15–20 seconds — exact spoken words)
+              <button class="copy-btn" onclick="event.stopPropagation(); copyText(this.closest('.brief-field').querySelector('em').textContent)">📋 copy</button>
+            </div>
+            <div class="brief-field-value"><em>&ldquo;${hook}&rdquo;</em></div>
+          </div>
+          <div class="brief-field">
+            <div class="brief-field-label">Thumbnail Direction</div>
+            <div class="brief-field-value">${thumbRef || 'INSUFFICIENT DATA'}</div>
+          </div>
+          <div class="brief-field">
+            <div class="brief-field-label">Best Upload Timing</div>
+            <div class="brief-field-value">${timing || 'INSUFFICIENT DATA'}</div>
+          </div>
+          <div class="brief-field full-width">
+            <div class="brief-field-label">Performance Forecast</div>
+            <div class="brief-field-value">${forecast}</div>
+          </div>
+          <div class="brief-field full-width">
+            <div class="brief-field-label">Tags (15)</div>
+            <div class="brief-field-value"><div class="tags-list">${tagsHtml}</div></div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleBrief(i) {
+  const card = document.getElementById(`brief-card-${i}`);
+  if (!card) return;
+  const wasExpanded = card.classList.contains('expanded');
+  document.querySelectorAll('.brief-card').forEach(c => c.classList.remove('expanded'));
+  if (!wasExpanded) card.classList.add('expanded');
+}
+
+// ── Analytics ──
+function renderAnalytics(profile, briefs) {
+  renderViewsTrend(profile);
+  renderTopicPerf(profile);
+  renderSuccessRate();
+  renderOutliers(profile);
+}
+
+function renderViewsTrend(profile) {
+  const ctx = document.getElementById('chart-views-trend').getContext('2d');
+  if (chartViewsTrend) chartViewsTrend.destroy();
+
+  const sp = profile.subniche_performance || {};
+  const entries = Object.entries(sp).slice(0, 10);
+  const labels  = entries.map(([k, v]) => v.display_name || k);
+  const data    = entries.map(([, v]) => v.avg_views || 0);
+
+  chartViewsTrend = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Avg views',
+        data,
+        borderColor: '#6c63ff',
+        backgroundColor: 'rgba(108,99,255,0.1)',
+        borderWidth: 2,
+        fill: true,
+        tension: 0.4,
+        pointBackgroundColor: '#6c63ff',
+        pointRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#555568', font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
+        y: { ticks: { color: '#555568', font: { size: 10 }, callback: v => fmtNum(v) }, grid: { color: 'rgba(255,255,255,0.04)' } }
+      }
+    }
+  });
+}
+
+function renderTopicPerf(profile) {
+  const ctx = document.getElementById('chart-topic-perf').getContext('2d');
+  if (chartTopicPerf) chartTopicPerf.destroy();
+
+  const sp = profile.subniche_performance || {};
+  const sorted = Object.entries(sp)
+    .sort((a, b) => (b[1].avg_views || 0) - (a[1].avg_views || 0))
+    .slice(0, 8);
+
+  chartTopicPerf = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: sorted.map(([k, v]) => v.display_name || k),
+      datasets: [{
+        label: 'Avg views',
+        data: sorted.map(([, v]) => v.avg_views || 0),
+        backgroundColor: 'rgba(108,99,255,0.6)',
+        borderColor: '#6c63ff',
+        borderWidth: 1,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#555568', font: { size: 10 }, callback: v => fmtNum(v) }, grid: { color: 'rgba(255,255,255,0.04)' } },
+        y: { ticks: { color: '#8b8b9a', font: { size: 11 } }, grid: { display: false } }
+      }
+    }
+  });
+}
+
+function renderSuccessRate() {
+  const ctx = document.getElementById('chart-success-rate').getContext('2d');
+  if (chartSuccessRate) chartSuccessRate.destroy();
+  document.getElementById('donut-pct').textContent = '—';
+
+  chartSuccessRate = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Outperformed', 'Matched', 'Underperformed'],
+      datasets: [{
+        data: [1],
+        backgroundColor: ['rgba(255,255,255,0.05)'],
+        borderWidth: 0,
+        cutout: '72%',
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { color: '#8b8b9a', font: { size: 11 }, boxWidth: 10, padding: 14 } }
+      }
+    }
+  });
+}
+
+function renderOutliers(profile) {
+  const el = document.getElementById('outlier-list');
+  const sp = profile.subniche_performance || {};
+  const avg = Number(profile.avg_views) || 1;
+
+  const outliers = Object.entries(sp)
+    .map(([k, v]) => ({ topic: v.display_name || k, best: v.best_views || 0, topAvg: v.avg_views || 0 }))
+    .filter(o => o.best > avg * 1.5)
+    .sort((a, b) => b.best - a.best)
+    .slice(0, 5);
+
+  if (!outliers.length) {
+    el.innerHTML = '<div style="color: var(--text-muted); font-size: 13px; text-align: center; padding: 20px">No outliers detected yet.</div>';
+    return;
+  }
+
+  el.innerHTML = outliers.map((o, i) => `
+    <div class="outlier-item">
+      <div class="outlier-rank">#${i + 1}</div>
+      <div class="outlier-info">
+        <div class="outlier-title">${escapeHtml(o.topic)}</div>
+        <div class="outlier-meta">${fmtNum(o.best)} views best &bull; ${fmtNum(o.topAvg)} avg</div>
+      </div>
+      <div class="outlier-mult">${(o.best / avg).toFixed(1)}x</div>
+    </div>
+  `).join('');
+}
+
+// ── Auto-load on DOMContentLoaded ──
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const res = await fetch(`${API_BASE}/api/data/briefs_latest.json`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data && Array.isArray(data.briefs) && data.briefs.length > 0) {
+        document.getElementById('input-section').style.display = 'none';
+        document.getElementById('btn-new-channel').style.display = '';
+        renderDashboard(data);
+      }
+    }
+  } catch { /* no data yet, show input */ }
+});
+</script>
+</body>
+</html>

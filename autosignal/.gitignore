@@ -1,0 +1,34 @@
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+.DS_Store
+
+# API Keys - DO NOT COMMIT
+api_keys.txt
+.env
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Database files
+*.db
+*.db-journal
+
+# Output files (per-niche data lives under data/{niche}/)
+data/*/
+!data/.gitkeep
+*.log
+
+# Ignore generated pipeline JSON only where it is produced, not all JSON.
+# (A blanket *.json rule silently untracks new config files.)
+/data/**/*.json
+/briefs_*.json
+/discovered_channels.json
+/discarded_videos.json
+/seed_channels_config.json

@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "cluster_label": "Digital Minimalism & Smartphone Detox Protocols",
+    "topic": "digital_minimalism",
+    "final_score": 9.8,
+    "window": "IMMEDIATE",
+    "trending_score": 7.8,
+    "search_gap_score": 9.3,
+    "seasonal_score": 9.0,
+    "outlier_score": 9.49,
+    "video_count": 6,
+    "avg_vph": 3900,
+    "outperformance_multiplier": "7.3x",
+    "search_gap_percent": "93%",
+    "recommended_angle": "Target high-intent searchers dealing with digital minimalism & smartphone detox protocols without requiring high-cost equipment.",
+    "sample_titles": [
+      "Dumbphone Experiment 30 Days Later: What Happened to My Attention Span",
+      "Dopamine Fasting Weekend: What the Science Actually Says About Brain Resets",
+      "Screen Time Detox Without Buying a Second Phone (5 iOS Settings)"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 2,
+    "cluster_label": "Low-Friction Second Brain & Obsidian / Notes Architecture",
+    "topic": "second_brain",
+    "final_score": 9.8,
+    "window": "EVERGREEN",
+    "trending_score": 6.2,
+    "search_gap_score": 8.7,
+    "seasonal_score": 7.8,
+    "outlier_score": 8.06,
+    "video_count": 6,
+    "avg_vph": 3100,
+    "outperformance_multiplier": "6.2x",
+    "search_gap_percent": "87%",
+    "recommended_angle": "Target high-intent searchers dealing with low-friction second brain & obsidian / notes architecture without requiring high-cost equipment.",
+    "sample_titles": [
+      "Why Your Notion Setup Makes You LESS Productive (The Clean Rebuild)",
+      "Obsidian vs Apple Notes in 2026: Why Simplicity Won Out",
+      "The PARA Method Simplified: Projects, Areas, Resources, Archives for Realists"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 3,
+    "cluster_label": "90-Minute Focus Protocols & Cognitive Energy Management",
+    "topic": "deep_work",
+    "final_score": 9.8,
+    "window": "EVERGREEN",
+    "trending_score": 7.0,
+    "search_gap_score": 8.9,
+    "seasonal_score": 7.8,
+    "outlier_score": 8.84,
+    "video_count": 6,
+    "avg_vph": 3500,
+    "outperformance_multiplier": "6.8x",
+    "search_gap_percent": "89%",
+    "recommended_angle": "Target high-intent searchers dealing with 90-minute focus protocols & cognitive energy management without requiring high-cost equipment.",
+    "sample_titles": [
+      "The 90-Minute Focus Block Protocol: How to Finish 8 Hours of Work by Noon",
+      "Ultradian Rhythms: Why Forcing 8 Constant Work Hours Destroys Your Cognitive Output",
+      "The Law of Diminishing Productivity: Why Working Over 50 Hours Is Counterproductive"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 4,
+    "cluster_label": "Habit Systems & Friction Engineering vs Willpower",
+    "topic": "habits",
+    "final_score": 9.8,
+    "window": "SEASONAL",
+    "trending_score": 5.4,
+    "search_gap_score": 8.3,
+    "seasonal_score": 8.5,
+    "outlier_score": 7.02,
+    "video_count": 5,
+    "avg_vph": 2700,
+    "outperformance_multiplier": "5.4x",
+    "search_gap_percent": "83%",
+    "recommended_angle": "Target high-intent searchers dealing with habit systems & friction engineering vs willpower without requiring high-cost equipment.",
+    "sample_titles": [
+      "Sleep Consistency Protocol: The Non-Negotiable Foundation of Daily Focus",
+      "Morning Routine Without 14 Supplements: A Realistic 20-Minute Blueprint",
+      "Stop Building Habit Trackers \u2014 Use This 2-Rule Friction System Instead"
+    ],
+    "status": "ready_for_brief"
+  }
+]

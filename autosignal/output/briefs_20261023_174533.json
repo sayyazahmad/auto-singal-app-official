@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-10-23T17:45:33.647257+00:00",
+  "brief_count": 4,
+  "valid_count": 4,
+  "briefs": [
+    {
+      "brief_id": "brief_auto_001",
+      "niche": "automotive",
+      "topic": "Parasitic Battery Drain & Alternator Testing",
+      "target_angle": "The 30-minute diagnosis trick dealers charge $250 for: parasitic drain isolation without losing computer memory",
+      "titles": {
+        "title_1_search_match": "How to Find a Parasitic Battery Drain in 15 Minutes (Step-by-Step)",
+        "title_2_curiosity": "Your Alternator Isn't Bad \u2014 Stop Wasting $300 (Try This First)",
+        "title_3_value": "Find the Fuse Killing Your Car Battery (No Expensive Tools Needed)",
+        "recommended_title": "title_2_curiosity",
+        "reason": "Outlier analysis shows 4.8x higher CTR for curiosity debunking angles in automotive electrical topics"
+      },
+      "hook_script": "Before you spend $300 on a brand new alternator because your battery keeps dying overnight, do NOT touch a wrench. In 90% of cases we see in the shop, the alternator is actually fine\u2014it's a hidden 50 milliamp parasitic drain from a stuck relay or telematics unit. In the next 8 minutes, I'll show you how to find the exact circuit with an eight-dollar multimeter.",
+      "thumbnail_direction": {
+        "primary_image": "Split frame: Hands holding multimeter reading '2.45A' in red vs '0.02A' in bright green",
+        "text_overlay": "NOT THE ALTERNATOR!",
+        "color_signal": "High-contrast red warning badge with yellow meter display",
+        "focal_point": "Multimeter screen and glowing fuse block"
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00 - 0:35",
+          "beat": "The Hook & False Diagnosis Trap",
+          "action": "Demonstrate dead battery symptom and common misdiagnosis mistake"
+        },
+        {
+          "time": "0:35 - 2:15",
+          "beat": "Setting Up Current Draw Test",
+          "action": "Hooking multimeter in series with negative terminal without waking BCM"
+        },
+        {
+          "time": "2:15 - 5:00",
+          "beat": "The Fuse Pull Sequence",
+          "action": "Pulling micro-fuses systematically until the 2A draw drops to 0.03A"
+        },
+        {
+          "time": "5:00 - 7:15",
+          "beat": "Fixing the Offending Module",
+          "action": "Stuck trunk latch or bluetooth receiver disconnect and verification"
+        },
+        {
+          "time": "7:15 - 8:30",
+          "beat": "Verification & Pro Safety Tip",
+          "action": "Final sleep cycle test and preventing alternator surge"
+        }
+      ],
+      "production_checklist": [
+        "B-roll close-up of digital multimeter readout at eye level",
+        "Diagram overlay showing series wiring connection",
+        "Microphone lavalier positioned away from cooling fan airflow",
+        "Clear pin-out callout on fuse diagram in engine bay"
+      ]
+    },
+    {
+      "brief_id": "brief_tech_002",
+      "niche": "technology",
+      "topic": "Local AI & Private LLM Deployment with Ollama",
+      "target_angle": "Stop paying OpenAI $200/mo: Running 14B reasoning models locally with zero data leaks",
+      "titles": {
+        "title_1_search_match": "How to Run DeepSeek R1 & Ollama Locally (Complete Setup Guide)",
+        "title_2_curiosity": "I Canceled My ChatGPT Plus for This 100% Free Local Setup",
+        "title_3_value": "Run SOTA AI Models Locally on Any GPU (VRAM Benchmarks & Guide)",
+        "recommended_title": "title_2_curiosity",
+        "reason": "Personal sacrifice / decision framing has achieved 6.8x channel average in tech software niches"
+      },
+      "hook_script": "Three weeks ago I made a radical decision: I completely canceled all my cloud AI subscriptions and transitioned my entire software development workflow to 100% local models running right here under my desk. Here are the real benchmarks, what actually works for coding, and the exact hardware specs you need.",
+      "thumbnail_direction": {
+        "primary_image": "Creator pointing between a big '$240/yr' crossed out and a glowing terminal window",
+        "text_overlay": "100% LOCAL & FREE",
+        "color_signal": "Neon purple / dark cyber aesthetic with glowing command line prompt",
+        "focal_point": "Terminal benchmark showing 48 tokens/second"
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00 - 0:45",
+          "beat": "The Cloud Subscription Dilemma",
+          "action": "Showing token costs and privacy terms"
+        },
+        {
+          "time": "0:45 - 2:30",
+          "beat": "Ollama + Model Quantization Basics",
+          "action": "Explaining Q4_K_M vs FP16 without jargon"
+        },
+        {
+          "time": "2:30 - 5:15",
+          "beat": "Live Speed & Accuracy Benchmarks",
+          "action": "Coding refactor side-by-side with GPT-4o"
+        },
+        {
+          "time": "5:15 - 8:00",
+          "beat": "VS Code & Cursor Integration",
+          "action": "Setting up Continue.dev or OpenCode with local API endpoint"
+        },
+        {
+          "time": "8:00 - 9:30",
+          "beat": "The Hardware Verdict",
+          "action": "Minimum specs breakdown (M-series Mac vs Nvidia RTX)"
+        }
+      ],
+      "production_checklist": [
+        "Screen recording at crisp 4K 60fps with enlarged terminal fonts",
+        "Clean desk shot showing small PC footprint",
+        "Side-by-side response latency timer graphic"
+      ]
+    }
+  ]
+}

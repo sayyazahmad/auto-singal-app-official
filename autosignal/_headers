@@ -1,0 +1,5 @@
+# Tell Cloudflare to serve .jsx files as proper JavaScript so the browser
+# will accept them as modules.
+
+/*.jsx
+  Content-Type: application/javascript

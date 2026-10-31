@@ -1,0 +1,90 @@
+[
+  {
+    "rank": 1,
+    "cluster_label": "Parasitic Battery Drain & Alternator Testing",
+    "topic": "electrical",
+    "final_score": 9.8,
+    "window": "IMMEDIATE",
+    "trending_score": 3.7,
+    "search_gap_score": 9.1,
+    "seasonal_score": 9.0,
+    "outlier_score": 7.02,
+    "video_count": 6,
+    "avg_vph": 1850,
+    "outperformance_multiplier": "5.4x",
+    "search_gap_percent": "91%",
+    "recommended_angle": "Target high-intent searchers dealing with parasitic battery drain & alternator testing without requiring high-cost equipment.",
+    "sample_titles": [
+      "5 OBD2 Scanner Live Data PID Graphs You Must Check for Rough Idle",
+      "Starter Clicks Once But Won't Crank: Voltage Drop Test on Starter Cable",
+      "Why Your Alternator Keeps Dying (The Silent Parasitic Drain Nobody Tests)"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 2,
+    "cluster_label": "Transmission Solenoid vs Full Rebuild Diagnosis",
+    "topic": "transmission",
+    "final_score": 9.8,
+    "window": "EVERGREEN",
+    "trending_score": 3.04,
+    "search_gap_score": 8.5,
+    "seasonal_score": 7.8,
+    "outlier_score": 6.24,
+    "video_count": 4,
+    "avg_vph": 1520,
+    "outperformance_multiplier": "4.8x",
+    "search_gap_percent": "85%",
+    "recommended_angle": "Target high-intent searchers dealing with transmission solenoid vs full rebuild diagnosis without requiring high-cost equipment.",
+    "sample_titles": [
+      "Transmission Slipping in 2nd? Don't Rebuild \u2014 Test This $40 Solenoid First",
+      "Torque Converter Shudder at 45 MPH: Lubegard ShudderFix Test",
+      "Automatic Transmission Fluid Level Check Without a Dipstick (Temp Method)"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 3,
+    "cluster_label": "Heater Core & Cooling System Air Pocket Bleeding",
+    "topic": "cooling_system",
+    "final_score": 9.53,
+    "window": "SEASONAL",
+    "trending_score": 2.56,
+    "search_gap_score": 7.9,
+    "seasonal_score": 8.5,
+    "outlier_score": 5.46,
+    "video_count": 5,
+    "avg_vph": 1280,
+    "outperformance_multiplier": "4.2x",
+    "search_gap_percent": "79%",
+    "recommended_angle": "Target high-intent searchers dealing with heater core & cooling system air pocket bleeding without requiring high-cost equipment.",
+    "sample_titles": [
+      "Blown Head Gasket Combustion Gas Test in Radiator (Block Tester Fluid)",
+      "Heater Core Clogged Flush with CLR & Garden Hose (Fix No Heat)",
+      "AC Clutch Not Engaging? Bypass Relay Test Before Buying Compressor"
+    ],
+    "status": "ready_for_brief"
+  },
+  {
+    "rank": 4,
+    "cluster_label": "Brake Caliper Pin & Master Cylinder Pressure Loss",
+    "topic": "brake_system",
+    "final_score": 9.66,
+    "window": "EVERGREEN",
+    "trending_score": 2.82,
+    "search_gap_score": 8.2,
+    "seasonal_score": 7.8,
+    "outlier_score": 5.72,
+    "video_count": 6,
+    "avg_vph": 1410,
+    "outperformance_multiplier": "4.4x",
+    "search_gap_percent": "82%",
+    "recommended_angle": "Target high-intent searchers dealing with brake caliper pin & master cylinder pressure loss without requiring high-cost equipment.",
+    "sample_titles": [
+      "Never Replace This Brake Sensor Until You Try This 30-Second Reset",
+      "Brake Pedal Sinks to Floor at Red Lights: Master Cylinder Internal Bypass",
+      "ABS Pump Running Continuously With Key Off: Module Relay Rebuild"
+    ],
+    "status": "ready_for_brief"
+  }
+]

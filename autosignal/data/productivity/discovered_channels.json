@@ -1,0 +1,77 @@
+{
+  "channels": [
+    {
+      "channel_title": "The Intentional Mind",
+      "channel_id": "UC_productivity_51349",
+      "subscriber_count": 28000,
+      "avg_views_per_video": 14000,
+      "outlier_hit_rate": 0.35,
+      "status": "validated_seed",
+      "niche": "productivity"
+    },
+    {
+      "channel_title": "Focus Architect",
+      "channel_id": "UC_productivity_57390",
+      "subscriber_count": 52000,
+      "avg_views_per_video": 27000,
+      "outlier_hit_rate": 0.56,
+      "status": "validated_seed",
+      "niche": "productivity"
+    },
+    {
+      "channel_title": "Quiet Productivity",
+      "channel_id": "UC_productivity_91016",
+      "subscriber_count": 14500,
+      "avg_views_per_video": 7200,
+      "outlier_hit_rate": 0.3,
+      "status": "validated_seed",
+      "niche": "productivity"
+    },
+    {
+      "channel_title": "Systems Not Goals",
+      "channel_id": "UC_productivity_32676",
+      "subscriber_count": 39000,
+      "avg_views_per_video": 18500,
+      "outlier_hit_rate": 0.37,
+      "status": "validated_seed",
+      "niche": "productivity"
+    },
+    {
+      "channel_title": "Digital Calm",
+      "channel_id": "UC_productivity_87347",
+      "subscriber_count": 8100,
+      "avg_views_per_video": 3900,
+      "outlier_hit_rate": 0.42,
+      "status": "validated_seed",
+      "niche": "productivity"
+    },
+    {
+      "channel_title": "Deep Output Lab",
+      "channel_id": "UC_productivity_49056",
+      "subscriber_count": 71000,
+      "avg_views_per_video": 34000,
+      "outlier_hit_rate": 0.26,
+      "status": "validated_seed",
+      "niche": "productivity"
+    },
+    {
+      "channel_title": "Habit Mechanics",
+      "channel_id": "UC_productivity_18735",
+      "subscriber_count": 22000,
+      "avg_views_per_video": 10500,
+      "outlier_hit_rate": 0.42,
+      "status": "validated_seed",
+      "niche": "productivity"
+    },
+    {
+      "channel_title": "Mindful Execution",
+      "channel_id": "UC_productivity_79330",
+      "subscriber_count": 46000,
+      "avg_views_per_video": 23000,
+      "outlier_hit_rate": 0.33,
+      "status": "validated_seed",
+      "niche": "productivity"
+    }
+  ],
+  "total": 8
+}

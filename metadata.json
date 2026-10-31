@@ -1,0 +1,6 @@
+{
+  "name": "AutoSignal Intelligence Studio",
+  "description": "YouTube content intelligence pipeline and data explorer: run multi-step Python analytics, inspect outlier videos, semantic clusters, and generate AI creator briefs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

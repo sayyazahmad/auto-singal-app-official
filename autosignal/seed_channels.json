@@ -1,0 +1,749 @@
+{
+  "channel_ids": [
+    "UC0T6MVd3wQDB5ICAe45OxaQ",
+    "UC0yHbz4OxdQFwmVX2BBQqLg",
+    "UC2UXDak6o7rBm23k3Vv5dww",
+    "UC3iyLcDyYxk2nN7M5DsYaYQ",
+    "UC4DRUh4X4lNz22WBbmkdiQQ",
+    "UC5fI3kxC-ewZ6ZXEYgznM7g",
+    "UC6biysICWOJ-C3P4Tyeggzg",
+    "UC6mIxFTvXkWQVEHPsEdflzQ",
+    "UC6tUZA7GiIZPaUu4FQXnFYA",
+    "UC7Jwj9fkrf1adN4fMmTkpug",
+    "UC7zZ2-Q_oxbUaoMVL0z51wg",
+    "UC8butISFwT-Wl7EV0hUK0BQ",
+    "UCA-mWX9CvCTVFWRMb9bKc9w",
+    "UCA6yfpYhy5sWMjRGOT-OAIQ",
+    "UCBJycsmduvYEL83R_U4JriQ",
+    "UCBsGGbHWB3WOS_we0Dr15dg",
+    "UCBwmMxybNva6P_5VmxjzwqA",
+    "UCCktnahuRFYIBtNnKT5IYyg",
+    "UCDkox5NLaLtrYssKumtfzNA",
+    "UCE0-acFJdnTPUCYlYoiq_fg",
+    "UCEzU7p3e3gZbBCPP20KLkLQ",
+    "UCF9-JngqznvAsiF2yZbeY8g",
+    "UCFdYDksnnzckY1cy3oe1aFA",
+    "UCGznz4NfW5iymkvn1l40qyA",
+    "UCHIbErciyS3Hs0kjAz-at5Q",
+    "UCJihyK0A38SZ6SdJirEdIOw",
+    "UCK1wTf_JLCq-wpT65xwNt8A",
+    "UCKOk1DiU3eUZV5CO0slBrMw",
+    "UCLe_q9axMaeTbjN0hy1Z9xA",
+    "UCO2x-p9gg9TLKneXlibGR7w",
+    "UCORX3Cl7ByidjEgzSCgv9Yw",
+    "UCPhyA52nHlW3L6r-7sDfcyg",
+    "UCROsCSoY7I_QZuS4QGQckOA",
+    "UCS-WzPVpAAli-1IfEG2lN8A",
+    "UCS6nknkYrSzK6CJN955BtrA",
+    "UCSDU975BassXQZGoJmvctNQ",
+    "UCSOpcUkE-is7u7c4AkLgqTw",
+    "UCSWdLZkyhxTE3yKGgalmR8g",
+    "UCT6AJiTYspOILBK3hMWEq2g",
+    "UCTQuKo8v0PaPCvk5aRxc_Yg",
+    "UCUICPzNgVAwESkDnvz-CFIQ",
+    "UCUpt_5O1vYpWAGg77iNMQXA",
+    "UCVRqLKnUgC4BM3Vu7gZYQcw",
+    "UCV_DLB3VW0szIGQnwel1Nsw",
+    "UCVyRiMvfUNMA1UPlDPzG5Ow",
+    "UCWsEZ9v1KC8b5VYjYbEewJA",
+    "UCXuqSBlHAE6Xw-yeJA0Tunw",
+    "UCYoUuK_uXILQmvip-6jDZ-A",
+    "UCZknyXD-6tETm9aN8GQCi8g",
+    "UC_RovKmk0OCbuZjA8f08opw",
+    "UC_x5XG1OV2P6uZZ5FSM9Ttw",
+    "UCaBOIBVD_f6eyRRRBRrCz8w",
+    "UCaFGDBmGK_jw66u3av2Ysjw",
+    "UCaNk22cLid93kifuVbVapcQ",
+    "UCakIVH4t7k4vZe1AWPpewgA",
+    "UCapyHygDZ_pEJ5pwwZZKV3w",
+    "UCc5-Xb17fw1I0EOoIuzN2xw",
+    "UCc_ycus0q7DSd85ZkmEY5ig",
+    "UCce9o4j5L2ZIhB1rYrt3mug",
+    "UCd6vEDS3SOhWbXZrxbrf_bw",
+    "UCdBK94H6oZT2Q7l0-b0xmMg",
+    "UCddiUEpeqJcYeBxX1IVBKvQ",
+    "UCde0vB0fTwC8AT3sJofFV0w",
+    "UCdtwPYK_0LG3ll1Op0iAMkQ",
+    "UCeVMnSShP_Iviwkknt83cww",
+    "UCeeFfhMcJa1kjtfZAGskOCA",
+    "UCfJT_eYDTmDE-ovKaxVE1ig",
+    "UCfdNM3NAhaBOXCafH7krzrA",
+    "UCgHj7p79mwLmlg01mgAGzVg",
+    "UCgbyN_o-Guwpyqfuuz3pyIw",
+    "UCh714OuOFrulaaSVaSE5eWQ",
+    "UChRlaISXbl2gECFAmDzxgzg",
+    "UChhw6DlKKTQ9mYSpTfXUYqA",
+    "UChpleBmo18P08aKCIgti38g",
+    "UCiQMYozSSTkJ2twtZM1bG9w",
+    "UCjZnbgPb08NFg7MHyPQRZ3Q",
+    "UClQ4o8ekS-GSbhjDAB4313Q",
+    "UCnXMlaEmmJrX5jqnQPCqgUw",
+    "UCoi3Uk6JtP9QgA5BRwnh6NQ",
+    "UCpCrcUPVtIvXLDnHnexu-WQ",
+    "UCpLKqC4BVf57nLX6ew7Omxw",
+    "UCpZy-Hfqcxf-R7nQzlv9Bvw",
+    "UCr613nJgA50o8DUUT00qHvw",
+    "UCsT0YIqwnpJCM-mx7-gSA4Q",
+    "UCsguRUxh-0DiryIdPPWFeCQ",
+    "UCt8HYtdheQVGhuj-Wnur0Lw",
+    "UCtKkRBqgP0i23H6zd0knbyw",
+    "UCtoH0f8p2cJx54BruezvZtw",
+    "UCuudpdbKmQWq2PPzYgVCWlA",
+    "UCvM5YYWwfLwpcQgbRr68JLQ",
+    "UCveqD0pcZE0u7kg51KBOZbA",
+    "UCwAnu01qlnVg1Ai2AbtTMaA",
+    "UCwVBLXAj0pfOb3df21bBtyQ",
+    "UCwrVwiJllwhJUKXKmjLcckQ",
+    "UCxOVEOhPNXcJuyfVLhm_BfQ",
+    "UCyHta2dyCTkf29AB67AYn7A",
+    "UCz0zSuukBglV2YwG3_7uKRg",
+    "UCzfEmzRscu-147419MYhKWA",
+    "UCzgA9CBrIXPtkB2yNTTiy1w",
+    "UCzmwnZ_ZElg6kuE6e5QS4pg"
+  ],
+  "dormant": [],
+  "channel_meta": {
+    "UCDkox5NLaLtrYssKumtfzNA": {
+      "title": "Earners LAPTOP",
+      "subscribers": 36700,
+      "seed_score": 10.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCSDU975BassXQZGoJmvctNQ": {
+      "title": "Explainer Chris",
+      "subscribers": 33300,
+      "seed_score": 10.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCV_DLB3VW0szIGQnwel1Nsw": {
+      "title": "The Solo Entrepreneur",
+      "subscribers": 41400,
+      "seed_score": 10.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCapyHygDZ_pEJ5pwwZZKV3w": {
+      "title": "CS & IT Tutorials by Vrushali 👩‍🎓",
+      "subscribers": 68900,
+      "seed_score": 10.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCKOk1DiU3eUZV5CO0slBrMw": {
+      "title": "Akber Shaikh",
+      "subscribers": 95700,
+      "seed_score": 10.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCK1wTf_JLCq-wpT65xwNt8A": {
+      "title": "Smart Tech For Any Age",
+      "subscribers": 25000,
+      "seed_score": 10.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCxOVEOhPNXcJuyfVLhm_BfQ": {
+      "title": "Tom Gregory",
+      "subscribers": 37200,
+      "seed_score": 10.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCUICPzNgVAwESkDnvz-CFIQ": {
+      "title": "Mera Template",
+      "subscribers": 69300,
+      "seed_score": 10.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCROsCSoY7I_QZuS4QGQckOA": {
+      "title": "ItsKeaton",
+      "subscribers": 76300,
+      "seed_score": 10.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCBsGGbHWB3WOS_we0Dr15dg": {
+      "title": "Software Scope",
+      "subscribers": 22800,
+      "seed_score": 9.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCE0-acFJdnTPUCYlYoiq_fg": {
+      "title": "Neural Nutshell",
+      "subscribers": 15000,
+      "seed_score": 9.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:10.318939+00:00",
+      "recent_uploads_90d": 50
+    },
+    "UCtoH0f8p2cJx54BruezvZtw": {
+      "title": "Rawrkee",
+      "subscribers": 22800,
+      "seed_score": 9.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:10.835644+00:00",
+      "recent_uploads_90d": 14
+    },
+    "UCEzU7p3e3gZbBCPP20KLkLQ": {
+      "title": "Clay Lawrence",
+      "subscribers": 14600,
+      "seed_score": 9.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCjZnbgPb08NFg7MHyPQRZ3Q": {
+      "title": "Amit Kukreja",
+      "subscribers": 128000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCS6nknkYrSzK6CJN955BtrA": {
+      "title": "Just Call Me Eddie",
+      "subscribers": 305000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCoi3Uk6JtP9QgA5BRwnh6NQ": {
+      "title": "GregsGadgets",
+      "subscribers": 414000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCpCrcUPVtIvXLDnHnexu-WQ": {
+      "title": "Stephen Robles",
+      "subscribers": 221000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCnXMlaEmmJrX5jqnQPCqgUw": {
+      "title": "Shuaib Gilgiti",
+      "subscribers": 315000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCwrVwiJllwhJUKXKmjLcckQ": {
+      "title": "Apple Developer",
+      "subscribers": 308000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:14.827301+00:00",
+      "recent_uploads_90d": 50
+    },
+    "UC0yHbz4OxdQFwmVX2BBQqLg": {
+      "title": "AI Master",
+      "subscribers": 290000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UC6tUZA7GiIZPaUu4FQXnFYA": {
+      "title": "Cord Cutters News",
+      "subscribers": 381000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCt8HYtdheQVGhuj-Wnur0Lw": {
+      "title": "Pavlo",
+      "subscribers": 126000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCgbyN_o-Guwpyqfuuz3pyIw": {
+      "title": "Farzad",
+      "subscribers": 436000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCzgA9CBrIXPtkB2yNTTiy1w": {
+      "title": "Level 2 Jeff",
+      "subscribers": 163000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:07.323533+00:00",
+      "recent_uploads_90d": 13
+    },
+    "UCzfEmzRscu-147419MYhKWA": {
+      "title": "Skillademia",
+      "subscribers": 58400,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCUpt_5O1vYpWAGg77iNMQXA": {
+      "title": "Zip Tie Tech",
+      "subscribers": 296000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:13.732911+00:00",
+      "recent_uploads_90d": 11
+    },
+    "UCzmwnZ_ZElg6kuE6e5QS4pg": {
+      "title": "Brian Tong",
+      "subscribers": 353000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UC4DRUh4X4lNz22WBbmkdiQQ": {
+      "title": "JCristina",
+      "subscribers": 168000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCuudpdbKmQWq2PPzYgVCWlA": {
+      "title": "Indently",
+      "subscribers": 356000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:12.234762+00:00",
+      "recent_uploads_90d": 24
+    },
+    "UC7zZ2-Q_oxbUaoMVL0z51wg": {
+      "title": "Sajjaad Khader",
+      "subscribers": 312000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:05.478331+00:00",
+      "recent_uploads_90d": 35
+    },
+    "UCFdYDksnnzckY1cy3oe1aFA": {
+      "title": "Zeeshan Shaikh",
+      "subscribers": 431000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCz0zSuukBglV2YwG3_7uKRg": {
+      "title": "TAC",
+      "subscribers": 333000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:13.393101+00:00",
+      "recent_uploads_90d": 14
+    },
+    "UCaBOIBVD_f6eyRRRBRrCz8w": {
+      "title": "Dirty Tesla",
+      "subscribers": 140000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCaNk22cLid93kifuVbVapcQ": {
+      "title": "Parker Prompts",
+      "subscribers": 119000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:09.368969+00:00",
+      "recent_uploads_90d": 20
+    },
+    "UCde0vB0fTwC8AT3sJofFV0w": {
+      "title": "Mikey No Code",
+      "subscribers": 137000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCveqD0pcZE0u7kg51KBOZbA": {
+      "title": "Shivangi Tiwari",
+      "subscribers": 115000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCSWdLZkyhxTE3yKGgalmR8g": {
+      "title": "Ghulam Rasool Shahzada",
+      "subscribers": 216000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCc5-Xb17fw1I0EOoIuzN2xw": {
+      "title": "WiseUp Communications",
+      "subscribers": 384000,
+      "seed_score": 8.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:06.890037+00:00",
+      "recent_uploads_90d": 10
+    },
+    "UCvM5YYWwfLwpcQgbRr68JLQ": {
+      "title": "Adrian Twarog",
+      "subscribers": 419000,
+      "seed_score": 7.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCce9o4j5L2ZIhB1rYrt3mug": {
+      "title": "PRAKO BACHA",
+      "subscribers": 101000,
+      "seed_score": 7.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00",
+      "last_seen_at": "2026-06-19T13:23:04.759740+00:00",
+      "recent_uploads_90d": 9
+    },
+    "UClQ4o8ekS-GSbhjDAB4313Q": {
+      "title": "Suraj Jha",
+      "subscribers": 10400,
+      "seed_score": 7.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCF9-JngqznvAsiF2yZbeY8g": {
+      "title": "iDB",
+      "subscribers": 468000,
+      "seed_score": 7.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCORX3Cl7ByidjEgzSCgv9Yw": {
+      "title": "Anastasi In Tech",
+      "subscribers": 482000,
+      "seed_score": 7.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCPhyA52nHlW3L6r-7sDfcyg": {
+      "title": "Web Developete",
+      "subscribers": 160000,
+      "seed_score": 7.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCh714OuOFrulaaSVaSE5eWQ": {
+      "title": "Tap To Build",
+      "subscribers": 7520,
+      "seed_score": 7.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UC5fI3kxC-ewZ6ZXEYgznM7g": {
+      "title": "Codie Sanchez",
+      "subscribers": 2200000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCZknyXD-6tETm9aN8GQCi8g": {
+      "title": "The Cutting Edge School",
+      "subscribers": 709000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.322776+00:00"
+    },
+    "UCT6AJiTYspOILBK3hMWEq2g": {
+      "title": "Switch and Click",
+      "subscribers": 1240000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCLe_q9axMaeTbjN0hy1Z9xA": {
+      "title": "Caleb Hammer",
+      "subscribers": 3360000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCaFGDBmGK_jw66u3av2Ysjw": {
+      "title": "MacRumors",
+      "subscribers": 646000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00",
+      "last_seen_at": "2026-06-19T13:23:14.433526+00:00",
+      "recent_uploads_90d": 33
+    },
+    "UCYoUuK_uXILQmvip-6jDZ-A": {
+      "title": "Vaibhav Kadnar",
+      "subscribers": 6990000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00",
+      "last_seen_at": "2026-06-19T13:23:11.409318+00:00",
+      "recent_uploads_90d": 50
+    },
+    "UCeeFfhMcJa1kjtfZAGskOCA": {
+      "title": "TechLinked",
+      "subscribers": 1990000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCiQMYozSSTkJ2twtZM1bG9w": {
+      "title": "zollotech",
+      "subscribers": 2100000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCdtwPYK_0LG3ll1Op0iAMkQ": {
+      "title": "Tech Life Unity",
+      "subscribers": 811000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCS-WzPVpAAli-1IfEG2lN8A": {
+      "title": "Michael MJD",
+      "subscribers": 618000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCc_ycus0q7DSd85ZkmEY5ig": {
+      "title": "Waveform Clips",
+      "subscribers": 537000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UChpleBmo18P08aKCIgti38g": {
+      "title": "Matt Wolfe",
+      "subscribers": 965000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCd6vEDS3SOhWbXZrxbrf_bw": {
+      "title": "SAMTIME",
+      "subscribers": 615000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00",
+      "last_seen_at": "2026-06-19T13:23:09.749752+00:00",
+      "recent_uploads_90d": 36
+    },
+    "UCO2x-p9gg9TLKneXlibGR7w": {
+      "title": "Snazzy Labs",
+      "subscribers": 1260000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UChhw6DlKKTQ9mYSpTfXUYqA": {
+      "title": "Starter Story",
+      "subscribers": 834000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCBwmMxybNva6P_5VmxjzwqA": {
+      "title": "Apna College",
+      "subscribers": 7670000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCpZy-Hfqcxf-R7nQzlv9Bvw": {
+      "title": "Brandon Butch",
+      "subscribers": 1420000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCVRqLKnUgC4BM3Vu7gZYQcw": {
+      "title": "warikoo careers",
+      "subscribers": 555000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCsguRUxh-0DiryIdPPWFeCQ": {
+      "title": "Rise Above Reality",
+      "subscribers": 121000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UC0T6MVd3wQDB5ICAe45OxaQ": {
+      "title": "WsCube Tech",
+      "subscribers": 4380000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCfJT_eYDTmDE-ovKaxVE1ig": {
+      "title": "Kevin Stratvert",
+      "subscribers": 4300000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCBJycsmduvYEL83R_U4JriQ": {
+      "title": "Marques Brownlee",
+      "subscribers": 21000000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCA6yfpYhy5sWMjRGOT-OAIQ": {
+      "title": "KnowledgeGATE by Sanchit Sir",
+      "subscribers": 874000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCddiUEpeqJcYeBxX1IVBKvQ": {
+      "title": "The Verge",
+      "subscribers": 3510000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00",
+      "last_seen_at": "2026-06-19T13:23:11.757118+00:00",
+      "recent_uploads_90d": 50
+    },
+    "UCXuqSBlHAE6Xw-yeJA0Tunw": {
+      "title": "Linus Tech Tips",
+      "subscribers": 16800000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCgHj7p79mwLmlg01mgAGzVg": {
+      "title": "iDeviceHelp",
+      "subscribers": 1040000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UC_RovKmk0OCbuZjA8f08opw": {
+      "title": "Futurepedia",
+      "subscribers": 716000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCTQuKo8v0PaPCvk5aRxc_Yg": {
+      "title": "Charlie Chang",
+      "subscribers": 1440000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00",
+      "last_seen_at": "2026-06-19T13:23:08.922151+00:00",
+      "recent_uploads_90d": 20
+    },
+    "UCr613nJgA50o8DUUT00qHvw": {
+      "title": "WULFF DEN",
+      "subscribers": 976000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCCktnahuRFYIBtNnKT5IYyg": {
+      "title": "Intellipaat",
+      "subscribers": 13100000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCfdNM3NAhaBOXCafH7krzrA": {
+      "title": "The Infographics Show",
+      "subscribers": 15400000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCA-mWX9CvCTVFWRMb9bKc9w": {
+      "title": "Dan Martell",
+      "subscribers": 2830000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UC3iyLcDyYxk2nN7M5DsYaYQ": {
+      "title": "Daniel | Tech & Data",
+      "subscribers": 546000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UC6biysICWOJ-C3P4Tyeggzg": {
+      "title": "Low Level",
+      "subscribers": 1130000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCsT0YIqwnpJCM-mx7-gSA4Q": {
+      "title": "TEDx Talks",
+      "subscribers": 44400000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCHIbErciyS3Hs0kjAz-at5Q": {
+      "title": "Technical Suneja",
+      "subscribers": 609000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00",
+      "last_seen_at": "2026-06-19T13:23:06.432786+00:00",
+      "recent_uploads_90d": 50
+    },
+    "UC2UXDak6o7rBm23k3Vv5dww": {
+      "title": "Tina Huang",
+      "subscribers": 1240000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00",
+      "last_seen_at": "2026-06-19T13:23:05.882101+00:00",
+      "recent_uploads_90d": 28
+    },
+    "UCJihyK0A38SZ6SdJirEdIOw": {
+      "title": "Gate Smashers",
+      "subscribers": 2750000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00",
+      "last_seen_at": "2026-06-19T13:23:12.915376+00:00",
+      "recent_uploads_90d": 50
+    },
+    "UCdBK94H6oZT2Q7l0-b0xmMg": {
+      "title": "ShortCircuit",
+      "subscribers": 2530000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UChRlaISXbl2gECFAmDzxgzg": {
+      "title": "Westen Champlin",
+      "subscribers": 5410000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCeVMnSShP_Iviwkknt83cww": {
+      "title": "CodeWithHarry",
+      "subscribers": 9750000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCpLKqC4BVf57nLX6ew7Omxw": {
+      "title": "DOTNET Institute",
+      "subscribers": 873000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UC8butISFwT-Wl7EV0hUK0BQ": {
+      "title": "freeCodeCamp.org",
+      "subscribers": 11700000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UC_x5XG1OV2P6uZZ5FSM9Ttw": {
+      "title": "Google for Developers",
+      "subscribers": 2660000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCakIVH4t7k4vZe1AWPpewgA": {
+      "title": "Tommy G",
+      "subscribers": 3530000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCWsEZ9v1KC8b5VYjYbEewJA": {
+      "title": "Nick Ackerman",
+      "subscribers": 894000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00",
+      "last_seen_at": "2026-06-19T13:23:08.255006+00:00",
+      "recent_uploads_90d": 50
+    },
+    "UCGznz4NfW5iymkvn1l40qyA": {
+      "title": "Simon Squibb",
+      "subscribers": 2390000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UC7Jwj9fkrf1adN4fMmTkpug": {
+      "title": "DankPods",
+      "subscribers": 1840000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCwVBLXAj0pfOb3df21bBtyQ": {
+      "title": "Explore with Epaphra",
+      "subscribers": 855000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UC6mIxFTvXkWQVEHPsEdflzQ": {
+      "title": "GreatScott!",
+      "subscribers": 2150000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCVyRiMvfUNMA1UPlDPzG5Ow": {
+      "title": "DesignCourse",
+      "subscribers": 1180000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCyHta2dyCTkf29AB67AYn7A": {
+      "title": "5 Minutes Engineering",
+      "subscribers": 854000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCwAnu01qlnVg1Ai2AbtTMaA": {
+      "title": "Jeff Su",
+      "subscribers": 1780000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCtKkRBqgP0i23H6zd0knbyw": {
+      "title": "90s Mentor",
+      "subscribers": 991000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    },
+    "UCSOpcUkE-is7u7c4AkLgqTw": {
+      "title": "MrMobile [Michael Fisher]",
+      "subscribers": 1280000,
+      "seed_score": 6.0,
+      "added_at": "2026-06-19T13:05:10.323775+00:00"
+    }
+  },
+  "last_updated": "2026-06-19T13:23:14.827301+00:00",
+  "total_channels": 100
+}

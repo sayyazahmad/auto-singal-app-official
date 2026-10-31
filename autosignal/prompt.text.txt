@@ -1,0 +1,34 @@
+Your goal is to make this product as close to an exceptional MVP as the current architecture allows.
+
+First, understand the entire system, its purpose, users, and expected outputs.
+
+Then:
+
+* Identify every weakness affecting product quality
+* Fix all reasonable issues in the pipeline
+* Improve data flow, clustering, semantic analysis, scoring, and output quality
+* Remove noise, weak signals, duplicates, and low-value results
+* Strengthen opportunity discovery and ranking logic
+* Ensure every stage contributes meaningful value to the final output
+* Verify all modules and JSON outputs remain fully compatible
+
+Do not make changes just to improve code quality metrics. Prioritize improvements that make the final product more useful, accurate, and valuable for users.
+
+After implementing improvements:
+
+1. Re-audit the entire project
+2. Validate every pipeline stage end-to-end
+3. Analyze the final JSON outputs
+4. Identify any remaining weaknesses
+5. Explain what would still prevent this from being a world-class MVP
+
+Finally provide:
+
+* Overall product rating (/10)
+* MVP readiness rating (/10)
+* Confidence in output quality (/10)
+* Top remaining risks
+* Whether you would personally ship this MVP to early users
+
+Be highly critical, evidence-based, and focused on product outcomes rather than code aesthetics.
+

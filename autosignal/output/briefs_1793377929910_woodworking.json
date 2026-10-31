@@ -1,0 +1,60 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_wood_mvv6wywl",
+      "generated_at": "2026-10-30T16:32:09.910Z",
+      "ai_powered": true,
+      "model": "gemini-2.5-flash",
+      "topic": "Japanese Pull Saw Flush Cutting Secret",
+      "niche": "woodworking",
+      "target_angle": "Mastering the elusive perfectly flush cut using a Japanese pull saw, without damage or frustration.",
+      "titles": {
+        "title_1_search_match": "Japanese Pull Saw Flush Cut: Master Seamless Woodworking Joints",
+        "title_2_curiosity": "STOP damaging your projects: The *REAL* Japanese Pull Saw Secret",
+        "title_3_value": "10-Minute Flush Cuts: Master Your Japanese Pull Saw for Flawless Finish",
+        "recommended_title": "title_2_curiosity",
+        "reason": "Channels in this sub-tier benefit greatly from curiosity-driven titles. The 'STOP damaging...' hook creates immediate relevance and problem-solving intrigue, while 'The *REAL* Japanese Pull Saw Secret' promises exclusive, high-value information, maximizing CTR over purely informational or benefit-driven alternatives."
+      },
+      "hook_script": "Ever finished a project, only to discover an unsightly bump or scratch from a 'flush' cut that wasn't quite flush? It's frustrating, and often, we blame the saw. But what if I told you the problem isn't your Japanese pull saw, but a simple secret technique that guarantees perfectly smooth, damage-free flush cuts every single time? Stay tuned, because I’m about to reveal it.",
+      "thumbnail_direction": {
+        "primary_image": "Extreme close-up on a perfectly flush-cut wooden dowel or tenon, showcasing a flawless surface with no protrusion or damage. In the background, slightly out of focus, is the blade of a Japanese pull saw, positioned as if just finishing the cut. A hand (creator's) can be subtly seen guiding the saw or pointing to the perfect cut.",
+        "text_overlay": "FLUSH CUT SECRET",
+        "color_signal": "Electric neon green (highlighting 'SECRET') or sharp contrasting yellow against natural wood tones.",
+        "focal_point": "The impeccably smooth, flush-cut surface."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00 - 0:30",
+          "beat": "Hook & False Assumptions",
+          "action": "Visually demonstrate a flawed flush cut, showing common tear-out or proud edges, and highlight the misconception that simply pushing harder or using a different blade will fix it."
+        },
+        {
+          "time": "0:30 - 2:30",
+          "beat": "Setup & Essential Principles",
+          "action": "Break down the core principles of pull saw flush cutting: the pull stroke advantage, blade flexibility, and the importance of a sacrificial guide. Show minimal setup."
+        },
+        {
+          "time": "2:30 - 5:30",
+          "beat": "Step-by-Step Isolation: The Secret Technique",
+          "action": "Systematically walk through the precise hand position, angle of attack, starting the cut, and maintaining even pressure. Use slow-motion and multiple angles for clarity on different applications (dowels, tenons, trim)."
+        },
+        {
+          "time": "5:30 - 7:30",
+          "beat": "The Breakthrough Fix: Applying the Secret",
+          "action": "Demonstrate the 'secret' on a real project or complex joint, showing the immediate and perfect result. Compare visually to previous attempts or common failures."
+        },
+        {
+          "time": "7:30 - 8:30",
+          "beat": "Retention Payoff & Pro Tip",
+          "action": "Offer advanced tips for different wood types or challenging cuts. Emphasize practice and how this skill elevates all woodworking projects. Conclude with a clear call to action."
+        }
+      ],
+      "production_checklist": [
+        "Clean, even lighting on the saw blade and wood surface, ensuring no distracting shadows.",
+        "Extreme close-up B-roll on the saw teeth making contact, the wood grain, and the resultant flush surface.",
+        "On-screen graphic overlays summarizing each technique step or key principle (e.g., 'Step 1: The Feather Touch Start').",
+        "Subtle audio cue (e.g., a short musical flourish or sound effect) at 2:30 marking the start of the 'Secret Technique' reveal."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "channels": [
+    {
+      "channel_title": "CodeCraft Studio",
+      "channel_id": "UC_technology_40572",
+      "subscriber_count": 34000,
+      "avg_views_per_video": 18000,
+      "outlier_hit_rate": 0.52,
+      "status": "validated_seed",
+      "niche": "technology"
+    },
+    {
+      "channel_title": "The Pragmatic Dev",
+      "channel_id": "UC_technology_18151",
+      "subscriber_count": 62000,
+      "avg_views_per_video": 31000,
+      "outlier_hit_rate": 0.55,
+      "status": "validated_seed",
+      "niche": "technology"
+    },
+    {
+      "channel_title": "LocalAI Lab",
+      "channel_id": "UC_technology_8670",
+      "subscriber_count": 11500,
+      "avg_views_per_video": 5900,
+      "outlier_hit_rate": 0.56,
+      "status": "validated_seed",
+      "niche": "technology"
+    },
+    {
+      "channel_title": "DevOps Simplified",
+      "channel_id": "UC_technology_53194",
+      "subscriber_count": 45000,
+      "avg_views_per_video": 22000,
+      "outlier_hit_rate": 0.62,
+      "status": "validated_seed",
+      "niche": "technology"
+    },
+    {
+      "channel_title": "Weekend Automator",
+      "channel_id": "UC_technology_66841",
+      "subscriber_count": 9200,
+      "avg_views_per_video": 4100,
+      "outlier_hit_rate": 0.57,
+      "status": "validated_seed",
+      "niche": "technology"
+    },
+    {
+      "channel_title": "Junior to Lead",
+      "channel_id": "UC_technology_20015",
+      "subscriber_count": 81000,
+      "avg_views_per_video": 39000,
+      "outlier_hit_rate": 0.55,
+      "status": "validated_seed",
+      "niche": "technology"
+    },
+    {
+      "channel_title": "FullStack Daily",
+      "channel_id": "UC_technology_26919",
+      "subscriber_count": 26000,
+      "avg_views_per_video": 13000,
+      "outlier_hit_rate": 0.62,
+      "status": "validated_seed",
+      "niche": "technology"
+    },
+    {
+      "channel_title": "Terminal & Cloud",
+      "channel_id": "UC_technology_33278",
+      "subscriber_count": 54000,
+      "avg_views_per_video": 26000,
+      "outlier_hit_rate": 0.39,
+      "status": "validated_seed",
+      "niche": "technology"
+    }
+  ],
+  "total": 8
+}
