@@ -1,0 +1,97 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwui9o9",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:20:20.985Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Repairing Deep Car Scratches Without Repainting",
+      "target_angle": "Focus on the 'DIY vs. Professional' tension by demonstrating a specific, low-cost kit that works where others fail, emphasizing the 'no-paint' claim.",
+      "why_it_works": "The data shows that 'no-paint' repair videos like NyCuErGd8Jw are massive outliers (53.8x performance) because they solve a high-anxiety, expensive problem without requiring professional tools. Small channels like ABD Automotive (khmI47_CPuU) prove that even with a smaller base, focusing on a specific, cheap, and high-impact repair (4.5x ratio) builds immediate trust and authority.",
+      "pattern_insights": [
+        "High-stakes outcomes: The promise of avoiding expensive shop visits or 'panel replacement' is the primary driver of click-through.",
+        "Visual transformation: Successful videos focus on the 'before vs. after' shift, particularly in clear coat or deep scratch repair.",
+        "Low-cost intervention: Emphasizing a repair done for under $50 attracts viewers who are currently priced out of professional body shops.",
+        "Process transparency: Viewers prefer 'POV' or direct instructional styles that show the exact technique rather than just the final result."
+      ],
+      "source_video_ids": [
+        "NyCuErGd8Jw",
+        "jeWcg75O2eU",
+        "khmI47_CPuU"
+      ],
+      "titles": {
+        "title_1_search_match": "How to fix deep car scratches without painting",
+        "title_2_curiosity": "Is this $20 scratch kit actually legit?",
+        "title_3_value": "Deep scratch repair: Stop paying for body shops",
+        "recommended_title": "title_2_curiosity",
+        "reason": "It addresses the skepticism viewers have regarding DIY products, which is a powerful hook for a smaller creator building credibility."
+      },
+      "hook_script": "Most people think a deep scratch like this means a trip to the body shop and a four-figure bill. But what if you could actually fix it yourself, in your driveway, without a single drop of paint? I bought this $20 kit to see if it’s a total scam or if it’s the secret to a perfect finish. Let's find out.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen: Close-up of a deep, white scratch on a dark car vs. the same panel looking completely smooth.",
+        "text_overlay": "No Paint Needed",
+        "color_signal": "High contrast yellow arrow pointing to the scratch.",
+        "focal_point": "The transition point where the scratch is being filled/buffed."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:30",
+          "beat": "The Problem",
+          "action": "Show the scratch under bright light, explain why it's deep (catching the fingernail test), and show a quote from a shop."
+        },
+        {
+          "time": "0:30-2:30",
+          "beat": "The Method",
+          "action": "Explain the science of clear coat repair without paint, showing the specific product being used."
+        },
+        {
+          "time": "2:30-8:00",
+          "beat": "The Process",
+          "action": "Step-by-step application in real-time. Focus on the 'satisfying' moments of buffing and leveling."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Reveal",
+          "action": "Final wipe down, light reflection test, and honest verdict on cost vs. professional results."
+        }
+      ],
+      "production_checklist": [
+        "Test the scratch with a fingernail to prove depth.",
+        "Use a clean microfiber cloth for the final reveal to ensure no streaks.",
+        "Include a 'cost-per-repair' breakdown graphic.",
+        "Ensure high-quality lighting on the scratch before and after."
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Repairing Deep Car Scratches Without Repainting",
+        "topic": "Repairing Deep Car Scratches Without Repainting",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 7,
+        "avg_vph": 359,
+        "outperformance_multiplier": "38.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "Focus on the 'DIY vs. Professional' tension by demonstrating a specific, low-cost kit that works where others fail, emphasizing the 'no-paint' claim.",
+        "sample_titles": [
+          "How To Fix Clear Coat Peel Without Respraying",
+          "How To Repair Deep Car Scratches Without Repainting",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

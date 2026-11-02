@@ -1,0 +1,97 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwul0zo",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:22:29.700Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Fixing common paint damage without professional equipment",
+      "target_angle": "Focus on low-cost, household chemical solutions that avoid expensive body shop painting, positioning it as a 'hack' rather than a traditional repair.",
+      "why_it_works": "The data shows that CVR POV's videos on fixing clear coat and deep scratches achieved massive 50x+ outperformance ratios by promising professional results without professional tools. By focusing on a specific, high-frustration cosmetic issue, a smaller channel can capture high search intent and satisfy the audience's desire for budget-friendly alternatives to dealer repairs.",
+      "pattern_insights": [
+        "High-performing videos focus on cosmetic 'resurrection' of cars rather than complex mechanical engine work.",
+        "The 'Without Repainting' or 'Without Respraying' framing is a massive hook because it removes the barrier of expensive equipment.",
+        "Small channel ABD Automotive proves that 'low-cost fix' ($38) titles attract high engagement despite lower baseline views.",
+        "Viewers prioritize 'repairing' over 'replacing' to avoid high dealership costs, as seen in the BIC Channel performance."
+      ],
+      "source_video_ids": [
+        "jeWcg75O2eU",
+        "NyCuErGd8Jw",
+        "khmI47_CPuU"
+      ],
+      "titles": {
+        "title_1_search_match": "How to fix paint chips without a respray",
+        "title_2_curiosity": "Stop paying body shops: DIY paint scratch fix",
+        "title_3_value": "Fix deep car scratches for under $20",
+        "recommended_title": "title_3_value",
+        "reason": "It combines the high-performing 'low cost' angle from ABD Automotive with the specific 'scratch repair' promise that drove 50x outperformance for CVR POV."
+      },
+      "hook_script": "Most people think a deep scratch like this means a trip to the body shop and a massive bill. But today, I’m going to show you how to pull this off your paint for less than twenty bucks, using stuff you probably already have in your garage. No spray guns, no professional experience, just a clean finish.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen: deep scratch on left, perfectly smooth surface on right.",
+        "text_overlay": "Fixed for $20",
+        "color_signal": "High contrast, bright red arrow pointing to the scratch.",
+        "focal_point": "The transition line between the damaged and repaired paint."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:30",
+          "beat": "The Stakes",
+          "action": "Show the damage close up, state the cost of a professional repair, and introduce the DIY solution."
+        },
+        {
+          "time": "0:30-3:00",
+          "beat": "The Method",
+          "action": "Walk through the cleaning and prep process; emphasize 'no sanding' or 'no spray' if applicable."
+        },
+        {
+          "time": "3:00-8:00",
+          "beat": "The Execution",
+          "action": "Show the process in real-time, focusing on the technique rather than just the materials."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Reveal",
+          "action": "Final wipe down, show it under natural sunlight to prove no haze or uneven texture."
+        }
+      ],
+      "production_checklist": [
+        "Clean the area thoroughly to ensure no dirt is trapped in the repair.",
+        "Use a high-quality macro lens for the 'before' and 'after' shots.",
+        "Film in direct sunlight to show the repair actually holds up, not just under garage lights.",
+        "Include a price list breakdown on screen for the materials used."
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Fixing common paint damage without professional equipment",
+        "topic": "Fixing common paint damage without professional equipment",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 7,
+        "avg_vph": 359,
+        "outperformance_multiplier": "38.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "Focus on low-cost, household chemical solutions that avoid expensive body shop painting, positioning it as a 'hack' rather than a traditional repair.",
+        "sample_titles": [
+          "How To Fix Clear Coat Peel Without Respraying",
+          "How To Repair Deep Car Scratches Without Repainting",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

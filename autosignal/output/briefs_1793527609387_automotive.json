@@ -1,0 +1,95 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvxo14bu",
+      "niche": "automotive",
+      "generated_at": "2026-11-01T10:06:49.386Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Fixing Major Engine Issues Extremely Cheaply",
+      "target_angle": "The 'Impossible' Fix: Using non-automotive household tools to solve a catastrophic engine failure that shops claim requires a full rebuild.",
+      "why_it_works": "Outliers like ABD Automotive's $38 engine blowby fix prove that viewers prioritize low-cost, high-impact results over professional shop standards. By focusing on a specific dollar amount and a 'doomed' engine state, you mirror the high-engagement pattern of fixing things that experts say are unfixable, which drives high click-through rates.",
+      "pattern_insights": [
+        "Specific low-cost dollar amounts in titles act as a powerful anchor for value-seeking viewers.",
+        "The 'repair vs. replace' dichotomy performs best when you challenge a professional mechanic's 'totaled' diagnosis.",
+        "Focusing on a single, relatable vehicle issue creates a clear narrative arc that outperforms generic repair videos.",
+        "Visualizing the 'before' state of a catastrophic failure is essential for high retention."
+      ],
+      "source_video_ids": [
+        "khmI47_CPuU",
+        "Dnfqj2YbEVM"
+      ],
+      "titles": {
+        "title_1_search_match": "How to Fix Blown Head Gasket Symptoms for Under $50",
+        "title_2_curiosity": "My Engine Was Done For, So I Used This $20 Trick",
+        "title_3_value": "Stop Engine Overheating: A Permanent $30 DIY Engine Fix",
+        "recommended_title": "title_2_curiosity",
+        "reason": "This title creates a strong curiosity gap while promising a low-cost solution, mirroring the successful packaging of the ABD Automotive engine fix."
+      },
+      "hook_script": "Every mechanic I talked to told me this engine was absolute trash—a total loss. They wanted two thousand dollars just to pull the head off, but I think I found a way to bypass the problem entirely using stuff I already had in my garage. If this works, we just saved a car from the scrap heap for less than twenty bucks.",
+      "thumbnail_direction": {
+        "primary_image": "Close-up of a greasy, disassembled engine part next to a common household tool used in an unconventional way.",
+        "text_overlay": "$20 ENGINE FIX",
+        "color_signal": "High-contrast yellow text on a dark, oily engine background.",
+        "focal_point": "The contrast between the broken component and the cheap repair tool."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:20",
+          "beat": "The Hook",
+          "action": "Show the car failing, the mechanic's quote, and the $20 solution."
+        },
+        {
+          "time": "0:20-2:00",
+          "beat": "The Diagnosis",
+          "action": "Explain the major issue clearly using simple visuals."
+        },
+        {
+          "time": "2:00-8:00",
+          "beat": "The Process",
+          "action": "Step-by-step repair, highlighting the cheap method vs. the expensive professional way."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Result",
+          "action": "Start the engine, show it running smoothly, and recap the cost savings."
+        }
+      ],
+      "production_checklist": [
+        "Capture high-quality audio of the engine starting to show the 'before' issue.",
+        "Record a clear shot of the receipt or the items purchased to validate the price.",
+        "Ensure good lighting on the specific engine component being repaired.",
+        "Include a 'professional' quote/estimate on screen to heighten the stakes."
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Fixing Major Engine Issues Extremely Cheaply",
+        "topic": "Fixing Major Engine Issues Extremely Cheaply",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 6.2,
+        "video_count": 7,
+        "avg_vph": 1106,
+        "outperformance_multiplier": "6.2x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "The 'Impossible' Fix: Using non-automotive household tools to solve a catastrophic engine failure that shops claim requires a full rebuild.",
+        "sample_titles": [
+          "ディーラー修理拒否。「パネル交換しかない」と言われたバイクが刺さった穴を、修復歴なしで直す限界の板金修理【新型ジムニー 第1話】",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

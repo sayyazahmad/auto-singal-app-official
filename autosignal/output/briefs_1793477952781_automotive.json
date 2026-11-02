@@ -1,0 +1,97 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwugt1n",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:19:12.779Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "DIY Cosmetic Car Body Repair Hacks",
+      "target_angle": "Focusing on low-cost, non-professional techniques for common aesthetic damage that shops refuse to fix or overcharge for.",
+      "why_it_works": "The data shows that 'CVR POV' (55.8x and 53.8x ratios) dominates by solving specific cosmetic issues without professional painting. Small channels like 'ABD Automotive' (4.5x ratio) succeed by framing repairs around a low dollar amount, proving that viewers prioritize 'accessible' fixes over complex mechanical overhauls.",
+      "pattern_insights": [
+        "High outperformance is tied to 'Fixing without X' phrasing (e.g., without respraying, without repainting).",
+        "Specific, localized damage (scratches, clear coat, holes) performs better than general engine work.",
+        "Low-cost repair promises (e.g., $38 engine fix) drive high click-through rates.",
+        "The 'repairing what shops refuse' angle creates high emotional stakes and curiosity."
+      ],
+      "source_video_ids": [
+        "jeWcg75O2eU",
+        "NyCuErGd8Jw",
+        "khmI47_CPuU"
+      ],
+      "titles": {
+        "title_1_search_match": "How to Fix Deep Paint Scratches at Home",
+        "title_2_curiosity": "Stop Paying for Body Shop Paint Repairs",
+        "title_3_value": "Fixing Ugly Paint Damage for Under $20",
+        "recommended_title": "title_3_value",
+        "reason": "It combines the high-performing 'low cost' angle from ABD Automotive with the 'cosmetic fix' topic that drove the CVR POV viral hits."
+      },
+      "hook_script": "Most people think a deep scratch or peeling clear coat means a thousand-dollar trip to the body shop. But I’m going to show you how I fixed this exact eyesore in my driveway for less than twenty bucks, using stuff you can find at any auto parts store. No professional tools, no spray booth, and honestly, the results are way better than I expected.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen showing a nasty scratch or peeling clear coat on the left and a clean, polished surface on the right.",
+        "text_overlay": "Body Shop HATES This",
+        "color_signal": "High contrast red arrow pointing to the repair site.",
+        "focal_point": "The transition line between the damaged area and the finished repair."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:20",
+          "beat": "The Hook",
+          "action": "Show the damage close-up, state the low cost, and show the 'after' result immediately."
+        },
+        {
+          "time": "0:20-2:00",
+          "beat": "The Problem",
+          "action": "Briefly explain why body shops charge so much and why this DIY method is a legitimate alternative."
+        },
+        {
+          "time": "2:00-8:00",
+          "beat": "The Process",
+          "action": "Step-by-step walkthrough of the cleaning, sanding, and application process with clear audio."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Reveal",
+          "action": "Final buffing and outcome reveal in natural sunlight to prove the repair quality."
+        }
+      ],
+      "production_checklist": [
+        "Macro lens shots of the damage before and after.",
+        "Itemized list of materials with exact prices shown on screen.",
+        "Natural light for final reveal shots to avoid 'hiding' the repair.",
+        "Clear, narrated steps explaining the 'why' behind each sanding or application stage."
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "DIY Cosmetic Car Body Repair Hacks",
+        "topic": "DIY Cosmetic Car Body Repair Hacks",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 7,
+        "avg_vph": 359,
+        "outperformance_multiplier": "38.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "Focusing on low-cost, non-professional techniques for common aesthetic damage that shops refuse to fix or overcharge for.",
+        "sample_titles": [
+          "How To Fix Clear Coat Peel Without Respraying",
+          "How To Repair Deep Car Scratches Without Repainting",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

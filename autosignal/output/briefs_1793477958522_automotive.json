@@ -1,0 +1,60 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_auto_mvwugxh6",
+      "generated_at": "2026-10-31T20:19:18.522Z",
+      "ai_powered": true,
+      "model": "gemini-3.1-flash-lite",
+      "topic": "DIY Cosmetic Car Body Repair Hacks",
+      "niche": "automotive",
+      "target_angle": "Focusing on low-cost, non-professional techniques for common aesthetic damage that shops refuse to fix or overcharge for.",
+      "titles": {
+        "title_1_search_match": "How to Fix Scratches and Dents at Home: Cheap DIY Body Repair",
+        "title_2_curiosity": "Stop Paying $500 for a $5 Car Scratch",
+        "title_3_value": "Save Thousands: Professional Auto Body Hacks for Under $20",
+        "recommended_title": "title_2_curiosity",
+        "reason": "For channels under 50k subs, curiosity-driven titles paired with 'us vs. them' sentiment (the shop vs. the viewer) generate significantly higher click-through rates by tapping into the viewer's desire to outsmart high-cost service providers."
+      },
+      "hook_script": "Most body shops will charge you five hundred dollars just to look at this scratch, and honestly? They’re betting on the fact that you think this is a professional-only job. It’s not. In the next eight minutes, I’m going to show you how to erase this damage using stuff you already have in your garage, and it’s going to cost you less than a lunch break.",
+      "thumbnail_direction": {
+        "primary_image": "Split-screen close-up: Left side shows a jagged, white-scrape dent on a dark-colored car door; right side shows the same area perfectly buffed and shiny. Hand holding a basic microfiber cloth in the frame.",
+        "text_overlay": "NEVER PAY SHOPS",
+        "color_signal": "High-contrast yellow text with a black drop shadow against a deep metallic car paint background to signal urgency and authority.",
+        "focal_point": "The transition point between the damaged paint and the restored, glossy finish."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00 - 0:30",
+          "beat": "Hook & False Assumptions",
+          "action": "Demonstrate the core symptom and debunk the #1 rookie mistake"
+        },
+        {
+          "time": "0:30 - 2:30",
+          "beat": "Setup & Equipment Test",
+          "action": "Show minimal tools required and baseline reading"
+        },
+        {
+          "time": "2:30 - 5:30",
+          "beat": "Step-by-Step Isolation",
+          "action": "Walk through systematic diagnosis with clear visual proof"
+        },
+        {
+          "time": "5:30 - 7:30",
+          "beat": "The Breakthrough Fix",
+          "action": "Implement the solution with side-by-side verification"
+        },
+        {
+          "time": "7:30 - 8:30",
+          "beat": "Retention Payoff & Pro Tip",
+          "action": "Long-term prevention advice and call-to-action"
+        }
+      ],
+      "production_checklist": [
+        "Clean high-contrast lighting on key focal object",
+        "B-roll close-ups on gauge/screen/action",
+        "On-screen graphic overlay of key metrics",
+        "Pacing reset audio chime at minute 2:30"
+      ]
+    }
+  ]
+}

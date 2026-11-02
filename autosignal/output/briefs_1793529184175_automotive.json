@@ -1,0 +1,102 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvxoyvfx",
+      "niche": "automotive",
+      "generated_at": "2026-11-01T10:33:04.173Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Fixing Major Engine Blow-by for Under $50",
+      "target_angle": "Focus on the specific, low-cost diagnostic process rather than just the repair, highlighting a 'hidden' engine failure point that mechanics ignore.",
+      "why_it_works": "Outliers like 'Fixing Major Engine BlowBy on a Ford Ranger for $38' prove that viewers prioritize low-cost, high-impact fixes over expensive shop repairs. By focusing on a specific dollar amount and a common, intimidating engine problem, a smaller channel can leverage the high search intent for 'DIY engine diagnostics' to outperform their current view baseline.",
+      "pattern_insights": [
+        "Specific budget constraints (e.g., $38) turn an intimidating repair into an accessible challenge.",
+        "High-performing videos focus on correcting 'dealer-rejected' or 'failed' repairs, building authority through problem-solving.",
+        "The 'repair without replacing' hook is consistently effective, as seen in the clear coat and scratch repair outliers.",
+        "Transformation-heavy content that solves an expensive problem cheaply is the most reliable path to high view-to-subscriber ratios."
+      ],
+      "source_video_ids": [
+        "khmI47_CPuU",
+        "jeWcg75O2eU",
+        "NyCuErGd8Jw"
+      ],
+      "titles": {
+        "title_1_search_match": "How to Fix Engine Blow-by Without an Overhaul",
+        "title_2_curiosity": "I Fixed My Engine's Worst Problem for $40",
+        "title_3_value": "Stop Burning Oil: Cheap Engine Blow-by Fix",
+        "recommended_title": "title_2_curiosity",
+        "reason": "It creates a direct curiosity gap regarding the '$40' figure, which matches the successful framing of the Ford Ranger repair video while promising a high-value solution."
+      },
+      "hook_script": "Most mechanics tell you that blow-by means your engine is toast and you need a full rebuild. I was told that too, but I wasn't ready to drop thousands on a repair. I found a way to fix the pressure issue in my driveway using just forty dollars worth of parts. Here is exactly how I diagnosed the root cause and handled the repair myself.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen: Close-up of a dirty, oily engine part vs. a clean, reinstalled version",
+        "text_overlay": "$40 Engine Fix",
+        "color_signal": "High contrast with a bright red arrow pointing to the specific faulty component",
+        "focal_point": "The oily, damaged engine component held in hand"
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:30",
+          "beat": "The Hook",
+          "action": "State the expensive diagnosis given by a shop and show the car running poorly to prove the problem."
+        },
+        {
+          "time": "0:30-2:00",
+          "beat": "The Diagnostic",
+          "action": "Quickly demonstrate the blow-by test so the viewer can replicate it at home."
+        },
+        {
+          "time": "2:00-6:00",
+          "beat": "The Solution",
+          "action": "Step-by-step installation of the low-cost parts; emphasize the simplicity."
+        },
+        {
+          "time": "6:00-8:00",
+          "beat": "The Proof",
+          "action": "Cold start and idle test to show the immediate improvement."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "Conclusion",
+          "action": "Breakdown of the $40 cost versus shop quote and final thoughts on long-term reliability."
+        }
+      ],
+      "production_checklist": [
+        "Capture clear audio of the engine idle before and after the fix",
+        "Use a macro lens to show the wear on the old part",
+        "Include a 'what you need' list on screen to increase saved-video value",
+        "Keep the repair steps under 10 minutes to maintain high retention"
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Fixing Major Engine Blow-by for Under $50",
+        "topic": "Fixing Major Engine Blow-by for Under $50",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 7,
+        "avg_vph": 359,
+        "outperformance_multiplier": "38.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "Focus on the specific, low-cost diagnostic process rather than just the repair, highlighting a 'hidden' engine failure point that mechanics ignore.",
+        "sample_titles": [
+          "How To Fix Clear Coat Peel Without Respraying",
+          "How To Repair Deep Car Scratches Without Repainting",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

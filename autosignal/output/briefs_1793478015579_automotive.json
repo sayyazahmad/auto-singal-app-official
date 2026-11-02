@@ -1,0 +1,97 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwui5i2",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:20:15.578Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Repairing deep car scratches without painting",
+      "target_angle": "Focus on a specific 'budget hack' material that avoids professional body shop prices entirely.",
+      "why_it_works": "The data shows a massive 55.8x and 53.8x outperformance when creators solve cosmetic exterior damage without professional equipment. By focusing on a low-cost, high-impact DIY fix, a smaller channel can capture the same search-driven intent that propelled CVR POV to over 200k views.",
+      "pattern_insights": [
+        "High outperformance is tied to 'Zero-Repaint' cosmetic repairs.",
+        "Low-cost solutions ($38 engine fix) perform well for smaller channels.",
+        "Specific, tangible 'Before and After' promise drives high CTR.",
+        "The 'DIY vs. Professional' narrative creates instant curiosity."
+      ],
+      "source_video_ids": [
+        "jeWcg75O2eU",
+        "NyCuErGd8Jw",
+        "khmI47_CPuU"
+      ],
+      "titles": {
+        "title_1_search_match": "How to repair deep car scratches yourself",
+        "title_2_curiosity": "Stop paying for body shops: deep scratch fix",
+        "title_3_value": "Remove deep car scratches for under $20",
+        "recommended_title": "title_3_value",
+        "reason": "This title combines the high-performing 'DIY' promise with a specific, low-cost budget anchor that proved effective in the ABD Automotive outlier."
+      },
+      "hook_script": "Most people think a deep scratch like this means a trip to the body shop and a massive bill. But I’m going to show you how to pull this off in your driveway with stuff you can pick up for less than twenty bucks. We aren't doing a 'cover-up' job; we are actually fixing the clear coat and color layer so it disappears completely.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen showing a deep white scratch on a dark car vs. the same panel looking brand new.",
+        "text_overlay": "Fixed for $20",
+        "color_signal": "High contrast red arrow pointing to the scratch.",
+        "focal_point": "The transition point where the scratch meets the buffed surface."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:20",
+          "beat": "The Hook",
+          "action": "Show the damage, state the cost, and promise a permanent fix."
+        },
+        {
+          "time": "0:20-2:00",
+          "beat": "The Assessment",
+          "action": "Explain why this scratch is deep and why standard polish won't work."
+        },
+        {
+          "time": "2:00-8:00",
+          "beat": "The Process",
+          "action": "Step-by-step application of the budget-friendly filler and clear coat."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Reveal",
+          "action": "Show the final buffing process and the 'sunlight test' to prove it's gone."
+        }
+      ],
+      "production_checklist": [
+        "Macro lens shots of the scratch before and after",
+        "Receipt or price tags for the products used",
+        "Sunlight/Direct light footage for the final reveal",
+        "Clear, narrated steps on sanding/buffing technique"
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Repairing deep car scratches without painting",
+        "topic": "Repairing deep car scratches without painting",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 7,
+        "avg_vph": 359,
+        "outperformance_multiplier": "38.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "Focus on a specific 'budget hack' material that avoids professional body shop prices entirely.",
+        "sample_titles": [
+          "How To Fix Clear Coat Peel Without Respraying",
+          "How To Repair Deep Car Scratches Without Repainting",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

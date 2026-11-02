@@ -1,0 +1,73 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwueljd",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:17:29.737Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Repairing Major Engine Issues Cheaply",
+      "target_angle": "Focus on the 'High-Value Fix for Low Cost' narrative using a common daily driver vehicle",
+      "why_it_works": "The data shows that 'Fixing Major Engine BlowBy on a Ford Ranger for $38' (4.5x ratio) significantly outperforms channels with similar subscriber counts when the cost-to-repair is explicitly low. Small channels win by proving that high-ticket engine issues don't always require professional shop rates, which builds immediate trust and authority.",
+      "pattern_insights": [
+        "Explicitly mentioning a low, specific dollar amount for a major repair in the title",
+        "Focusing on 'Fixing' rather than 'Maintaining' to target acute viewer pain points",
+        "High-contrast 'Before/After' visual storytelling of a complex mechanical failure",
+        "Addressing specific vehicle models to capture high-intent search traffic"
+      ],
+      "source_video_ids": [
+        "khmI47_CPuU"
+      ],
+      "titles": {
+        "title_1_search_match": "Fixing Major Engine Misfire for Under $50",
+        "title_2_curiosity": "Is This $40 Fix Better Than A Shop?",
+        "title_3_value": "Stop Paying For Engine Repairs: $40 DIY Fix",
+        "recommended_title": "title_1_search_match",
+        "reason": "It clearly communicates the problem (engine misfire) and the solution (a sub-$50 fix), which directly mirrors the successful packaging of the Ford Ranger video."
+      },
+      "hook_script": "Most shops told me this engine was toast and quoted me two thousand dollars for the repair. But after spending just forty dollars and about an hour in my driveway, I got it running perfectly again. Here is exactly how I diagnosed the issue and how you can do the same thing without a professional garage.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen showing a dirty, disassembled engine part next to a clean, installed replacement part",
+        "text_overlay": "$40 Engine Fix",
+        "color_signal": "High contrast red arrow pointing to the faulty component",
+        "focal_point": "The specific broken part being held in hand"
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:20",
+          "beat": "The Hook",
+          "action": "State the high shop quote vs your low cost, show the engine running rough."
+        },
+        {
+          "time": "0:20-2:00",
+          "beat": "The Diagnosis",
+          "action": "Walk through the symptoms and the specific tools used to identify the failure."
+        },
+        {
+          "time": "2:00-8:00",
+          "beat": "The Repair",
+          "action": "Step-by-step assembly/disassembly, highlighting the specific $40 part."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Result",
+          "action": "Start the engine, demonstrate the fix, and provide a final cost breakdown."
+        }
+      ],
+      "production_checklist": [
+        "Film in high-contrast lighting to show engine detail",
+        "Keep receipts visible to prove the $40 cost",
+        "Use a top-down camera angle for the repair process",
+        "Clearly label every bolt and part removed for viewer clarity"
+      ]
+    }
+  ]
+}

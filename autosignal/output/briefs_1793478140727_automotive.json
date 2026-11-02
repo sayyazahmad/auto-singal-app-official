@@ -1,0 +1,98 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwuku2c",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:22:20.724Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Fixing Deep Car Scratches Without Repainting",
+      "target_angle": "The 'Impossible' Scratch: Combining professional-grade buffing techniques with household filler hacks to save a 'totaled' panel.",
+      "why_it_works": "The data shows that 'How To Repair Deep Car Scratches Without Repainting' by CVR POV achieved a 53.8x view ratio, proving that viewers are hyper-focused on low-cost, high-impact DIY fixes. By focusing on a 'totaled' panel rather than just a minor scratch, you tap into the high-engagement 'transformation' narrative seen in successful videos like those from Arthur Tussik, while keeping the accessibility of a small-channel budget.",
+      "pattern_insights": [
+        "High-contrast transformation: The most successful videos prioritize a 'before vs. after' reveal that feels impossible to achieve at home.",
+        "Cost-effective problem solving: Outliers like ABD Automotive's $38 engine fix prove that viewers love specific, low-budget solutions to expensive-seeming problems.",
+        "Instructional clarity: The best-performing videos in this niche avoid fluff and focus entirely on the manual process of repair.",
+        "Avoiding the dealership: There is a strong audience preference for 'repairing' over 'replacing' or 're-painting', framed as a way to beat expensive repair costs."
+      ],
+      "source_video_ids": [
+        "NyCuErGd8Jw",
+        "jeWcg75O2eU",
+        "khmI47_CPuU"
+      ],
+      "titles": {
+        "title_1_search_match": "Repairing Deep Car Scratches Without Repainting",
+        "title_2_curiosity": "Is This Deep Scratch Really Fixable At Home?",
+        "title_3_value": "Remove Deep Car Scratches For Under $20",
+        "recommended_title": "title_3_value",
+        "reason": "It combines the high-search intent of scratch repair with a specific, low-cost promise that mimics the success of the $38 engine fix video."
+      },
+      "hook_script": "You’ve probably seen the videos where they use a magic marker to fix a scratch, but let’s be real—that doesn’t work on deep gouges. I took a key-scratched panel that a body shop quoted me five hundred dollars to repaint, and I’m going to show you how to blend it perfectly for under twenty bucks. No spray guns, no professional booth, just a few specific steps to save your clear coat.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen showing a deep gouge on the left and a perfectly smooth, reflective finish on the right.",
+        "text_overlay": "Save $500 DIY",
+        "color_signal": "High contrast red arrow pointing to the scratch area.",
+        "focal_point": "The transition point between the damaged paint and the restored finish."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:30",
+          "beat": "The Hook",
+          "action": "Show the damage clearly in natural light, state the professional quote, and show the $20 kit."
+        },
+        {
+          "time": "0:30-3:00",
+          "beat": "The Prep",
+          "action": "Clean, tape off, and explain why traditional 'touch-up pens' fail on deep scratches."
+        },
+        {
+          "time": "3:00-8:00",
+          "beat": "The Fix",
+          "action": "Demonstrate the layering process, sanding, and buffing with voiceover explaining the 'why' behind the technique."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Reveal",
+          "action": "Wash off the residue, polish to a shine, and compare against the original damage."
+        }
+      ],
+      "production_checklist": [
+        "Macro lens shots of the scratch before and after",
+        "Clear, well-lit workspace with no shadows on the panel",
+        "Receipt or price breakdown graphic for the materials",
+        "Detailed explanation of the grit levels for sandpaper used",
+        "Final reveal in direct sunlight to prove no haze remains"
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Fixing Deep Car Scratches Without Repainting",
+        "topic": "Fixing Deep Car Scratches Without Repainting",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 7,
+        "avg_vph": 359,
+        "outperformance_multiplier": "38.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "The 'Impossible' Scratch: Combining professional-grade buffing techniques with household filler hacks to save a 'totaled' panel.",
+        "sample_titles": [
+          "How To Fix Clear Coat Peel Without Respraying",
+          "How To Repair Deep Car Scratches Without Repainting",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

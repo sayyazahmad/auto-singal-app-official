@@ -1,52 +1,76 @@
 @import "tailwindcss";
 
+/* The app toggles a `.dark` class on <html>; without this, `dark:` follows the OS setting instead */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Neutrals with a slight green cast: surfaces, borders, text */
+  --color-ink-50: #F7F8F5;
+  --color-ink-100: #EFF1EC;
+  --color-ink-150: #E6E9E2;
+  --color-ink-200: #DCE0D7;
+  --color-ink-300: #C3C9BD;
+  --color-ink-400: #9AA294;
+  --color-ink-500: #6E776A;
+  --color-ink-600: #535B50;
+  --color-ink-700: #3A4138;
+  --color-ink-800: #2A302A;
+  --color-ink-850: #212621;
+  --color-ink-900: #191D19;
+  --color-ink-950: #111411;
+
+  /* Forest green accent */
+  --color-brand-50: #EFF6F1;
+  --color-brand-100: #DCEBE1;
+  --color-brand-200: #B9D7C4;
+  --color-brand-300: #8EBDA0;
+  --color-brand-400: #5E9C77;
+  --color-brand-500: #3E7F5B;
+  --color-brand-600: #2D6A4A;
+  --color-brand-700: #24563C;
+  --color-brand-800: #1E4532;
+  --color-brand-900: #183829;
+  --color-brand-950: #0E2218;
+}
+
+/* Chart colors, validated for color-vision deficiency against each mode's surface.
+   Series = data marks; muted = de-emphasis marks; grid = hairlines. */
+:root {
+  --chart-series: #1f8a4c;
+  --chart-muted: #9AA294;
+  --chart-grid: #E6E9E2;
+  --chart-surface: #FFFFFF;
+}
+
+.dark {
+  --chart-series: #36a263;
+  --chart-muted: #B9C0B3;
+  --chart-grid: #2A302A;
+  --chart-surface: #212621;
+}
+
 @layer base {
-  :root {
-    --claude-bg: #FAF9F5;
-    --claude-surface: #FFFFFF;
-    --claude-surface-soft: #F5F3EC;
-    --claude-surface-card: #FFFFFF;
-    --claude-border: #E8E5DC;
-    --claude-border-subtle: #EFECE4;
-    --claude-text: #1C1917;
-    --claude-text-muted: #736E65;
-    --claude-accent: #C96442;
-    --claude-accent-hover: #B55232;
-    --claude-accent-soft: #FDF5F0;
-  }
-
-  .dark {
-    --claude-bg: #1B1A18;
-    --claude-surface: #242320;
-    --claude-surface-soft: #2B2A26;
-    --claude-surface-card: #242320;
-    --claude-border: #3A3833;
-    --claude-border-subtle: #302F2A;
-    --claude-text: #ECE8E1;
-    --claude-text-muted: #9E9A90;
-    --claude-accent: #D97757;
-    --claude-accent-hover: #E3886A;
-    --claude-accent-soft: #2F241F;
-  }
-
   body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-    background-color: var(--claude-bg);
-    color: var(--claude-text);
+    font-family: var(--font-sans);
+    background-color: var(--color-ink-50);
+    color: var(--color-ink-900);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
-  h1, h2, .font-serif-claude {
-    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  .dark body {
+    background-color: var(--color-ink-900);
+    color: var(--color-ink-100);
   }
 
-  code, pre, .font-mono-claude {
-    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  h1, h2, h3 {
+    letter-spacing: -0.01em;
   }
 }
 
-/* Custom Soft Scrollbars reminiscent of Claude web UI */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -57,20 +81,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(120, 115, 105, 0.25);
+  background: rgba(110, 119, 106, 0.3);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(120, 115, 105, 0.45);
+  background: rgba(110, 119, 106, 0.5);
 }
 
-/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.18s ease-out forwards;
 }

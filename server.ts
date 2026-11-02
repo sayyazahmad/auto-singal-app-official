@@ -1,10 +1,16 @@
 import express from 'express';
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import dotenv from 'dotenv';
 import { GoogleGenAI } from '@google/genai';
+import { runLiveResearch, quotaStatus, cheapThinkingConfig, YouTubeError } from './liveResearch.js';
+import {
+  buildAuthUrl, consumeState, exchangeCode, isConnected, disconnect as disconnectChannel,
+  channelAnalytics, publicChannelLookup, NotConnectedError, type OAuthConfig
+} from './channelAnalytics.js';
 
 dotenv.config();
 
@@ -28,6 +34,21 @@ const HOST = parseArg('--host') || process.env.HOST || '0.0.0.0';
 const AUTOSIGNAL_DIR = path.resolve(__dirname, 'autosignal');
 const DATA_DIR = path.resolve(AUTOSIGNAL_DIR, 'data');
 const OUTPUT_DIR = path.resolve(AUTOSIGNAL_DIR, 'output');
+// Interpreter for pipeline scripts; override via PYTHON_BIN (requirements.txt pins target Python 3.12)
+const PYTHON_BIN = process.env.PYTHON_BIN || 'python3';
+// On Vercel the app runs as a serverless function: no Python, and only /tmp is writable
+const IS_VERCEL = Boolean(process.env.VERCEL);
+
+// Saves JSON to disk. On Vercel the bundle is read-only, so results only live in memory there
+async function persistJson(filePath: string, data: unknown) {
+  try {
+    await fs.mkdir(path.dirname(filePath), { recursive: true });
+    await fs.writeFile(filePath, JSON.stringify(data, null, 2));
+  } catch (err: any) {
+    if (!IS_VERCEL) throw err;
+    console.warn(`Not saved (read-only filesystem): ${path.basename(filePath)}`);
+  }
+}
 
 app.use(express.json({ limit: '10mb' }));
 
@@ -992,6 +1013,22 @@ app.post('/api/pipeline/run-step', async (req, res) => {
   const startTime = Date.now();
   let pythonArgs: string[] = [];
 
+  if (IS_VERCEL) {
+    const summary = await buildStepHumanSummary(stepId, normalizedNiche);
+    return res.json({
+      success: Boolean(summary),
+      exitCode: 0,
+      stepId,
+      niche: normalizedNiche,
+      command: 'skipped',
+      stdout: 'The Python pipeline does not run on Vercel. Showing the saved data for this niche; run the pipeline locally to refresh it.',
+      stderr: null,
+      executionTimeMs: Date.now() - startTime,
+      summary,
+      timestamp: new Date().toISOString()
+    });
+  }
+
   switch (stepId) {
     case 'metadata_fetch':
       pythonArgs = ['metadata_fetch.py', normalizedNiche];
@@ -1031,12 +1068,14 @@ app.post('/api/pipeline/run-step', async (req, res) => {
   }
 
   try {
-    const pythonProc = spawn('python3', pythonArgs, {
+    const pythonProc = spawn(PYTHON_BIN, pythonArgs, {
       cwd: AUTOSIGNAL_DIR,
       env: {
         ...process.env,
         NICHE: normalizedNiche,
-        PYTHONUNBUFFERED: '1'
+        PYTHONUNBUFFERED: '1',
+        // Scripts print box-drawing/emoji; Windows pipes default to cp1252 and crash on them
+        PYTHONUTF8: '1'
       }
     });
 
@@ -1058,7 +1097,7 @@ app.post('/api/pipeline/run-step', async (req, res) => {
       // refresh benchmark data so the user always sees fresh, verified data
       if (code !== 0 && (stepId === 'run_pipeline' || stepId === 'semantic_research')) {
         await new Promise<void>((resolve) => {
-          const fallback = spawn('python3', ['seed_pipeline_data.py'], { cwd: AUTOSIGNAL_DIR });
+          const fallback = spawn(PYTHON_BIN, ['seed_pipeline_data.py'], { cwd: AUTOSIGNAL_DIR });
           fallback.on('close', () => resolve());
         });
       }
@@ -1070,7 +1109,7 @@ app.post('/api/pipeline/run-step', async (req, res) => {
         exitCode: code,
         stepId,
         niche: normalizedNiche,
-        command: `python3 ${pythonArgs.join(' ')}`,
+        command: `${PYTHON_BIN} ${pythonArgs.join(' ')}`,
         stdout: stdout || 'Process completed with no standard output.',
         stderr: stderr || null,
         executionTimeMs,
@@ -1091,6 +1130,87 @@ app.post('/api/pipeline/run-step', async (req, res) => {
   }
 });
 
+// Cheapest Gemini model available to new API keys (gemini-2.5-flash-lite is closed to them); override with GEMINI_MODEL
+const GEMINI_MODEL = process.env.GEMINI_MODEL || 'gemini-3.1-flash-lite';
+// Cap on YouTube quota units this app spends per day (Google's free quota is 10,000)
+const YOUTUBE_DAILY_UNIT_BUDGET = parseInt(process.env.YOUTUBE_DAILY_UNIT_BUDGET || '2000', 10);
+const LIVE_CACHE_DIR = IS_VERCEL ? path.join(os.tmpdir(), 'autosignal-cache') : path.resolve(__dirname, '.cache');
+// YouTube videoCategoryId per niche, only where one category clearly fits; keeps searches like "DIY repair" on-niche
+const NICHE_YOUTUBE_CATEGORY: Partial<Record<NicheKey, string>> = {
+  automotive: '2',      // Autos & Vehicles
+  technology: '28',     // Science & Technology
+  cybersecurity: '28',
+  smarthome: '28',
+  gaming: '20',         // Gaming
+  music: '10',          // Music
+  travel: '19',         // Travel & Events
+  filmmaking: '1',      // Film & Animation
+  education: '27',      // Education
+  cooking: '26',        // Howto & Style
+  woodworking: '26',
+  gardening: '26',
+};
+
+function liveKeys() {
+  const youtubeKey = (userCustomYoutubeApiKey || process.env.YOUTUBE_API_KEY || process.env.YOUTUBE_API_KEY_1 || '').trim();
+  const geminiKey = (process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '').trim();
+  const missing = [...(youtubeKey ? [] : ['YOUTUBE_API_KEY']), ...(geminiKey ? [] : ['GEMINI_API_KEY'])];
+  return { youtubeKey, geminiKey, missing };
+}
+
+// Live YouTube outlier research + Gemini analysis; persists the brief and videos like the other endpoints do
+async function liveResearchAndSave(niche: NicheKey, topic: string | undefined, creatorSubs?: number, creatorAvgViews?: number) {
+  const { youtubeKey, geminiKey } = liveKeys();
+  const result = await runLiveResearch({
+    niche,
+    nicheLabel: NICHE_META[niche].label,
+    nicheTopics: NICHE_META[niche].description.split(','),
+    topic,
+    categoryId: NICHE_YOUTUBE_CATEGORY[niche],
+    creatorSubs,
+    creatorAvgViews,
+    youtubeKey,
+    geminiKey,
+    geminiModel: GEMINI_MODEL,
+    cacheDir: LIVE_CACHE_DIR,
+    dailyUnitBudget: YOUTUBE_DAILY_UNIT_BUDGET,
+  });
+
+  MEMORY_BRIEFS.unshift(result.brief);
+  await persistJson(path.join(OUTPUT_DIR, `briefs_${Date.now()}_${niche}.json`), { briefs: [result.brief] });
+
+  const nicheDir = path.join(DATA_DIR, niche);
+  const semanticFilePath = path.join(nicheDir, 'merged_videos_semantic.json');
+  const existingData: any = await readJsonSafe(semanticFilePath, { videos: [] });
+  const existingList = Array.isArray(existingData) ? existingData : (existingData.videos || []);
+  const seen = new Set<string>();
+  const combined = [...result.videos, ...existingList].filter((v: any) => {
+    if (!v.video_id || seen.has(v.video_id)) return false;
+    seen.add(v.video_id);
+    return true;
+  });
+  await persistJson(semanticFilePath, { videos: combined });
+
+  return result;
+}
+
+// 5a. Live idea: research the niche (or a topic) on YouTube and have Gemini pick and brief the best idea
+app.post('/api/ideas/live', async (req, res) => {
+  const { niche = 'automotive', topic, creatorSubs, creatorAvgViews } = req.body;
+  const normalizedNiche: NicheKey = VALID_NICHES.includes(niche) ? niche : 'automotive';
+  const { missing } = liveKeys();
+  if (missing.length > 0) {
+    return res.status(400).json({ success: false, missingKeys: missing, error: `Live research needs ${missing.join(' and ')} in .env` });
+  }
+  try {
+    const result = await liveResearchAndSave(normalizedNiche, typeof topic === 'string' && topic.trim() ? topic.trim() : undefined, creatorSubs, creatorAvgViews);
+    res.json({ success: true, ...result });
+  } catch (err: any) {
+    console.warn('Live research failed:', err.message);
+    res.status(err instanceof YouTubeError ? 502 : 500).json({ success: false, error: err.message });
+  }
+});
+
 // 5. Generate AI Brief on demand using Gemini API
 app.post('/api/briefs/generate', async (req, res) => {
   const {
@@ -1101,6 +1221,19 @@ app.post('/api/briefs/generate', async (req, res) => {
     creatorSubs = 25000,
     creatorAvgViews = 12000
   } = req.body;
+
+  // With both keys set, ground the brief in live YouTube data for this topic; otherwise fall through
+  let liveError: string | null = null;
+  if (liveKeys().missing.length === 0) {
+    const liveNiche: NicheKey = VALID_NICHES.includes(niche) ? niche : 'automotive';
+    try {
+      const live = await liveResearchAndSave(liveNiche, topic, creatorSubs, creatorAvgViews);
+      return res.json({ success: true, live: true, ...live });
+    } catch (err: any) {
+      liveError = err.message;
+      console.warn('Live brief research failed, using topic-only brief:', err.message);
+    }
+  }
 
   const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
 
@@ -1157,10 +1290,11 @@ Respond ONLY with a valid JSON object matching this schema:
 }`;
 
       const geminiResponse = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: GEMINI_MODEL,
         contents: prompt,
         config: {
-          responseMimeType: 'application/json'
+          responseMimeType: 'application/json',
+          ...cheapThinkingConfig(GEMINI_MODEL)
         }
       });
 
@@ -1173,7 +1307,7 @@ Respond ONLY with a valid JSON object matching this schema:
         brief_id: briefId,
         generated_at: new Date().toISOString(),
         ai_powered: true,
-        model: 'gemini-2.5-flash',
+        model: GEMINI_MODEL,
         ...briefData
       };
 
@@ -1182,9 +1316,9 @@ Respond ONLY with a valid JSON object matching this schema:
 
       // Save to output folder with timestamp prefix so sorting works cleanly
       const outFilename = `briefs_${Date.now()}_${niche}.json`;
-      await fs.writeFile(path.join(OUTPUT_DIR, outFilename), JSON.stringify({ briefs: [enrichedBrief] }, null, 2));
+      await persistJson(path.join(OUTPUT_DIR, outFilename), { briefs: [enrichedBrief] });
 
-      return res.json({ success: true, brief: enrichedBrief });
+      return res.json({ success: true, brief: enrichedBrief, liveError });
     } catch (err: any) {
       console.warn('Gemini brief generation error, using rule-based fallback:', err.message);
     }
@@ -1230,9 +1364,9 @@ Respond ONLY with a valid JSON object matching this schema:
 
   MEMORY_BRIEFS.unshift(fallbackBrief);
   const outFilename = `briefs_${Date.now()}_${niche}.json`;
-  await fs.writeFile(path.join(OUTPUT_DIR, outFilename), JSON.stringify({ briefs: [fallbackBrief] }, null, 2));
+  await persistJson(path.join(OUTPUT_DIR, outFilename), { briefs: [fallbackBrief] });
 
-  res.json({ success: true, brief: fallbackBrief });
+  res.json({ success: true, brief: fallbackBrief, liveError });
 });
 
 // 6. Live YouTube Data API v3 Search, Outlier Computation, and Database Persistence
@@ -1395,7 +1529,6 @@ app.post('/api/youtube/search-and-save', async (req, res) => {
 
   // 4. Persist to Database on Disk (data/<niche>/merged_videos_semantic.json)
   const nicheDir = path.join(DATA_DIR, normalizedNiche);
-  await fs.mkdir(nicheDir, { recursive: true });
   const semanticFilePath = path.join(nicheDir, 'merged_videos_semantic.json');
 
   let existingData: any = await readJsonSafe(semanticFilePath, { videos: [] });
@@ -1409,7 +1542,7 @@ app.post('/api/youtube/search-and-save', async (req, res) => {
     return true;
   });
 
-  await fs.writeFile(semanticFilePath, JSON.stringify({ videos: combinedVideos }, null, 2));
+  await persistJson(semanticFilePath, { videos: combinedVideos });
 
   // 5. Generate AI Brief directly for this search query & top video
   const topVideo = importedVideos[0];
@@ -1460,9 +1593,9 @@ Respond ONLY with a valid JSON object matching this schema:
 }`;
 
       const gRes = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: GEMINI_MODEL,
         contents: prompt,
-        config: { responseMimeType: 'application/json' }
+        config: { responseMimeType: 'application/json', ...cheapThinkingConfig(GEMINI_MODEL) }
       });
       const cleanJson = (gRes.text || '{}').replace(/```json\n?|\n?```/g, '').trim();
       const parsedBrief = JSON.parse(cleanJson);
@@ -1470,7 +1603,7 @@ Respond ONLY with a valid JSON object matching this schema:
         brief_id: `brief_srch_${Date.now().toString(36)}`,
         generated_at: new Date().toISOString(),
         ai_powered: true,
-        model: 'gemini-2.5-flash',
+        model: GEMINI_MODEL,
         ...parsedBrief
       };
     } catch (err: any) {
@@ -1516,11 +1649,7 @@ Respond ONLY with a valid JSON object matching this schema:
 
   // Prepend brief to in-memory cache and save to disk
   MEMORY_BRIEFS.unshift(generatedBrief);
-  await fs.mkdir(OUTPUT_DIR, { recursive: true });
-  await fs.writeFile(
-    path.join(OUTPUT_DIR, `briefs_${Date.now()}_${normalizedNiche}.json`),
-    JSON.stringify({ briefs: [generatedBrief] }, null, 2)
-  );
+  await persistJson(path.join(OUTPUT_DIR, `briefs_${Date.now()}_${normalizedNiche}.json`), { briefs: [generatedBrief] });
 
   res.json({
     success: true,
@@ -1537,30 +1666,187 @@ Respond ONLY with a valid JSON object matching this schema:
 });
 
 // 7. Config & API Keys Endpoint
-app.get('/api/config/keys', (_req, res) => {
+app.get('/api/config/keys', async (_req, res) => {
   res.json({
     geminiConfigured: Boolean(process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY),
-    geminiModel: 'gemini-2.5-flash',
+    geminiModel: GEMINI_MODEL,
+    youtubeQuota: await quotaStatus(LIVE_CACHE_DIR, YOUTUBE_DAILY_UNIT_BUDGET),
     youtubeConfigured: Boolean(process.env.YOUTUBE_API_KEY || process.env.YOUTUBE_API_KEY_1 || userCustomYoutubeApiKey),
     userCustomYoutubeApiKey: userCustomYoutubeApiKey || '',
     activeNichesCount: VALID_NICHES.length
   });
 });
 
-app.post('/api/config/keys', (req, res) => {
-  const { youtubeApiKey } = req.body;
-  if (typeof youtubeApiKey === 'string') {
-    userCustomYoutubeApiKey = youtubeApiKey.trim();
-    if (userCustomYoutubeApiKey) {
-      process.env.YOUTUBE_API_KEY = userCustomYoutubeApiKey;
+function isLocalRequest(req: express.Request) {
+  return ['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(req.socket.remoteAddress || '');
+}
+
+// Insert or replace KEY="value" lines in .env so keys entered in Settings survive restarts
+async function upsertEnvFile(values: Record<string, string>) {
+  const envPath = path.resolve(__dirname, '.env');
+  let text = '';
+  try {
+    text = await fs.readFile(envPath, 'utf-8');
+  } catch {
+    // no .env yet
+  }
+  for (const [key, value] of Object.entries(values)) {
+    const line = `${key}="${value.replace(/"/g, '')}"`;
+    const re = new RegExp(`^${key}=.*$`, 'm');
+    text = re.test(text) ? text.replace(re, line) : `${text}${text && !text.endsWith('\n') ? '\n' : ''}${line}\n`;
+  }
+  await fs.writeFile(envPath, text);
+}
+
+// Cheap checks so a wrong key is reported when it's saved, not when a brief fails
+async function checkYoutubeKey(key: string): Promise<string | null> {
+  try {
+    // i18nLanguages costs 1 quota unit
+    const r: any = await (await fetch(`https://www.googleapis.com/youtube/v3/i18nLanguages?part=snippet&hl=en&key=${encodeURIComponent(key)}`)).json();
+    return r.error ? (r.error.message || 'YouTube rejected the key') : null;
+  } catch (e: any) {
+    return e.message;
+  }
+}
+
+async function checkGeminiKey(key: string): Promise<string | null> {
+  try {
+    // Fetching model metadata is free and also confirms the configured model is available to this key
+    const r: any = await (await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}?key=${encodeURIComponent(key)}`)).json();
+    return r.error ? (r.error.message || 'Gemini rejected the key') : null;
+  } catch (e: any) {
+    return e.message;
+  }
+}
+
+app.post('/api/config/keys', async (req, res) => {
+  const { youtubeApiKey, geminiApiKey } = req.body;
+  const toSave: Record<string, string> = {};
+  const errors: Record<string, string> = {};
+
+  if (typeof youtubeApiKey === 'string' && youtubeApiKey.trim()) {
+    const key = youtubeApiKey.trim();
+    const err = await checkYoutubeKey(key);
+    if (err) {
+      errors.youtube = err;
+    } else {
+      userCustomYoutubeApiKey = key;
+      process.env.YOUTUBE_API_KEY = key;
+      toSave.YOUTUBE_API_KEY = key;
     }
   }
+  if (typeof geminiApiKey === 'string' && geminiApiKey.trim()) {
+    const key = geminiApiKey.trim();
+    const err = await checkGeminiKey(key);
+    if (err) {
+      errors.gemini = err;
+    } else {
+      process.env.GEMINI_API_KEY = key;
+      toSave.GEMINI_API_KEY = key;
+    }
+  }
+
+  // Only write .env for requests from this machine: the dev server listens on all interfaces
+  let savedToEnv = false;
+  if (Object.keys(toSave).length > 0 && isLocalRequest(req)) {
+    await upsertEnvFile(toSave);
+    savedToEnv = true;
+  }
+
   res.json({
-    success: true,
+    success: Object.keys(errors).length === 0,
+    errors,
+    savedToEnv,
     geminiConfigured: Boolean(process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY),
+    geminiModel: GEMINI_MODEL,
     youtubeConfigured: Boolean(process.env.YOUTUBE_API_KEY || process.env.YOUTUBE_API_KEY_1 || userCustomYoutubeApiKey),
     userCustomYoutubeApiKey: userCustomYoutubeApiKey || ''
   });
+});
+
+// 8. Channel analytics: owner's private analytics via Google OAuth, or public stats by handle
+function oauthConfig(): OAuthConfig {
+  return {
+    clientId: (process.env.YOUTUBE_OAUTH_CLIENT_ID || '').trim(),
+    clientSecret: (process.env.YOUTUBE_OAUTH_CLIENT_SECRET || '').trim(),
+    // Must match an "Authorized redirect URI" on the Google OAuth client exactly
+    redirectUri: `http://localhost:${PORT}/api/channel/oauth/callback`,
+    cacheDir: LIVE_CACHE_DIR,
+  };
+}
+
+// The channel owner's analytics and tokens never leave this machine
+app.use('/api/channel', (req, res, next) => {
+  if (req.path === '/public' || isLocalRequest(req)) return next();
+  res.status(403).json({ error: 'Channel analytics are only available from this computer' });
+});
+
+app.get('/api/channel/status', async (_req, res) => {
+  const cfg = oauthConfig();
+  res.json({
+    oauthReady: Boolean(cfg.clientId && cfg.clientSecret),
+    connected: await isConnected(cfg),
+    redirectUri: cfg.redirectUri,
+    youtubeKeyConfigured: Boolean(userCustomYoutubeApiKey || process.env.YOUTUBE_API_KEY || process.env.YOUTUBE_API_KEY_1),
+  });
+});
+
+app.post('/api/channel/oauth-config', async (req, res) => {
+  const clientId = String(req.body?.clientId || '').trim();
+  const clientSecret = String(req.body?.clientSecret || '').trim();
+  if (!clientId.endsWith('.apps.googleusercontent.com') || !clientSecret) {
+    return res.status(400).json({ error: 'Paste both the Client ID (ends in .apps.googleusercontent.com) and the Client secret.' });
+  }
+  process.env.YOUTUBE_OAUTH_CLIENT_ID = clientId;
+  process.env.YOUTUBE_OAUTH_CLIENT_SECRET = clientSecret;
+  await upsertEnvFile({ YOUTUBE_OAUTH_CLIENT_ID: clientId, YOUTUBE_OAUTH_CLIENT_SECRET: clientSecret });
+  res.json({ success: true });
+});
+
+app.get('/api/channel/oauth/start', (_req, res) => {
+  const cfg = oauthConfig();
+  if (!cfg.clientId || !cfg.clientSecret) return res.redirect('/?view=channel&oauth_error=' + encodeURIComponent('Add your Google OAuth client first'));
+  res.redirect(buildAuthUrl(cfg));
+});
+
+app.get('/api/channel/oauth/callback', async (req, res) => {
+  const { code, state, error } = req.query as Record<string, string>;
+  const back = (err?: string) => res.redirect('/?view=channel' + (err ? '&oauth_error=' + encodeURIComponent(err) : '&connected=1'));
+  if (error) return back(error === 'access_denied' ? 'You cancelled the Google sign-in' : error);
+  if (!code || !state || !consumeState(state)) return back('Sign-in link expired. Try connecting again.');
+  try {
+    await exchangeCode(oauthConfig(), code);
+    back();
+  } catch (err: any) {
+    back(err.message);
+  }
+});
+
+app.post('/api/channel/disconnect', async (_req, res) => {
+  await disconnectChannel(oauthConfig());
+  res.json({ success: true });
+});
+
+app.get('/api/channel/analytics', async (req, res) => {
+  const days = [7, 28, 90].includes(Number(req.query.days)) ? Number(req.query.days) : 28;
+  try {
+    res.json(await channelAnalytics(oauthConfig(), days));
+  } catch (err: any) {
+    if (err instanceof NotConnectedError) return res.status(401).json({ connected: false, error: err.message });
+    res.status(502).json({ error: err.message });
+  }
+});
+
+app.get('/api/channel/public', async (req, res) => {
+  const q = String(req.query.q || '').trim();
+  const apiKey = (userCustomYoutubeApiKey || process.env.YOUTUBE_API_KEY || process.env.YOUTUBE_API_KEY_1 || '').trim();
+  if (!q) return res.status(400).json({ error: 'Enter a channel @handle or link' });
+  if (!apiKey) return res.status(400).json({ error: 'Add your YouTube API key in Settings → API Keys first' });
+  try {
+    res.json(await publicChannelLookup(apiKey, q));
+  } catch (err: any) {
+    res.status(502).json({ error: err.message });
+  }
 });
 
 // ─── Frontend Integration (Vite Middleware in Dev) ──────────────────────────
@@ -1600,7 +1886,11 @@ async function startServer() {
   });
 }
 
-startServer().catch((err) => {
-  console.error('Failed to start AutoSignal server:', err);
-  process.exit(1);
-});
+if (!IS_VERCEL) {
+  startServer().catch((err) => {
+    console.error('Failed to start AutoSignal server:', err);
+    process.exit(1);
+  });
+}
+
+export default app;

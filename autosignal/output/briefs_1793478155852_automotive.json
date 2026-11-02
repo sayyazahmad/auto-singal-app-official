@@ -1,0 +1,103 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwul5qj",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:22:35.851Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Repairing Deep Paint Scratches Without Repainting",
+      "target_angle": "Focus on the specific, low-cost 'secret' technique used by detailers to save a panel, contrasting it with professional shop estimates.",
+      "why_it_works": "The data from CVR POV shows that 'Fixing Clear Coat Peel' and 'Deep Car Scratches' are massive outliers with 50x+ ratios, proving viewers are desperate for low-cost aesthetic fixes. By focusing on a high-value repair that avoids expensive body shop labor, a smaller channel can capture the same search-driven intent that propelled those videos to success.",
+      "pattern_insights": [
+        "High-value aesthetic repairs generate significantly higher view ratios than mechanical repairs.",
+        "The 'Without Repainting' or 'Without Respraying' framing removes the biggest barrier to entry for DIYers.",
+        "Small channels like ABD Automotive demonstrate that low-cost part fixes ($38) build immense trust and authority.",
+        "Viewers prioritize 'saving the panel' over expensive replacement, as seen in the BICチャンネル success with repair-over-replacement content."
+      ],
+      "source_video_ids": [
+        "jeWcg75O2eU",
+        "NyCuErGd8Jw",
+        "khmI47_CPuU"
+      ],
+      "titles": {
+        "title_1_search_match": "How To Fix Deep Car Scratches At Home",
+        "title_2_curiosity": "Stop Paying For Body Shop Scratch Repairs",
+        "title_3_value": "Remove Deep Scratches For Under 20 Dollars",
+        "recommended_title": "title_3_value",
+        "reason": "It combines the specific 'no-repainting' promise with a tangible, low-cost financial benefit that outperformed other titles in the dataset."
+      },
+      "hook_script": "You probably think this deep scratch means a multi-hundred dollar trip to the body shop, or worse, a full panel repaint. But what if I told you that for less than twenty bucks, you can actually level this out and make it disappear completely? I'm going to show you exactly how the pros hide these deep marks without a spray gun, so you can keep your factory paint intact.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen: deep white scratch on a dark car door vs. the exact same spot perfectly repaired.",
+        "text_overlay": "FIXED FOR $20",
+        "color_signal": "High contrast, bright red arrow pointing to the scratch area.",
+        "focal_point": "The transition line between the damaged and repaired paint."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:30",
+          "beat": "The Hook",
+          "action": "Show the scratch, explain the 'body shop' cost, and promise the cheap DIY solution."
+        },
+        {
+          "time": "0:30-2:00",
+          "beat": "The Diagnosis",
+          "action": "Explain why this specific scratch doesn't need a repaint (the 'fingernail test')."
+        },
+        {
+          "time": "2:00-6:00",
+          "beat": "The Process",
+          "action": "Step-by-step application of the repair method, focusing on close-up tactile shots."
+        },
+        {
+          "time": "6:00-8:00",
+          "beat": "The Reveal",
+          "action": "Polishing the area and showing the final result under direct sunlight."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Summary",
+          "action": "Breakdown of the $20 cost and why this is safer than a cheap respray."
+        }
+      ],
+      "production_checklist": [
+        "Verify the scratch is clear-coat deep using the fingernail test",
+        "Use a macro lens for the 'before' and 'after' shots",
+        "Include a clip of the materials used with prices on screen",
+        "Show the repair under direct, harsh sunlight to prove the fix isn't just a temporary fill",
+        "Ensure the final result comparison uses the same lighting as the start"
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Repairing Deep Paint Scratches Without Repainting",
+        "topic": "Repairing Deep Paint Scratches Without Repainting",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 7,
+        "avg_vph": 359,
+        "outperformance_multiplier": "38.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "Focus on the specific, low-cost 'secret' technique used by detailers to save a panel, contrasting it with professional shop estimates.",
+        "sample_titles": [
+          "How To Fix Clear Coat Peel Without Respraying",
+          "How To Repair Deep Car Scratches Without Repainting",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

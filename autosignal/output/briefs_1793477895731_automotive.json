@@ -1,0 +1,80 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwufl0y",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:18:15.730Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Repairing deep automotive paint scratches cheaply",
+      "target_angle": "Focus on a specific, high-stress cosmetic fix using common household or low-cost supplies, framing it as a 'professional secret' that saves a shop visit.",
+      "why_it_works": "The data shows that 'CVR POV' achieved a massive 55.8x view ratio by solving common cosmetic issues without professional respraying. Small channels like 'ABD Automotive' prove that specific budget fixes (4.5x ratio) outperform general repair content, allowing a mid-sized channel to leverage high-intent search traffic.",
+      "pattern_insights": [
+        "High outperformance is tied to 'fixing without repainting/respraying', focusing on non-invasive restoration.",
+        "Small-to-medium channels win by highlighting the specific dollar cost of the repair ($38 in the Ford Ranger example).",
+        "Viewers prioritize 'low-barrier' DIY solutions that avoid expensive body shop labor.",
+        "The 'Fixing Failed DIY' or 'Fixing Without Shop Help' frame creates high stakes and high curiosity."
+      ],
+      "source_video_ids": [
+        "jeWcg75O2eU",
+        "NyCuErGd8Jw",
+        "khmI47_CPuU"
+      ],
+      "titles": {
+        "title_1_search_match": "How to repair deep car scratches DIY",
+        "title_2_curiosity": "Stop paying for body shops: Deep scratch fix",
+        "title_3_value": "Fix deep car scratches for under $20",
+        "recommended_title": "title_3_value",
+        "reason": "It combines the high-performing 'budget' element from ABD Automotive with the 'cosmetic repair' demand seen in the top-performing CVR POV videos."
+      },
+      "hook_script": "Most people think a deep scratch down to the primer means an expensive trip to the body shop, or worse, a full panel respray. I’m going to show you how I fixed this deep gouge in my own driveway using stuff you can find at any local hardware store, and honestly, you won't even be able to tell where the scratch was.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen: Close-up of a nasty deep scratch vs. the perfectly smooth, polished finish after the repair.",
+        "text_overlay": "Shop fix vs DIY",
+        "color_signal": "Red 'before' side, bright clean 'after' side",
+        "focal_point": "The transition line between the damaged and repaired paint"
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:20",
+          "beat": "The Hook",
+          "action": "Show the damage close-up, then reveal the 'after' result to prove it works."
+        },
+        {
+          "time": "0:20-2:00",
+          "beat": "The Reality Check",
+          "action": "Explain why this specific type of scratch is usually considered 'unfixable' by amateurs."
+        },
+        {
+          "time": "2:00-5:00",
+          "beat": "The Method",
+          "action": "Step-by-step application of the budget-friendly materials."
+        },
+        {
+          "time": "5:00-8:00",
+          "beat": "The Detail Work",
+          "action": "Wetsanding and buffing process to blend the repair into the clear coat."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Reveal",
+          "action": "Final wipe down under direct sunlight to show the seamless finish."
+        }
+      ],
+      "production_checklist": [
+        "Macro lens shots of the scratch before and after",
+        "Clear list of materials and total cost overlay",
+        "Sunlight test footage to prove no ghosting",
+        "B-roll of the specific product brands used"
+      ]
+    }
+  ]
+}

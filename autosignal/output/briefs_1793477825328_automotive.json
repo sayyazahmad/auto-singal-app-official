@@ -1,0 +1,75 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwue2pb",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:17:05.327Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": false
+      },
+      "topic": "Fixing Major Car Issues Cheaply",
+      "target_angle": "Focus on extreme budget repairs for common, expensive-sounding engine or body issues that mechanics usually overcharge for.",
+      "why_it_works": "The data shows that viewers in this niche are highly responsive to 'Fixing X without Y' (like re-spraying or dealership intervention), as seen in the 55.8x ratio for CVR POV. Small channels like ABD Automotive prove that low-cost, high-value repairs (fixing major blowby for $38) generate significant interest because they solve expensive problems with accessible solutions.",
+      "pattern_insights": [
+        "High-value repairs that avoid professional costs (e.g., body shops or dealerships) drive the highest outperformance ratios.",
+        "Specific dollar amounts in the title create an immediate perceived value and verify the 'DIY' promise.",
+        "Framing a repair as a 'solution to a major problem' (blowby, deep scratches) outperforms generic maintenance videos.",
+        "Visual transformations of 'broken' to 'fixed' are central to high engagement, especially when the fix is surprisingly cheap."
+      ],
+      "source_video_ids": [
+        "jeWcg75O2eU",
+        "NyCuErGd8Jw",
+        "khmI47_CPuU"
+      ],
+      "titles": {
+        "title_1_search_match": "How to fix major engine knock for under 50 dollars",
+        "title_2_curiosity": "Stop paying thousands to fix this common engine problem",
+        "title_3_value": "Fixing a dead engine for 50 dollars DIY",
+        "recommended_title": "title_1_search_match",
+        "reason": "It combines the high-search intent of 'how to fix' with the specific, low-cost promise that proved successful for ABD Automotive."
+      },
+      "hook_script": "Most mechanics will tell you that this kind of engine knock means you need a full rebuild, which is going to cost you thousands of dollars. But what if I told you there is a way to fix the root cause of this specific failure for under fifty bucks, right in your own driveway? I'm going to show you exactly how to diagnose it and perform the repair yourself, even if you've never touched an engine before.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen showing a dirty, disassembled engine part next to the clean, replaced part.",
+        "text_overlay": "FIXED FOR $50",
+        "color_signal": "Red and green arrows highlighting the repair area.",
+        "focal_point": "The specific worn-out component being held in the hand."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:30",
+          "beat": "The Problem",
+          "action": "Demonstrate the engine noise or issue and state the high price tag a mechanic would charge."
+        },
+        {
+          "time": "0:30-2:00",
+          "beat": "The Diagnosis",
+          "action": "Show the simple tools used to identify the specific failure point."
+        },
+        {
+          "time": "2:00-8:00",
+          "beat": "The Step-by-Step Fix",
+          "action": "Clear, close-up shots of the repair process, emphasizing how accessible the parts are."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Result",
+          "action": "Start the engine, show the sound is gone, and recap the total cost."
+        }
+      ],
+      "production_checklist": [
+        "Verify part compatibility for the specific car model before filming",
+        "Use a macro lens or close-up focus for the repair steps",
+        "Record audio of the engine before and after the fix",
+        "Keep total video length under 12 minutes to maintain retention"
+      ]
+    }
+  ]
+}

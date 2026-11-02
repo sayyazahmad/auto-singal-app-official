@@ -1,0 +1,6 @@
+.venv-py312
+.cache
+.env
+node_modules
+autosignal/node_modules
+autosignal/.venv*

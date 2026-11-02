@@ -1,0 +1,99 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_tech_mvwulz17",
+      "niche": "technology",
+      "generated_at": "2026-10-31T20:23:13.819Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "Local LLMs | AI agents | DevOps & Docker",
+        "window_days": 30,
+        "videos_analysed": 10,
+        "small_channel_share": 40,
+        "cached": false
+      },
+      "topic": "Running Autonomous AI Agents in Docker",
+      "target_angle": "Focus on the 'how-to' security and isolation aspect for developers who are afraid to run AI agents on their main machine.",
+      "why_it_works": "The data shows a massive appetite for 'AI Agent' and 'Isolation' content, with AI Fusion's viral video proving that small channels can achieve a 129.4x outperformance ratio by focusing on the specific capability of autonomous agents. By combining the high-utility technical focus of the Red Hat and Cloud Codes videos with the accessible 'self-hosted' framing of Better Creating, you provide a high-value solution to a common developer fear.",
+      "pattern_insights": [
+        "High outperformance is driven by specific technical utility (e.g., Docker, Kubernetes, Sandboxing) rather than general AI news.",
+        "Small channels win when they solve a specific 'fear' (like AI hackers or credential leaks) rather than just showcasing general AI agent capabilities.",
+        "The most successful videos frame AI agents as a tangible tool that needs to be 'contained' or 'deployed' safely.",
+        "Titles that focus on a specific transition (e.g., switching from Python to Docker) or a specific constraint (e.g., sandboxing) perform significantly better than generic AI overviews."
+      ],
+      "source_video_ids": [
+        "8DKqcbEy-HM",
+        "6MuAOFfJk2w",
+        "B0oDptfLqKc",
+        "Mph1H5u3yeA"
+      ],
+      "titles": {
+        "title_1_search_match": "Running AI Agents Safely Inside Docker Containers",
+        "title_2_curiosity": "Is Your AI Agent Hacking Your Own Computer?",
+        "title_3_value": "Stop Running AI Agents Without A Sandbox",
+        "recommended_title": "title_1_search_match",
+        "reason": "It clearly signals the technical value to your target audience while promising the safety they are currently searching for in the wake of recent AI agent news."
+      },
+      "hook_script": "Most people are running AI agents directly on their host machines, which is honestly a disaster waiting to happen. If you've seen the recent news about autonomous agents acting on their own, you know why isolation matters. Today, I'm going to show you exactly how to containerize your agents using Docker so they can do the heavy lifting without ever touching your sensitive system files.",
+      "thumbnail_direction": {
+        "primary_image": "A split screen showing a scary terminal command on one side and a clean Docker logo on the other.",
+        "text_overlay": "Agent Sandbox Setup",
+        "color_signal": "Docker blue and alert orange",
+        "focal_point": "A glowing shield icon over a Docker container"
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:30",
+          "beat": "The Threat",
+          "action": "Demonstrate a simple AI agent script and explain the risk of it having unrestricted system access."
+        },
+        {
+          "time": "0:30-2:00",
+          "beat": "The Solution",
+          "action": "Briefly explain the concept of sandboxing, referencing the logic seen in the AI Engineer and Cloud Codes videos."
+        },
+        {
+          "time": "2:00-6:00",
+          "beat": "The Build",
+          "action": "Step-by-step screen share of setting up the Dockerfile and environment variables for the agent."
+        },
+        {
+          "time": "6:00-8:00",
+          "beat": "The Test",
+          "action": "Run a harmless but 'agentic' task inside the container to prove it works and is isolated."
+        }
+      ],
+      "production_checklist": [
+        "Verify Docker is installed on the host machine",
+        "Create a simple AI agent script that requires file system access",
+        "Prepare a clean Dockerfile that limits permissions",
+        "Record screen captures of the container logs to show isolation"
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Running Autonomous AI Agents in Docker",
+        "topic": "Running Autonomous AI Agents in Docker",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 10,
+        "avg_vph": 138,
+        "outperformance_multiplier": "44.1x",
+        "search_gap_percent": "40%",
+        "recommended_angle": "Focus on the 'how-to' security and isolation aspect for developers who are afraid to run AI agents on their main machine.",
+        "sample_titles": [
+          "Someone Just Open Sourced an Autonomous AI Hacker",
+          "Deploy AI agents on Kubernetes: Move from Ollama to vLLM",
+          "Why I’m Switching From Python to Docker Agent for AI Agents",
+          "Which Sandbox Can Actually Hold an AI Agent? (Docker, gVisor, Firecracker)"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

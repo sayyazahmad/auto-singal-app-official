@@ -1,0 +1,97 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvxoyi09",
+      "niche": "automotive",
+      "generated_at": "2026-11-01T10:32:46.761Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Fixing Major Engine Issues Extremely Cheaply",
+      "target_angle": "Focusing on the 'Dealer Refusal' narrative while keeping costs under $50, highlighting that professional diagnosis isn't always required.",
+      "why_it_works": "The data shows that 'ABD Automotive' succeeded by pairing a specific engine problem with an incredibly low price point, achieving a 4.5x outperformance. Viewers are clearly tired of expensive shop quotes, as evidenced by the high engagement on 'Fixing Failed DIY Mercedes Repair' and the 'Dealer Refusal' angle seen in the 'BEEFITCARS' video, which proves that solving problems experts claim are impossible is a massive draw.",
+      "pattern_insights": [
+        "Transformation of high-stakes failures into low-cost DIY wins",
+        "Specific dollar amounts in titles signal immediate accessibility",
+        "Focus on 'Dealer Refusal' or 'Impossible' repairs to build narrative tension",
+        "Visual demonstration of the 'before vs. after' state early in the video"
+      ],
+      "source_video_ids": [
+        "khmI47_CPuU",
+        "Dnfqj2YbEVM",
+        "Ip4QBKLFSWk"
+      ],
+      "titles": {
+        "title_1_search_match": "How to fix major engine blowby for under $50",
+        "title_2_curiosity": "The shop said it was totaled, I fixed it for $40",
+        "title_3_value": "Stop paying for engine rebuilds: the $50 DIY fix",
+        "recommended_title": "title_2_curiosity",
+        "reason": "It taps into the 'dealer refusal' narrative found in the BEEFITCARS video while maintaining the price-driven hook that worked for ABD Automotive."
+      },
+      "hook_script": "Every mechanic I talked to said this engine was toast. They told me I needed a complete rebuild or a new block, which would cost thousands. But I didn't believe them. I spent exactly forty dollars on a few parts, and in the next ten minutes, I'm going to show you how I brought this engine back to life without taking it to a shop.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen: dirty, disassembled engine component on the left, clean, installed component on the right.",
+        "text_overlay": "$40 ENGINE FIX",
+        "color_signal": "High-contrast yellow text on a dark, greasy background.",
+        "focal_point": "The specific part that was replaced, held in hand in the foreground."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:45",
+          "beat": "The Stakes",
+          "action": "Show the engine misfiring or smoking; explain the massive repair quote received."
+        },
+        {
+          "time": "0:45-3:00",
+          "beat": "The Diagnostic",
+          "action": "Explain why the 'pro' diagnosis was wrong using a simple, clear test."
+        },
+        {
+          "time": "3:00-8:00",
+          "beat": "The Fix",
+          "action": "Step-by-step installation of the low-cost part, highlighting the cost savings."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Proof",
+          "action": "Cold start, test drive, and showing the engine running smoothly."
+        }
+      ],
+      "production_checklist": [
+        "Macro shot of the damaged component",
+        "Receipt or screen capture of the $40 parts cost",
+        "Clear 'before' audio of the engine ticking or struggling",
+        "Side-by-side comparison of old vs. new part"
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Fixing Major Engine Issues Extremely Cheaply",
+        "topic": "Fixing Major Engine Issues Extremely Cheaply",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 5,
+        "video_count": 7,
+        "avg_vph": 1081,
+        "outperformance_multiplier": "5.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "Focusing on the 'Dealer Refusal' narrative while keeping costs under $50, highlighting that professional diagnosis isn't always required.",
+        "sample_titles": [
+          "ディーラー修理拒否。「パネル交換しかない」と言われたバイクが刺さった穴を、修復歴なしで直す限界の板金修理【新型ジムニー 第1話】",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38",
+          "Fixing Failed DIY Mercedes Repair. Исправляю кривой Мерседес E-Class."
+        ],
+        "live": true
+      }
+    }
+  ]
+}

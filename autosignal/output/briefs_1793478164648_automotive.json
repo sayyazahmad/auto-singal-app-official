@@ -1,0 +1,102 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwulciv",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:22:44.647Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Repairing Major Engine Issues Cheaply",
+      "target_angle": "Focus on a specific, high-cost repair identified as a 'total loss' by pros, fixed for under $50.",
+      "why_it_works": "Outliers like 'Fixing Major Engine BlowBy on a Ford Ranger for $38' prove that viewers prioritize low-cost, high-impact fixes over brand-name repairs. Small channels win by documenting a 'do-it-yourself' solution to a problem that mechanics usually charge thousands to replace, mirroring the high-outperformance success of CVR POV's budget-friendly restoration videos.",
+      "pattern_insights": [
+        "High outperformance is tied to 'cost-saving' promises (e.g., $38 fix, no respraying).",
+        "Viewers engage deeply with 'impossible' repairs that shops refuse to touch.",
+        "The 'Fixing Failed DIY' format from Arthur Tussik highlights the demand for corrective, professional-grade techniques.",
+        "Specific part names (Ford Ranger, Mercedes) act as strong search anchors."
+      ],
+      "source_video_ids": [
+        "khmI47_CPuU",
+        "jeWcg75O2eU",
+        "NyCuErGd8Jw"
+      ],
+      "titles": {
+        "title_1_search_match": "How to fix major engine oil leak for under $50",
+        "title_2_curiosity": "My mechanic said this engine was trash, I fixed it for $40",
+        "title_3_value": "Stop paying for engine replacements: The $50 DIY fix",
+        "recommended_title": "title_2_curiosity",
+        "reason": "This title leverages the 'us vs them' dynamic seen in high-performing automotive content, creating a strong narrative hook that promises a massive financial win."
+      },
+      "hook_script": "My mechanic told me this engine was basically a boat anchor and I should just scrap the car. He quoted me two thousand dollars for the repair. Instead, I spent forty bucks on parts and did it in my driveway. Let me show you exactly how I brought this engine back to life.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen: dirty, disassembled engine parts on the left vs clean, reassembled engine on the right.",
+        "text_overlay": "$40 FIX vs $2000",
+        "color_signal": "High contrast, using red for the 'mechanic cost' and green for the 'DIY cost'.",
+        "focal_point": "The specific part that was causing the failure, held in hand."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:20",
+          "beat": "The Hook",
+          "action": "State the problem and the 'impossible' nature of the repair."
+        },
+        {
+          "time": "0:20-2:00",
+          "beat": "The Diagnosis",
+          "action": "Show the symptoms using clear, close-up camera work."
+        },
+        {
+          "time": "2:00-5:00",
+          "beat": "The Tear Down",
+          "action": "Fast-paced montage of removing parts, highlighting the ease of the process."
+        },
+        {
+          "time": "5:00-10:00",
+          "beat": "The Fix",
+          "action": "Step-by-step installation of the low-cost part."
+        },
+        {
+          "time": "10:00-12:00",
+          "beat": "The Result",
+          "action": "Start the engine and demonstrate it running smooth, confirming the fix."
+        }
+      ],
+      "production_checklist": [
+        "Clean, high-quality audio during the intro.",
+        "Macro shots of the damaged part before and after.",
+        "Clear on-screen text listing the parts used and their prices.",
+        "Verify engine runs for at least 5 minutes on camera to prove the fix works."
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Repairing Major Engine Issues Cheaply",
+        "topic": "Repairing Major Engine Issues Cheaply",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 7,
+        "avg_vph": 359,
+        "outperformance_multiplier": "38.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "Focus on a specific, high-cost repair identified as a 'total loss' by pros, fixed for under $50.",
+        "sample_titles": [
+          "How To Fix Clear Coat Peel Without Respraying",
+          "How To Repair Deep Car Scratches Without Repainting",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

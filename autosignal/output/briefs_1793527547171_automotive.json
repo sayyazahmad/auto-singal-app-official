@@ -1,0 +1,97 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvxnzsbk",
+      "niche": "automotive",
+      "generated_at": "2026-11-01T10:05:47.168Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 7,
+        "small_channel_share": 14,
+        "cached": true
+      },
+      "topic": "Fixing Major Engine Issues Extremely Cheaply",
+      "target_angle": "Focus on the specific 'diagnostic hack' that saves the engine rather than just the dollar amount, proving it is a permanent solution not a 'band-aid'.",
+      "why_it_works": "The data shows that viewers crave high-stakes repairs that offer a clear path to saving thousands, as seen in ABD Automotive's success with their $38 engine fix. By focusing on a specific, high-value component failure, a smaller channel can demonstrate authority and build trust, which is the primary driver of the 4.5x outperformance ratio seen in that niche.",
+      "pattern_insights": [
+        "Specific dollar amounts in titles (e.g., $38) create a tangible promise of value.",
+        "High-stakes 'major' failures (blowby, clear coat, deep scratches) outperform general maintenance.",
+        "The 'repair vs. replace' narrative is highly compelling when dealers or mechanics claim it is impossible.",
+        "Focusing on a single, clear diagnostic process rather than a complex rebuild maintains viewer retention."
+      ],
+      "source_video_ids": [
+        "khmI47_CPuU",
+        "jeWcg75O2eU",
+        "NyCuErGd8Jw"
+      ],
+      "titles": {
+        "title_1_search_match": "How to Fix Engine Blowby for Under $50",
+        "title_2_curiosity": "They said my engine was dead. I fixed it for $40.",
+        "title_3_value": "Engine Repair Hack: Save Thousands on Your Next Fix",
+        "recommended_title": "title_2_curiosity",
+        "reason": "The curiosity gap created by the 'they said it was dead' narrative is a proven winner for driving clicks while the specific dollar amount anchors the value proposition."
+      },
+      "hook_script": "Most shops will tell you that once you start seeing this much oil in your intake, the engine is toast and needs a full rebuild. I was quoted three thousand dollars for the repair, but today I’m going to show you how I fixed the exact same issue in my driveway for less than forty bucks. This isn't a temporary patch; this is how you actually restore compression without tearing the whole block down.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen showing a dirty, oil-covered engine component next to a clean, installed new part.",
+        "text_overlay": "Dead Engine Fixed",
+        "color_signal": "High contrast yellow text on a dark, greasy background to signal 'repair'.",
+        "focal_point": "The specific part being replaced held in hand against the engine bay."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:30",
+          "beat": "The Stakes",
+          "action": "Show the symptoms, the smoking engine, and the expensive repair quote."
+        },
+        {
+          "time": "0:30-2:00",
+          "beat": "The Diagnostic",
+          "action": "Explain exactly why the failure happened using simple visual aids."
+        },
+        {
+          "time": "2:00-8:00",
+          "beat": "The Fix",
+          "action": "Step-by-step installation of the budget-friendly part with clear, close-up shots."
+        },
+        {
+          "time": "8:00-10:00",
+          "beat": "The Proof",
+          "action": "Start the engine, show it running smoothly, and explain why it will last."
+        }
+      ],
+      "production_checklist": [
+        "Clear, well-lit shots of the engine bay before and after cleaning.",
+        "Receipt or part listing shown on screen to verify the $40 cost.",
+        "Microphone placed close to the engine to capture the sound change.",
+        "B-roll of the specific tool used to make the process easier."
+      ],
+      "opportunity": {
+        "rank": 1,
+        "cluster_label": "Fixing Major Engine Issues Extremely Cheaply",
+        "topic": "Fixing Major Engine Issues Extremely Cheaply",
+        "final_score": 9,
+        "window": "RISING",
+        "trending_score": 9,
+        "search_gap_score": 1.4,
+        "seasonal_score": 9,
+        "outlier_score": 10,
+        "video_count": 7,
+        "avg_vph": 359,
+        "outperformance_multiplier": "38.0x",
+        "search_gap_percent": "14%",
+        "recommended_angle": "Focus on the specific 'diagnostic hack' that saves the engine rather than just the dollar amount, proving it is a permanent solution not a 'band-aid'.",
+        "sample_titles": [
+          "How To Fix Clear Coat Peel Without Respraying",
+          "How To Repair Deep Car Scratches Without Repainting",
+          "Fixing Major Engine BlowBy on a Ford Ranger for $38"
+        ],
+        "live": true
+      }
+    }
+  ]
+}

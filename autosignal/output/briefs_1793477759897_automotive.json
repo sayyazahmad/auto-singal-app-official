@@ -1,0 +1,78 @@
+{
+  "briefs": [
+    {
+      "brief_id": "brief_live_auto_mvwuco5r",
+      "niche": "automotive",
+      "generated_at": "2026-10-31T20:15:59.823Z",
+      "ai_powered": true,
+      "live_research": true,
+      "model": "gemini-3.1-flash-lite",
+      "research": {
+        "query": "DIY repair | diagnostics | transmission fixes",
+        "window_days": 30,
+        "videos_analysed": 1,
+        "small_channel_share": 0,
+        "cached": true
+      },
+      "topic": "Permanent DIY Transmission Fluid Leak Fix",
+      "target_angle": "Focus on a permanent, non-invasive repair method that avoids expensive shop transmission rebuilds, emphasizing the 'before and after' visual satisfaction.",
+      "why_it_works": "The outlier data shows that 'Repair & Rewear' achieved a 30.1x outperformance by focusing on a visually satisfying and unconventional fix for a common problem. Small channels win here by providing high-utility, low-cost diagnostic solutions that save viewers thousands of dollars on major mechanical repairs.",
+      "pattern_insights": [
+        "Focus on high-cost pain points where the DIY fix is surprisingly accessible.",
+        "Emphasize the visual transition from a damaged state to a restored, 'like-new' condition.",
+        "Use a framing that suggests a 'secret' or 'too simple' method to build curiosity.",
+        "The 30.1x ratio proves that viewers prioritize immediate, actionable repair hacks over general automotive content."
+      ],
+      "source_video_ids": [
+        "lJFFEUtKbnI"
+      ],
+      "titles": {
+        "title_1_search_match": "How to fix a transmission leak at home",
+        "title_2_curiosity": "Why your transmission is leaking and how to stop it",
+        "title_3_value": "Stop transmission leaks without removing the gearbox",
+        "recommended_title": "title_3_value",
+        "reason": "It promises a high-value outcome while addressing the specific fear of complex mechanical work, which aligns with the success of the 'Repair & Rewear' video."
+      },
+      "hook_script": "If you are seeing red fluid under your car, you are probably thinking you need a full transmission rebuild that costs thousands. But before you pay a mechanic, watch this. I found a way to seal a common leak in under an hour with just a few basic tools, and it is honestly way easier than you think.",
+      "thumbnail_direction": {
+        "primary_image": "Split screen showing a messy, leaking transmission area on the left and the same area clean and dry on the right.",
+        "text_overlay": "Stop The Leak",
+        "color_signal": "High contrast red fluid against a clean metal transmission housing.",
+        "focal_point": "The exact point of the leak being sealed by a tool or sealant."
+      },
+      "pacing_outline": [
+        {
+          "time": "0:00-0:20",
+          "beat": "The Hook",
+          "action": "Show the leak on the ground, state the problem, and offer the simple solution."
+        },
+        {
+          "time": "0:20-2:00",
+          "beat": "Diagnosis",
+          "action": "Quickly show how to identify exactly where the leak is coming from using a flashlight."
+        },
+        {
+          "time": "2:00-7:00",
+          "beat": "The Fix",
+          "action": "Step-by-step walkthrough of the repair process, focusing on the tool usage."
+        },
+        {
+          "time": "7:00-9:00",
+          "beat": "Verification",
+          "action": "Wipe the area clean, run the engine, and show zero drops forming."
+        },
+        {
+          "time": "9:00-10:00",
+          "beat": "Conclusion",
+          "action": "Summary of cost savings and final encouragement to viewers."
+        }
+      ],
+      "production_checklist": [
+        "Clean the transmission housing thoroughly to ensure the fix is visible.",
+        "Use a macro lens to capture the specific leak point clearly.",
+        "Include a 'cost comparison' graphic showing DIY vs. Shop pricing.",
+        "Ensure audio is crisp to emphasize the mechanical sounds of the repair."
+      ]
+    }
+  ]
+}
