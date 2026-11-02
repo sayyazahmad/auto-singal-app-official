@@ -14,7 +14,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Root (run from repo root):
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 npm run dev      # tsx server.ts — Express with Vite middleware, http://localhost:3000
 npm run lint     # tsc --noEmit (the only lint/type check; there are no JS tests)
 npm run build    # vite build -> dist/
@@ -94,7 +94,7 @@ Keys can also be entered in Settings → API Keys: `POST /api/config/keys` check
 ## Deploying to Vercel
 
 **Setup:**
-- `vercel.json` builds the frontend into `dist/` with `npm run build`, using `--legacy-peer-deps` for the install.
+- `vercel.json` builds the frontend into `dist/` with `npm run build`.
 - It rewrites `/api/*` to `api/index.ts`, which re-exports the Express app from `server.ts`. `server.ts` only calls `startServer()` when `VERCEL` is unset.
 - All other paths fall back to `index.html`.
 - The function bundles `autosignal/{data,output}/**` via `includeFiles`.
@@ -111,5 +111,4 @@ Keys can also be entered in Settings → API Keys: `POST /api/config/keys` check
 ## Gotchas
 
 - The server spawns `PYTHON_BIN` (default `python3`) for pipeline steps. The `requirements.txt` pins only install on Python 3.12, so point `PYTHON_BIN` at a 3.12 interpreter. If it's missing or lacks the deps, steps fail and silently fall back to seeded data.
-- Root `npm install` needs `--legacy-peer-deps`: vite 8's optional esbuild peer conflicts with the pinned dev dep `esbuild@^0.25`.
 - `autosignal/.gitignore` ignores `data/**/*.json`, but the four real niches' data files are committed anyway. Changes to them show up as diffs.
